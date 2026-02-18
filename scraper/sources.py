@@ -158,9 +158,10 @@ def deduplicate_articles(articles: list[dict]) -> list[dict]:
     seen = set()
     unique_articles = []
     for art in articles:
-        if art["link"] not in seen:
+        identifier = (art["link"].split("?")[0], art["title"].strip())
+        if identifier not in seen:
             unique_articles.append(art)
-            seen.add(art["link"])
+            seen.add(identifier)
     return unique_articles
 
 
