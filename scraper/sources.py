@@ -154,6 +154,15 @@ ACTIVE_SOURCES = [
     ReutersSource(),
 ]
 
+def deduplicate_articles(articles: list[dict]) -> list[dict]:
+    seen = set()
+    unique_articles = []
+    for art in articles:
+        if art["link"] not in seen:
+            unique_articles.append(art)
+            seen.add(art["link"])
+    return unique_articles
+
 
 def fetch_all_articles(enrich_content: bool = True) -> list[dict]:
     """
@@ -177,5 +186,6 @@ def fetch_all_articles(enrich_content: bool = True) -> list[dict]:
             all_articles.extend(articles)
         except Exception as e:
             logger.error(f"Error in source {source.NAME}: {e}")
-
+    
+    all_articles = deduplicate_articles(all_articles)
     return all_articles
