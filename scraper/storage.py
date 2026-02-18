@@ -12,6 +12,7 @@ import os
 import logging
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
+from typing import Optional
 
 logger = logging.getLogger(__name__)
 
@@ -158,7 +159,3 @@ def update_storage(new_articles: list[dict]) -> tuple[list[dict], list[dict]]:
 
     save_data(data)
     return merged, truly_new
-
-
-# Fix missing Optional import
-from typing import Optional

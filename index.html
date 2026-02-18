@@ -1,0 +1,2057 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Macro Lab — 2026-02-18 10:09 UTC</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --surface: #161b22;
+      --border: #30363d;
+      --text: #c9d1d9;
+      --text-muted: #8b949e;
+      --accent: #58a6ff;
+      --green: #3fb950;
+      --yellow: #d29922;
+      --red: #f85149;
+      --tag-bg: #1f2937;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    header h1 { font-size: 18px; font-weight: 700; color: var(--accent); }
+    header .meta { color: var(--text-muted); font-size: 12px; margin-left: auto; }
+    .toggle-btn {
+      background: var(--tag-bg);
+      color: var(--text);
+      border: 1px solid var(--border);
+      padding: 6px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 13px;
+      transition: background 0.2s;
+    }
+    .toggle-btn:hover { background: var(--border); }
+    .toggle-btn.active { background: var(--accent); color: #000; border-color: var(--accent); }
+    main { max-width: 960px; margin: 0 auto; padding: 24px 16px; }
+    .stats-bar {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin-bottom: 20px;
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .stat { display: flex; flex-direction: column; }
+    .stat-label { font-size: 11px; text-transform: uppercase; color: var(--text-muted); }
+    .stat-value { font-size: 20px; font-weight: 700; color: var(--accent); }
+    .view { display: none; }
+    .view.active { display: block; }
+    .section-title {
+      font-size: 13px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 12px;
+      transition: border-color 0.15s;
+    }
+    .card:hover { border-color: var(--accent); }
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+    }
+    .source-badge {
+      background: var(--tag-bg);
+      color: var(--text-muted);
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+    }
+    .score {
+      font-size: 12px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+    .score-high { background: rgba(63,185,80,0.15); color: var(--green); }
+    .score-mid { background: rgba(210,153,34,0.15); color: var(--yellow); }
+    .score-low { background: rgba(139,148,158,0.1); color: var(--text-muted); }
+    .theme-tag {
+      font-size: 11px;
+      background: rgba(248,81,73,0.15);
+      color: var(--red);
+      padding: 2px 8px;
+      border-radius: 4px;
+      border: 1px solid rgba(248,81,73,0.3);
+    }
+    .card h3 { font-size: 15px; margin-bottom: 6px; }
+    .card h3 a { color: var(--text); text-decoration: none; }
+    .card h3 a:hover { color: var(--accent); }
+    .preview { color: var(--text-muted); font-size: 13px; margin-bottom: 8px; }
+    .card-footer { font-size: 11px; color: var(--text-muted); }
+    .filter-bar {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    .filter-btn {
+      background: var(--tag-bg);
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+      padding: 4px 12px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 12px;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--accent);
+      color: #000;
+      border-color: var(--accent);
+    }
+    @media (max-width: 600px) {
+      header { flex-wrap: wrap; }
+      .stats-bar { gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h1>📊 Macro Lab</h1>
+  <button class="toggle-btn active" id="toggleBtn" onclick="toggleView()">
+    Top 20 View
+  </button>
+  <div class="meta">Updated: 2026-02-18 10:09 UTC · 119 articles (7d) · Alert threshold: 84.95</div>
+</header>
+
+<main>
+  <div class="stats-bar">
+    <div class="stat">
+      <span class="stat-label">Articles (7d)</span>
+      <span class="stat-value">119</span>
+    </div>
+    <div class="stat">
+      <span class="stat-label">Top Articles</span>
+      <span class="stat-value">20</span>
+    </div>
+    <div class="stat">
+      <span class="stat-label">Critical Alerts</span>
+      <span class="stat-value">101</span>
+    </div>
+    <div class="stat">
+      <span class="stat-label">Alert Threshold</span>
+      <span class="stat-value">84.95</span>
+    </div>
+  </div>
+
+  <!-- TOP VIEW -->
+  <div class="view active" id="view-top">
+    <div class="section-title">Top 20 Articles This Hour</div>
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="filterCards('all', this)">All</button>
+      <button class="filter-btn" onclick="filterCards('war_conflict', this)">War/Conflict</button>
+      <button class="filter-btn" onclick="filterCards('monetary_emergency', this)">Fed</button>
+      <button class="filter-btn" onclick="filterCards('market_crash', this)">Market Crash</button>
+      <button class="filter-btn" onclick="filterCards('sanctions_major', this)">Sanctions</button>
+    </div>
+    <div id="cards-top">
+
+<article class="card" data-score="100.0" data-themes="war_conflict,sanctions_major,geopolitical_shock">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-high">100.0</span>
+    <span class="theme-tag">⚔️ War/Conflict</span><span class="theme-tag">🚫 Sanctions</span><span class="theme-tag">🌐 Geo Shock</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/world/europe/trump-ukraine-war-putin.html" target="_blank" rel="noopener">Trump Said He’d End the War in Ukraine in a Day. It’s Harder Than He Thought.</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT President Trump repeatedly promised during his campaign that he would end the war in Ukraine in one day. But by most measures, the war has grown worse for Ukrainians since Mr. Trump returned to the White House, not better. More civilians were kill…</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 17:49:09</time>
+  </div>
+</article>
+
+<article class="card" data-score="100.0" data-themes="war_conflict,sanctions_major,geopolitical_shock">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-high">100.0</span>
+    <span class="theme-tag">⚔️ War/Conflict</span><span class="theme-tag">🚫 Sanctions</span><span class="theme-tag">🌐 Geo Shock</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/world/europe/russian-figure-skater-milan-olympics.html" target="_blank" rel="noopener">Questions Swirl Around Russian Figure Skater in Her Olympic Debut</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT Dressed all in black with her dark hair pulled tightly into a bun, the Russian teenager many in the figure skating world have been wondering about finally showed up in Milan on Monday. A day before she began competition at the Winter Olympics, the…</p>
+  <div class="card-footer">
+    <time>Wed, 18 Feb 2026 01:05:49</time>
+  </div>
+</article>
+
+<article class="card" data-score="100.0" data-themes="war_conflict,geopolitical_shock">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-high">100.0</span>
+    <span class="theme-tag">⚔️ War/Conflict</span><span class="theme-tag">🌐 Geo Shock</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/world/europe/ukraine-russia-peace-talks-switzerland.html" target="_blank" rel="noopener">Ukraine and Russia Hold New Round of Peace Talks, but Expectations Are Low</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT Ukrainian and Russian officials began a new round of U.S.-brokered peace talks on Tuesday in Switzerland, though hopes of a breakthrough to end the war were low. Fighting rages on, past negotiations have produced little, and major hurdles to a dea…</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 18:14:06</time>
+  </div>
+</article>
+
+<article class="card" data-score="100.0" data-themes="war_conflict,sanctions_major,geopolitical_shock">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-high">100.0</span>
+    <span class="theme-tag">⚔️ War/Conflict</span><span class="theme-tag">🚫 Sanctions</span><span class="theme-tag">🌐 Geo Shock</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/world/europe/trump-ukraine-war-putin.html" target="_blank" rel="noopener">Trump Said He’d End the War in Ukraine in a Day. It’s Harder Than He Thought.</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT President Trump repeatedly promised during his campaign that he would end the war in Ukraine in one day. But by most measures, the war has grown worse for Ukrainians since Mr. Trump returned to the White House, not better. More civilians were kill…</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 17:49:09</time>
+  </div>
+</article>
+
+<article class="card" data-score="100.0" data-themes="war_conflict,sanctions_major,geopolitical_shock">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-high">100.0</span>
+    <span class="theme-tag">⚔️ War/Conflict</span><span class="theme-tag">🚫 Sanctions</span><span class="theme-tag">🌐 Geo Shock</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/world/europe/russian-figure-skater-milan-olympics.html" target="_blank" rel="noopener">Questions Swirl Around Russian Figure Skater in Her Olympic Debut</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT Dressed all in black with her dark hair pulled tightly into a bun, the Russian teenager many in the figure skating world have been wondering about finally showed up in Milan on Monday. A day before she began competition at the Winter Olympics, the…</p>
+  <div class="card-footer">
+    <time>Wed, 18 Feb 2026 01:05:49</time>
+  </div>
+</article>
+
+<article class="card" data-score="100.0" data-themes="war_conflict,geopolitical_shock">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-high">100.0</span>
+    <span class="theme-tag">⚔️ War/Conflict</span><span class="theme-tag">🌐 Geo Shock</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/world/europe/ukraine-russia-peace-talks-switzerland.html" target="_blank" rel="noopener">Ukraine and Russia Hold New Round of Peace Talks, but Expectations Are Low</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT Ukrainian and Russian officials began a new round of U.S.-brokered peace talks on Tuesday in Switzerland, though hopes of a breakthrough to end the war were low. Fighting rages on, past negotiations have produced little, and major hurdles to a dea…</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 18:14:06</time>
+  </div>
+</article>
+
+<article class="card" data-score="91.09" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-high">91.1</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/live/2026/02/11/business/jobs-report-economy/what-to-know-about-the-better-than-expected-report" target="_blank" rel="noopener">What to know about the better-than-expected report.</a></h3>
+  <p class="preview">Pinned Lydia DePillis What to know about the better-than-expected report. The U.S. economy put in a strong showing at the start of 2026, following a year of disruptions that depressed both the demand for labor and its supply. Employers added 130,000 jobs in January, the Labor Dep…</p>
+  <div class="card-footer">
+    <time>Wed, 11 Feb 2026 17:06:24</time>
+  </div>
+</article>
+
+<article class="card" data-score="91.09" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-high">91.1</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/live/2026/02/11/business/jobs-report-economy/what-to-know-about-the-better-than-expected-report" target="_blank" rel="noopener">What to know about the better-than-expected report.</a></h3>
+  <p class="preview">Pinned Lydia DePillis What to know about the better-than-expected report. The U.S. economy put in a strong showing at the start of 2026, following a year of disruptions that depressed both the demand for labor and its supply. Employers added 130,000 jobs in January, the Labor Dep…</p>
+  <div class="card-footer">
+    <time>Wed, 11 Feb 2026 17:06:24</time>
+  </div>
+</article>
+
+<article class="card" data-score="90.58" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-high">90.6</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/live/2026/02/11/business/jobs-report-economy/trump-plans-to-nominate-a-data-nerd-to-lead-bureau-of-labor-statistics" target="_blank" rel="noopener">Trump plans to nominate a ‘data nerd’ to lead Bureau of Labor Statistics.</a></h3>
+  <p class="preview">Pinned Lydia DePillis What to know about the better-than-expected report. The U.S. economy put in a strong showing at the start of 2026, following a year of disruptions that depressed both the demand for labor and its supply. Employers added 130,000 jobs in January, the Labor Dep…</p>
+  <div class="card-footer">
+    <time>Wed, 11 Feb 2026 12:45:02</time>
+  </div>
+</article>
+
+<article class="card" data-score="90.58" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-high">90.6</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/live/2026/02/11/business/jobs-report-economy/trump-plans-to-nominate-a-data-nerd-to-lead-bureau-of-labor-statistics" target="_blank" rel="noopener">Trump plans to nominate a ‘data nerd’ to lead Bureau of Labor Statistics.</a></h3>
+  <p class="preview">Pinned Lydia DePillis What to know about the better-than-expected report. The U.S. economy put in a strong showing at the start of 2026, following a year of disruptions that depressed both the demand for labor and its supply. Employers added 130,000 jobs in January, the Labor Dep…</p>
+  <div class="card-footer">
+    <time>Wed, 11 Feb 2026 12:45:02</time>
+  </div>
+</article>
+
+<article class="card" data-score="85.84" data-themes="war_conflict,sanctions_major">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-high">85.8</span>
+    <span class="theme-tag">⚔️ War/Conflict</span><span class="theme-tag">🚫 Sanctions</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/us/politics/us-coast-guard-oil-tanker-captain-venezuela.html" target="_blank" rel="noopener">U.S. Indicts Captain of an Oil Tanker the Coast Guard Chased for Weeks</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT The United States indicted the captain of an oil tanker that led American forces on a weekslong chase across the Atlantic Ocean after being stopped on its way to Venezuela, the first time President Trump’s crackdown on Venezuelan oil has resulted …</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 21:47:03</time>
+  </div>
+</article>
+
+<article class="card" data-score="85.84" data-themes="war_conflict,sanctions_major">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-high">85.8</span>
+    <span class="theme-tag">⚔️ War/Conflict</span><span class="theme-tag">🚫 Sanctions</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/us/politics/us-coast-guard-oil-tanker-captain-venezuela.html" target="_blank" rel="noopener">U.S. Indicts Captain of an Oil Tanker the Coast Guard Chased for Weeks</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT The United States indicted the captain of an oil tanker that led American forces on a weekslong chase across the Atlantic Ocean after being stopped on its way to Venezuela, the first time President Trump’s crackdown on Venezuelan oil has resulted …</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 21:47:03</time>
+  </div>
+</article>
+
+<article class="card" data-score="81.99" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-high">82.0</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/11/business/economy/fed-jobs-rates.html" target="_blank" rel="noopener">Lower Unemployment Rate Supports Longer Pause for Fed</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT Strong monthly jobs growth and easing unemployment have pushed back expectations about when the Federal Reserve will lower interest rates again, suggesting the central bank is poised for an extended pause. Data released on Wednesday by the Bureau …</p>
+  <div class="card-footer">
+    <time>Wed, 11 Feb 2026 19:25:52</time>
+  </div>
+</article>
+
+<article class="card" data-score="81.99" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-high">82.0</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/11/business/economy/fed-jobs-rates.html" target="_blank" rel="noopener">Lower Unemployment Rate Supports Longer Pause for Fed</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT Strong monthly jobs growth and easing unemployment have pushed back expectations about when the Federal Reserve will lower interest rates again, suggesting the central bank is poised for an extended pause. Data released on Wednesday by the Bureau …</p>
+  <div class="card-footer">
+    <time>Wed, 11 Feb 2026 19:25:52</time>
+  </div>
+</article>
+
+<article class="card" data-score="81.4" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-high">81.4</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/us/politics/trump-witkoff-kushner-diplomacy.html" target="_blank" rel="noopener">Trump Bets on Diplomacy Without Diplomats</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT Over the past year, the Trump administration has engaged in unconventional diplomacy, gunboat diplomacy and, in the most sensitive crises, diplomacy without diplomats. On Tuesday, the administration tried all three tactics at once. In Geneva, Pres…</p>
+  <div class="card-footer">
+    <time>Wed, 18 Feb 2026 03:12:44</time>
+  </div>
+</article>
+
+<article class="card" data-score="81.4" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-high">81.4</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/us/politics/trump-witkoff-kushner-diplomacy.html" target="_blank" rel="noopener">Trump Bets on Diplomacy Without Diplomats</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT Over the past year, the Trump administration has engaged in unconventional diplomacy, gunboat diplomacy and, in the most sensitive crises, diplomacy without diplomats. On Tuesday, the administration tried all three tactics at once. In Geneva, Pres…</p>
+  <div class="card-footer">
+    <time>Wed, 18 Feb 2026 03:12:44</time>
+  </div>
+</article>
+
+<article class="card" data-score="81.23" data-themes="war_conflict,sanctions_major">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-high">81.2</span>
+    <span class="theme-tag">⚔️ War/Conflict</span><span class="theme-tag">🚫 Sanctions</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/us/politics/us-iran-nuclear-talks.html" target="_blank" rel="noopener">U.S. and Iran Make ‘Good Progress’ in Geneva Talks, Foreign Minister Says</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT Indirect talks between American and Iranian officials in Switzerland ended on Tuesday with an agreement on a “set of guiding principles,” according to Iran’s foreign minister, who said both sides had agreed to exchange drafts on a potential deal. …</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 23:18:51</time>
+  </div>
+</article>
+
+<article class="card" data-score="81.23" data-themes="war_conflict,sanctions_major">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-high">81.2</span>
+    <span class="theme-tag">⚔️ War/Conflict</span><span class="theme-tag">🚫 Sanctions</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/us/politics/us-iran-nuclear-talks.html" target="_blank" rel="noopener">U.S. and Iran Make ‘Good Progress’ in Geneva Talks, Foreign Minister Says</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT Indirect talks between American and Iranian officials in Switzerland ended on Tuesday with an agreement on a “set of guiding principles,” according to Iran’s foreign minister, who said both sides had agreed to exchange drafts on a potential deal. …</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 23:18:51</time>
+  </div>
+</article>
+
+<article class="card" data-score="79.79" data-themes="war_conflict,sanctions_major">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-high">79.8</span>
+    <span class="theme-tag">⚔️ War/Conflict</span><span class="theme-tag">🚫 Sanctions</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/12/business/economy/trump-europe-sovereignty.html" target="_blank" rel="noopener">Europe Worries Trump Poses Threat to Its Financial and Tech Sovereignty</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT President Trump’s seizure of Venezuela’s oil and his on-again, off-again vows to acquire Greenland , by force if necessary, have underscored the new threat that Washington poses to nations’ sovereignty. The land and resource grabs have alarmed eve…</p>
+  <div class="card-footer">
+    <time>Thu, 12 Feb 2026 20:27:57</time>
+  </div>
+</article>
+
+<article class="card" data-score="79.79" data-themes="war_conflict,sanctions_major">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-high">79.8</span>
+    <span class="theme-tag">⚔️ War/Conflict</span><span class="theme-tag">🚫 Sanctions</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/12/business/economy/trump-europe-sovereignty.html" target="_blank" rel="noopener">Europe Worries Trump Poses Threat to Its Financial and Tech Sovereignty</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT President Trump’s seizure of Venezuela’s oil and his on-again, off-again vows to acquire Greenland , by force if necessary, have underscored the new threat that Washington poses to nations’ sovereignty. The land and resource grabs have alarmed eve…</p>
+  <div class="card-footer">
+    <time>Thu, 12 Feb 2026 20:27:57</time>
+  </div>
+</article>
+    </div>
+  </div>
+
+  <!-- FULL HISTORY VIEW -->
+  <div class="view" id="view-all">
+    <div class="section-title">Complete History — Last 7 Days (119 articles)</div>
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="filterCards('all', this, 'all')">All</button>
+      <button class="filter-btn" onclick="filterCards('war_conflict', this, 'all')">War/Conflict</button>
+      <button class="filter-btn" onclick="filterCards('monetary_emergency', this, 'all')">Fed</button>
+      <button class="filter-btn" onclick="filterCards('market_crash', this, 'all')">Market Crash</button>
+      <button class="filter-btn" onclick="filterCards('sanctions_major', this, 'all')">Sanctions</button>
+    </div>
+    <div id="cards-all">
+
+<article class="card" data-score="100.0" data-themes="war_conflict,sanctions_major,geopolitical_shock">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-high">100.0</span>
+    <span class="theme-tag">⚔️ War/Conflict</span><span class="theme-tag">🚫 Sanctions</span><span class="theme-tag">🌐 Geo Shock</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/world/europe/trump-ukraine-war-putin.html" target="_blank" rel="noopener">Trump Said He’d End the War in Ukraine in a Day. It’s Harder Than He Thought.</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT President Trump repeatedly promised during his campaign that he would end the war in Ukraine in one day. But by most measures, the war has grown worse for Ukrainians since Mr. Trump returned to the White House, not better. More civilians were kill…</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 17:49:09</time>
+  </div>
+</article>
+
+<article class="card" data-score="100.0" data-themes="war_conflict,sanctions_major,geopolitical_shock">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-high">100.0</span>
+    <span class="theme-tag">⚔️ War/Conflict</span><span class="theme-tag">🚫 Sanctions</span><span class="theme-tag">🌐 Geo Shock</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/world/europe/russian-figure-skater-milan-olympics.html" target="_blank" rel="noopener">Questions Swirl Around Russian Figure Skater in Her Olympic Debut</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT Dressed all in black with her dark hair pulled tightly into a bun, the Russian teenager many in the figure skating world have been wondering about finally showed up in Milan on Monday. A day before she began competition at the Winter Olympics, the…</p>
+  <div class="card-footer">
+    <time>Wed, 18 Feb 2026 01:05:49</time>
+  </div>
+</article>
+
+<article class="card" data-score="100.0" data-themes="war_conflict,geopolitical_shock">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-high">100.0</span>
+    <span class="theme-tag">⚔️ War/Conflict</span><span class="theme-tag">🌐 Geo Shock</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/world/europe/ukraine-russia-peace-talks-switzerland.html" target="_blank" rel="noopener">Ukraine and Russia Hold New Round of Peace Talks, but Expectations Are Low</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT Ukrainian and Russian officials began a new round of U.S.-brokered peace talks on Tuesday in Switzerland, though hopes of a breakthrough to end the war were low. Fighting rages on, past negotiations have produced little, and major hurdles to a dea…</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 18:14:06</time>
+  </div>
+</article>
+
+<article class="card" data-score="100.0" data-themes="war_conflict,sanctions_major,geopolitical_shock">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-high">100.0</span>
+    <span class="theme-tag">⚔️ War/Conflict</span><span class="theme-tag">🚫 Sanctions</span><span class="theme-tag">🌐 Geo Shock</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/world/europe/trump-ukraine-war-putin.html" target="_blank" rel="noopener">Trump Said He’d End the War in Ukraine in a Day. It’s Harder Than He Thought.</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT President Trump repeatedly promised during his campaign that he would end the war in Ukraine in one day. But by most measures, the war has grown worse for Ukrainians since Mr. Trump returned to the White House, not better. More civilians were kill…</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 17:49:09</time>
+  </div>
+</article>
+
+<article class="card" data-score="100.0" data-themes="war_conflict,sanctions_major,geopolitical_shock">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-high">100.0</span>
+    <span class="theme-tag">⚔️ War/Conflict</span><span class="theme-tag">🚫 Sanctions</span><span class="theme-tag">🌐 Geo Shock</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/world/europe/russian-figure-skater-milan-olympics.html" target="_blank" rel="noopener">Questions Swirl Around Russian Figure Skater in Her Olympic Debut</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT Dressed all in black with her dark hair pulled tightly into a bun, the Russian teenager many in the figure skating world have been wondering about finally showed up in Milan on Monday. A day before she began competition at the Winter Olympics, the…</p>
+  <div class="card-footer">
+    <time>Wed, 18 Feb 2026 01:05:49</time>
+  </div>
+</article>
+
+<article class="card" data-score="100.0" data-themes="war_conflict,geopolitical_shock">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-high">100.0</span>
+    <span class="theme-tag">⚔️ War/Conflict</span><span class="theme-tag">🌐 Geo Shock</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/world/europe/ukraine-russia-peace-talks-switzerland.html" target="_blank" rel="noopener">Ukraine and Russia Hold New Round of Peace Talks, but Expectations Are Low</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT Ukrainian and Russian officials began a new round of U.S.-brokered peace talks on Tuesday in Switzerland, though hopes of a breakthrough to end the war were low. Fighting rages on, past negotiations have produced little, and major hurdles to a dea…</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 18:14:06</time>
+  </div>
+</article>
+
+<article class="card" data-score="91.09" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-high">91.1</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/live/2026/02/11/business/jobs-report-economy/what-to-know-about-the-better-than-expected-report" target="_blank" rel="noopener">What to know about the better-than-expected report.</a></h3>
+  <p class="preview">Pinned Lydia DePillis What to know about the better-than-expected report. The U.S. economy put in a strong showing at the start of 2026, following a year of disruptions that depressed both the demand for labor and its supply. Employers added 130,000 jobs in January, the Labor Dep…</p>
+  <div class="card-footer">
+    <time>Wed, 11 Feb 2026 17:06:24</time>
+  </div>
+</article>
+
+<article class="card" data-score="91.09" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-high">91.1</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/live/2026/02/11/business/jobs-report-economy/what-to-know-about-the-better-than-expected-report" target="_blank" rel="noopener">What to know about the better-than-expected report.</a></h3>
+  <p class="preview">Pinned Lydia DePillis What to know about the better-than-expected report. The U.S. economy put in a strong showing at the start of 2026, following a year of disruptions that depressed both the demand for labor and its supply. Employers added 130,000 jobs in January, the Labor Dep…</p>
+  <div class="card-footer">
+    <time>Wed, 11 Feb 2026 17:06:24</time>
+  </div>
+</article>
+
+<article class="card" data-score="90.58" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-high">90.6</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/live/2026/02/11/business/jobs-report-economy/trump-plans-to-nominate-a-data-nerd-to-lead-bureau-of-labor-statistics" target="_blank" rel="noopener">Trump plans to nominate a ‘data nerd’ to lead Bureau of Labor Statistics.</a></h3>
+  <p class="preview">Pinned Lydia DePillis What to know about the better-than-expected report. The U.S. economy put in a strong showing at the start of 2026, following a year of disruptions that depressed both the demand for labor and its supply. Employers added 130,000 jobs in January, the Labor Dep…</p>
+  <div class="card-footer">
+    <time>Wed, 11 Feb 2026 12:45:02</time>
+  </div>
+</article>
+
+<article class="card" data-score="90.58" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-high">90.6</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/live/2026/02/11/business/jobs-report-economy/trump-plans-to-nominate-a-data-nerd-to-lead-bureau-of-labor-statistics" target="_blank" rel="noopener">Trump plans to nominate a ‘data nerd’ to lead Bureau of Labor Statistics.</a></h3>
+  <p class="preview">Pinned Lydia DePillis What to know about the better-than-expected report. The U.S. economy put in a strong showing at the start of 2026, following a year of disruptions that depressed both the demand for labor and its supply. Employers added 130,000 jobs in January, the Labor Dep…</p>
+  <div class="card-footer">
+    <time>Wed, 11 Feb 2026 12:45:02</time>
+  </div>
+</article>
+
+<article class="card" data-score="85.84" data-themes="war_conflict,sanctions_major">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-high">85.8</span>
+    <span class="theme-tag">⚔️ War/Conflict</span><span class="theme-tag">🚫 Sanctions</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/us/politics/us-coast-guard-oil-tanker-captain-venezuela.html" target="_blank" rel="noopener">U.S. Indicts Captain of an Oil Tanker the Coast Guard Chased for Weeks</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT The United States indicted the captain of an oil tanker that led American forces on a weekslong chase across the Atlantic Ocean after being stopped on its way to Venezuela, the first time President Trump’s crackdown on Venezuelan oil has resulted …</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 21:47:03</time>
+  </div>
+</article>
+
+<article class="card" data-score="85.84" data-themes="war_conflict,sanctions_major">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-high">85.8</span>
+    <span class="theme-tag">⚔️ War/Conflict</span><span class="theme-tag">🚫 Sanctions</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/us/politics/us-coast-guard-oil-tanker-captain-venezuela.html" target="_blank" rel="noopener">U.S. Indicts Captain of an Oil Tanker the Coast Guard Chased for Weeks</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT The United States indicted the captain of an oil tanker that led American forces on a weekslong chase across the Atlantic Ocean after being stopped on its way to Venezuela, the first time President Trump’s crackdown on Venezuelan oil has resulted …</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 21:47:03</time>
+  </div>
+</article>
+
+<article class="card" data-score="81.99" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-high">82.0</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/11/business/economy/fed-jobs-rates.html" target="_blank" rel="noopener">Lower Unemployment Rate Supports Longer Pause for Fed</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT Strong monthly jobs growth and easing unemployment have pushed back expectations about when the Federal Reserve will lower interest rates again, suggesting the central bank is poised for an extended pause. Data released on Wednesday by the Bureau …</p>
+  <div class="card-footer">
+    <time>Wed, 11 Feb 2026 19:25:52</time>
+  </div>
+</article>
+
+<article class="card" data-score="81.99" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-high">82.0</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/11/business/economy/fed-jobs-rates.html" target="_blank" rel="noopener">Lower Unemployment Rate Supports Longer Pause for Fed</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT Strong monthly jobs growth and easing unemployment have pushed back expectations about when the Federal Reserve will lower interest rates again, suggesting the central bank is poised for an extended pause. Data released on Wednesday by the Bureau …</p>
+  <div class="card-footer">
+    <time>Wed, 11 Feb 2026 19:25:52</time>
+  </div>
+</article>
+
+<article class="card" data-score="81.4" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-high">81.4</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/us/politics/trump-witkoff-kushner-diplomacy.html" target="_blank" rel="noopener">Trump Bets on Diplomacy Without Diplomats</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT Over the past year, the Trump administration has engaged in unconventional diplomacy, gunboat diplomacy and, in the most sensitive crises, diplomacy without diplomats. On Tuesday, the administration tried all three tactics at once. In Geneva, Pres…</p>
+  <div class="card-footer">
+    <time>Wed, 18 Feb 2026 03:12:44</time>
+  </div>
+</article>
+
+<article class="card" data-score="81.4" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-high">81.4</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/us/politics/trump-witkoff-kushner-diplomacy.html" target="_blank" rel="noopener">Trump Bets on Diplomacy Without Diplomats</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT Over the past year, the Trump administration has engaged in unconventional diplomacy, gunboat diplomacy and, in the most sensitive crises, diplomacy without diplomats. On Tuesday, the administration tried all three tactics at once. In Geneva, Pres…</p>
+  <div class="card-footer">
+    <time>Wed, 18 Feb 2026 03:12:44</time>
+  </div>
+</article>
+
+<article class="card" data-score="81.23" data-themes="war_conflict,sanctions_major">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-high">81.2</span>
+    <span class="theme-tag">⚔️ War/Conflict</span><span class="theme-tag">🚫 Sanctions</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/us/politics/us-iran-nuclear-talks.html" target="_blank" rel="noopener">U.S. and Iran Make ‘Good Progress’ in Geneva Talks, Foreign Minister Says</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT Indirect talks between American and Iranian officials in Switzerland ended on Tuesday with an agreement on a “set of guiding principles,” according to Iran’s foreign minister, who said both sides had agreed to exchange drafts on a potential deal. …</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 23:18:51</time>
+  </div>
+</article>
+
+<article class="card" data-score="81.23" data-themes="war_conflict,sanctions_major">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-high">81.2</span>
+    <span class="theme-tag">⚔️ War/Conflict</span><span class="theme-tag">🚫 Sanctions</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/us/politics/us-iran-nuclear-talks.html" target="_blank" rel="noopener">U.S. and Iran Make ‘Good Progress’ in Geneva Talks, Foreign Minister Says</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT Indirect talks between American and Iranian officials in Switzerland ended on Tuesday with an agreement on a “set of guiding principles,” according to Iran’s foreign minister, who said both sides had agreed to exchange drafts on a potential deal. …</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 23:18:51</time>
+  </div>
+</article>
+
+<article class="card" data-score="79.79" data-themes="war_conflict,sanctions_major">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-high">79.8</span>
+    <span class="theme-tag">⚔️ War/Conflict</span><span class="theme-tag">🚫 Sanctions</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/12/business/economy/trump-europe-sovereignty.html" target="_blank" rel="noopener">Europe Worries Trump Poses Threat to Its Financial and Tech Sovereignty</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT President Trump’s seizure of Venezuela’s oil and his on-again, off-again vows to acquire Greenland , by force if necessary, have underscored the new threat that Washington poses to nations’ sovereignty. The land and resource grabs have alarmed eve…</p>
+  <div class="card-footer">
+    <time>Thu, 12 Feb 2026 20:27:57</time>
+  </div>
+</article>
+
+<article class="card" data-score="79.79" data-themes="war_conflict,sanctions_major">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-high">79.8</span>
+    <span class="theme-tag">⚔️ War/Conflict</span><span class="theme-tag">🚫 Sanctions</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/12/business/economy/trump-europe-sovereignty.html" target="_blank" rel="noopener">Europe Worries Trump Poses Threat to Its Financial and Tech Sovereignty</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT President Trump’s seizure of Venezuela’s oil and his on-again, off-again vows to acquire Greenland , by force if necessary, have underscored the new threat that Washington poses to nations’ sovereignty. The land and resource grabs have alarmed eve…</p>
+  <div class="card-footer">
+    <time>Thu, 12 Feb 2026 20:27:57</time>
+  </div>
+</article>
+
+<article class="card" data-score="76.91" data-themes="war_conflict,sanctions_major">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-high">76.9</span>
+    <span class="theme-tag">⚔️ War/Conflict</span><span class="theme-tag">🚫 Sanctions</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/live/2026/02/17/us/trump-news/hud-opens-discrimination-investigation-into-a-muslim-development-in-texas" target="_blank" rel="noopener">HUD opens discrimination investigation into a Muslim development in Texas.</a></h3>
+  <p class="preview">D.H.S. Shutdown Feb. 17, 2026, 3:20 p.m. ET Carl Hulse Reporting from Washington The Democrats and the White House trade offers, but a deal to reopen D.H.S. remains elusive. Image Senator Richard Blumenthal, Democrat of Connecticut, during a Senate hearing last Thursday. Credit..…</p>
+  <div class="card-footer">
+    <time>Wed, 18 Feb 2026 03:21:04</time>
+  </div>
+</article>
+
+<article class="card" data-score="76.91" data-themes="war_conflict,sanctions_major">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-high">76.9</span>
+    <span class="theme-tag">⚔️ War/Conflict</span><span class="theme-tag">🚫 Sanctions</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/live/2026/02/17/us/trump-news/hud-opens-discrimination-investigation-into-a-muslim-development-in-texas" target="_blank" rel="noopener">HUD opens discrimination investigation into a Muslim development in Texas.</a></h3>
+  <p class="preview">D.H.S. Shutdown Feb. 17, 2026, 3:20 p.m. ET Carl Hulse Reporting from Washington The Democrats and the White House trade offers, but a deal to reopen D.H.S. remains elusive. Image Senator Richard Blumenthal, Democrat of Connecticut, during a Senate hearing last Thursday. Credit..…</p>
+  <div class="card-footer">
+    <time>Wed, 18 Feb 2026 03:21:04</time>
+  </div>
+</article>
+
+<article class="card" data-score="74.27" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-high">74.3</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/11/business/economy/forecasts-prediction-markets-economy.html" target="_blank" rel="noopener">Kalshi and Polymarket Create New Competition for Professional Economists</a></h3>
+  <p class="preview">Credit... Andrea Chronopoulos Supported by SKIP ADVERTISEMENT Listen to this article · 8:26 min Learn more Share full article 287 By Lydia DePillis Feb. 11, 2026 Economists at top banks and investment firms who command high salaries to divine the direction of the economy expected…</p>
+  <div class="card-footer">
+    <time>Wed, 11 Feb 2026 20:37:49</time>
+  </div>
+</article>
+
+<article class="card" data-score="74.27" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-high">74.3</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/11/business/economy/forecasts-prediction-markets-economy.html" target="_blank" rel="noopener">Kalshi and Polymarket Create New Competition for Professional Economists</a></h3>
+  <p class="preview">Credit... Andrea Chronopoulos Supported by SKIP ADVERTISEMENT Listen to this article · 8:26 min Learn more Share full article 287 By Lydia DePillis Feb. 11, 2026 Economists at top banks and investment firms who command high salaries to divine the direction of the economy expected…</p>
+  <div class="card-footer">
+    <time>Wed, 11 Feb 2026 20:37:49</time>
+  </div>
+</article>
+
+<article class="card" data-score="71.96" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-high">72.0</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/business/dealbook/paramount-warner-bros-netflix.html" target="_blank" rel="noopener">Paramount’s New Chance to Win Over Warner Bros. Discovery</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT Image Image Paramount has notched a big breakthrough in its efforts to restart merger talks with Warner Bros. Discovery. Credit... Ricardo Nagaoka for The New York Times In today's newsletter: Paramount notches a win More Epstein files fallout Ant…</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 13:17:09</time>
+  </div>
+</article>
+
+<article class="card" data-score="71.96" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-high">72.0</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/business/dealbook/paramount-warner-bros-netflix.html" target="_blank" rel="noopener">Paramount’s New Chance to Win Over Warner Bros. Discovery</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT Image Image Paramount has notched a big breakthrough in its efforts to restart merger talks with Warner Bros. Discovery. Credit... Ricardo Nagaoka for The New York Times In today's newsletter: Paramount notches a win More Epstein files fallout Ant…</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 13:17:09</time>
+  </div>
+</article>
+
+<article class="card" data-score="71.26" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-high">71.3</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/11/business/economy/after-a-year-of-sluggish-hiring-2026-could-be-off-to-a-stronger-start.html" target="_blank" rel="noopener">After a Year of Sluggish Hiring, 2026 Is Off to a Stronger Start</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT The U.S. economy put in a strong showing at the start of 2026, following a year of disruptions that depressed both the demand for labor and its supply. Employers added 130,000 jobs in January, the Labor Department reported on Wednesday, in a relea…</p>
+  <div class="card-footer">
+    <time>Wed, 11 Feb 2026 17:04:56</time>
+  </div>
+</article>
+
+<article class="card" data-score="71.26" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-high">71.3</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/11/business/economy/after-a-year-of-sluggish-hiring-2026-could-be-off-to-a-stronger-start.html" target="_blank" rel="noopener">After a Year of Sluggish Hiring, 2026 Is Off to a Stronger Start</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT The U.S. economy put in a strong showing at the start of 2026, following a year of disruptions that depressed both the demand for labor and its supply. Employers added 130,000 jobs in January, the Labor Department reported on Wednesday, in a relea…</p>
+  <div class="card-footer">
+    <time>Wed, 11 Feb 2026 17:04:56</time>
+  </div>
+</article>
+
+<article class="card" data-score="64.07" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-mid">64.1</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/12/business/economy/americans-pay-tariffs-trump-fed.html" target="_blank" rel="noopener">Americans Are Paying the Bill for Tariffs, Despite Trump’s Claims</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT President Trump has frequently claimed that foreign countries were paying for his tariffs, not Americans. But as economists predicted, that is largely turning out not to be the case. Research published on Thursday by economists at the Federal Rese…</p>
+  <div class="card-footer">
+    <time>Thu, 12 Feb 2026 16:59:20</time>
+  </div>
+</article>
+
+<article class="card" data-score="64.07" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-mid">64.1</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/12/business/economy/americans-pay-tariffs-trump-fed.html" target="_blank" rel="noopener">Americans Are Paying the Bill for Tariffs, Despite Trump’s Claims</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT President Trump has frequently claimed that foreign countries were paying for his tariffs, not Americans. But as economists predicted, that is largely turning out not to be the case. Research published on Thursday by economists at the Federal Rese…</p>
+  <div class="card-footer">
+    <time>Thu, 12 Feb 2026 16:59:20</time>
+  </div>
+</article>
+
+<article class="card" data-score="62.8" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-mid">62.8</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/16/business/economy/jamieson-greer-trump-trade.html" target="_blank" rel="noopener">The Quiet Architect of Trump’s Global Trade War</a></h3>
+  <p class="preview">Jamieson Greer, the U.S. trade representative, has quietly navigated the demands of an unpredictable president. Credit... Haiyun Jiang/The New York Times Supported by SKIP ADVERTISEMENT Listen to this article · 15:18 min Learn more Share full article By Ana Swanson Ana Swanson ha…</p>
+  <div class="card-footer">
+    <time>Mon, 16 Feb 2026 15:59:49</time>
+  </div>
+</article>
+
+<article class="card" data-score="62.8" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-mid">62.8</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/16/business/economy/jamieson-greer-trump-trade.html" target="_blank" rel="noopener">The Quiet Architect of Trump’s Global Trade War</a></h3>
+  <p class="preview">Jamieson Greer, the U.S. trade representative, has quietly navigated the demands of an unpredictable president. Credit... Haiyun Jiang/The New York Times Supported by SKIP ADVERTISEMENT Listen to this article · 15:18 min Learn more Share full article By Ana Swanson Ana Swanson ha…</p>
+  <div class="card-footer">
+    <time>Mon, 16 Feb 2026 15:59:49</time>
+  </div>
+</article>
+
+<article class="card" data-score="55.71" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-mid">55.7</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/18/business/jgb-trade-excitement.html" target="_blank" rel="noopener">The Sleepy Market for Japanese Government Bonds Is Now a ‘Battlefield’</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT For two decades, few corners of global finance were lonelier than the market for Japanese government bonds. Under the Bank of Japan’s longstanding regime of keeping borrowing costs pinned at zero, yields on the securities, known as J.G.B.s, largel…</p>
+  <div class="card-footer">
+    <time>Wed, 18 Feb 2026 05:00:08</time>
+  </div>
+</article>
+
+<article class="card" data-score="55.71" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-mid">55.7</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/18/business/jgb-trade-excitement.html" target="_blank" rel="noopener">The Sleepy Market for Japanese Government Bonds Is Now a ‘Battlefield’</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT For two decades, few corners of global finance were lonelier than the market for Japanese government bonds. Under the Bank of Japan’s longstanding regime of keeping borrowing costs pinned at zero, yields on the securities, known as J.G.B.s, largel…</p>
+  <div class="card-footer">
+    <time>Wed, 18 Feb 2026 05:00:08</time>
+  </div>
+</article>
+
+<article class="card" data-score="55.66" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-mid">55.7</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/world/middleeast/israel-hamas-board-of-peace-disarmament.html" target="_blank" rel="noopener">Trump’s ‘Board of Peace’ Presses Hamas on Disarmament, Officials Say</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT A senior official for Gaza on President Trump’s “Board of Peace” met with a top Hamas leader last week and pressed the militant group on the issue of disarmament, according to two officials briefed on the encounter, amid concern that Israel may re…</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 19:03:34</time>
+  </div>
+</article>
+
+<article class="card" data-score="55.66" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-mid">55.7</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/world/middleeast/israel-hamas-board-of-peace-disarmament.html" target="_blank" rel="noopener">Trump’s ‘Board of Peace’ Presses Hamas on Disarmament, Officials Say</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT A senior official for Gaza on President Trump’s “Board of Peace” met with a top Hamas leader last week and pressed the militant group on the issue of disarmament, according to two officials briefed on the encounter, amid concern that Israel may re…</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 19:03:34</time>
+  </div>
+</article>
+
+<article class="card" data-score="53.51" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-mid">53.5</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/11/business/economy/k-shaped-economy.html" target="_blank" rel="noopener">What Executives Are Saying About the ‘K-Shaped’ Economy</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT The U.S. economy is growing, but not evenly. What began as an uneven rebound from the Covid-19 pandemic has hardened into what many economists describe as a “K-shaped” economy , in which higher-income households pull ahead while lower-income house…</p>
+  <div class="card-footer">
+    <time>Wed, 11 Feb 2026 18:59:03</time>
+  </div>
+</article>
+
+<article class="card" data-score="53.51" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-mid">53.5</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/11/business/economy/k-shaped-economy.html" target="_blank" rel="noopener">What Executives Are Saying About the ‘K-Shaped’ Economy</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT The U.S. economy is growing, but not evenly. What began as an uneven rebound from the Covid-19 pandemic has hardened into what many economists describe as a “K-shaped” economy , in which higher-income households pull ahead while lower-income house…</p>
+  <div class="card-footer">
+    <time>Wed, 11 Feb 2026 18:59:03</time>
+  </div>
+</article>
+
+<article class="card" data-score="45.14" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-mid">45.1</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/us/politics/jesse-jackson-black-voters-voting-rights-act.html" target="_blank" rel="noopener">Jesse Jackson’s Death Arrives at a Crucial Moment for Black Political Power</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT The Rev. Jesse Jackson’s death comes at a moment when Black voters are hugely influential within the Democratic Party and there are more Black senators than ever before — yet the future of Black representation in the House of Representatives is un…</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 23:21:50</time>
+  </div>
+</article>
+
+<article class="card" data-score="45.14" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-mid">45.1</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/us/politics/jesse-jackson-black-voters-voting-rights-act.html" target="_blank" rel="noopener">Jesse Jackson’s Death Arrives at a Crucial Moment for Black Political Power</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT The Rev. Jesse Jackson’s death comes at a moment when Black voters are hugely influential within the Democratic Party and there are more Black senators than ever before — yet the future of Black representation in the House of Representatives is un…</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 23:21:50</time>
+  </div>
+</article>
+
+<article class="card" data-score="45.12" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-mid">45.1</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/04/business/economy/state-fiscal-protest-ice.html" target="_blank" rel="noopener">State Fiscal Chiefs Protest Federal Immigration Chaos</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT As the immigration enforcement operation in Minnesota takes a toll on local businesses, whose customers and employees are staying off the streets out of fear, some public budgets heads have a message to the White House: Stop. Democratic state trea…</p>
+  <div class="card-footer">
+    <time>Wed, 04 Feb 2026 18:53:37</time>
+  </div>
+</article>
+
+<article class="card" data-score="45.12" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-mid">45.1</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/04/business/economy/state-fiscal-protest-ice.html" target="_blank" rel="noopener">State Fiscal Chiefs Protest Federal Immigration Chaos</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT As the immigration enforcement operation in Minnesota takes a toll on local businesses, whose customers and employees are staying off the streets out of fear, some public budgets heads have a message to the White House: Stop. Democratic state trea…</p>
+  <div class="card-footer">
+    <time>Wed, 04 Feb 2026 18:53:37</time>
+  </div>
+</article>
+
+<article class="card" data-score="45.01" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-mid">45.0</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/business/japan-trump-investments.html" target="_blank" rel="noopener">Trump Hails Japan’s First Batch of U.S. Investments</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT The U.S. government outlined tens of billions of dollars in planned Japanese investments in the United States as part of a trade agreement struck last year, marking the start of a massive pledge that has faced domestic frictions and financing hurd…</p>
+  <div class="card-footer">
+    <time>Wed, 18 Feb 2026 05:33:24</time>
+  </div>
+</article>
+
+<article class="card" data-score="45.01" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-mid">45.0</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/business/japan-trump-investments.html" target="_blank" rel="noopener">Trump Hails Japan’s First Batch of U.S. Investments</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT The U.S. government outlined tens of billions of dollars in planned Japanese investments in the United States as part of a trade agreement struck last year, marking the start of a massive pledge that has faced domestic frictions and financing hurd…</p>
+  <div class="card-footer">
+    <time>Wed, 18 Feb 2026 05:33:24</time>
+  </div>
+</article>
+
+<article class="card" data-score="44.45" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-mid">44.5</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/us/politics/ntsb-reagan-national-crash-report.html" target="_blank" rel="noopener">House Plans to Vote on Air Safety Bill After Report on Deadly D.C. Crash</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT The National Transportation Safety Board on Tuesday released its final report on the midair collision near Ronald Reagan National Airport last year that killed 67 people, as the House announced plans to vote next week on legislation to address som…</p>
+  <div class="card-footer">
+    <time>Wed, 18 Feb 2026 03:03:24</time>
+  </div>
+</article>
+
+<article class="card" data-score="44.45" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-mid">44.5</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/us/politics/ntsb-reagan-national-crash-report.html" target="_blank" rel="noopener">House Plans to Vote on Air Safety Bill After Report on Deadly D.C. Crash</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT The National Transportation Safety Board on Tuesday released its final report on the midair collision near Ronald Reagan National Airport last year that killed 67 people, as the House announced plans to vote next week on legislation to address som…</p>
+  <div class="card-footer">
+    <time>Wed, 18 Feb 2026 03:03:24</time>
+  </div>
+</article>
+
+<article class="card" data-score="44.2" data-themes="">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-mid">44.2</span>
+    
+  </div>
+  <h3><a href="https://www.nytimes.com/video/business/economy/100000010706277/explaining-us-job-growth-healthcare-ai-trump.html" target="_blank" rel="noopener">The Hidden Number Driving U.S. Job Growth</a></h3>
+  <p class="preview">new video loaded: The Hidden Number Driving U.S. Job Growth Watch Today’s Videos Advertisement SKIP ADVERTISEMENT More in Reporter Video › The Hidden Park Under the Brooklyn Bridge 2:29 We Tracked All the Lawsuits Against the Second Trump Administration 2:32 How ICE Is Pushing Te…</p>
+  <div class="card-footer">
+    <time>Sat, 14 Feb 2026 19:38:03</time>
+  </div>
+</article>
+
+<article class="card" data-score="44.2" data-themes="">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-mid">44.2</span>
+    
+  </div>
+  <h3><a href="https://www.nytimes.com/video/business/economy/100000010706277/explaining-us-job-growth-healthcare-ai-trump.html" target="_blank" rel="noopener">The Hidden Number Driving U.S. Job Growth</a></h3>
+  <p class="preview">new video loaded: The Hidden Number Driving U.S. Job Growth Watch Today’s Videos Advertisement SKIP ADVERTISEMENT More in Reporter Video › The Hidden Park Under the Brooklyn Bridge 2:29 We Tracked All the Lawsuits Against the Second Trump Administration 2:32 How ICE Is Pushing Te…</p>
+  <div class="card-footer">
+    <time>Sat, 14 Feb 2026 19:38:03</time>
+  </div>
+</article>
+
+<article class="card" data-score="43.95" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-mid">44.0</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/business/goldman-sachs-diversity-board.html" target="_blank" rel="noopener">Goldman Sachs to Drop D.E.I. Criteria for Board Members</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT Goldman Sachs is taking another step away from the diversity mandates the Wall Street firm had long championed. Goldman will no longer explicitly consider race, gender and sexual orientation when evaluating a potential board member at the firm, ac…</p>
+  <div class="card-footer">
+    <time>Wed, 18 Feb 2026 02:15:35</time>
+  </div>
+</article>
+
+<article class="card" data-score="43.95" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-mid">44.0</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/business/goldman-sachs-diversity-board.html" target="_blank" rel="noopener">Goldman Sachs to Drop D.E.I. Criteria for Board Members</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT Goldman Sachs is taking another step away from the diversity mandates the Wall Street firm had long championed. Goldman will no longer explicitly consider race, gender and sexual orientation when evaluating a potential board member at the firm, ac…</p>
+  <div class="card-footer">
+    <time>Wed, 18 Feb 2026 02:15:35</time>
+  </div>
+</article>
+
+<article class="card" data-score="42.08" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-mid">42.1</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/18/us/politics/democrats-trump-congress.html" target="_blank" rel="noopener">Democrats Plan to Counter Trump’s Speech to Congress With Rally</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT Democrats knew in real time last year that they had bungled their response to President Trump’s address to a joint session of Congress, making themselves a distraction rather than offering a cohesive message of resistance to his policies. Represen…</p>
+  <div class="card-footer">
+    <time>Wed, 18 Feb 2026 10:04:13</time>
+  </div>
+</article>
+
+<article class="card" data-score="42.08" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-mid">42.1</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/18/us/politics/democrats-trump-congress.html" target="_blank" rel="noopener">Democrats Plan to Counter Trump’s Speech to Congress With Rally</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT Democrats knew in real time last year that they had bungled their response to President Trump’s address to a joint session of Congress, making themselves a distraction rather than offering a cohesive message of resistance to his policies. Represen…</p>
+  <div class="card-footer">
+    <time>Wed, 18 Feb 2026 10:04:13</time>
+  </div>
+</article>
+
+<article class="card" data-score="40.92" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-mid">40.9</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/16/world/middleeast/syria-army-kurds-war.html" target="_blank" rel="noopener">Syrian Army Crosses New Threshold With Advances in Kurdish Regions</a></h3>
+  <p class="preview">The Syrian Army has moved into vast new regions, seeking to erase the largest fissure left from the civil war. They have encountered a land in desperate need and deeply divided after years of fighting. The advance has left ethnic Kurds fearful and wary. It has dashed their dream …</p>
+  <div class="card-footer">
+    <time>Mon, 16 Feb 2026 20:41:07</time>
+  </div>
+</article>
+
+<article class="card" data-score="40.92" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-mid">40.9</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/16/world/middleeast/syria-army-kurds-war.html" target="_blank" rel="noopener">Syrian Army Crosses New Threshold With Advances in Kurdish Regions</a></h3>
+  <p class="preview">The Syrian Army has moved into vast new regions, seeking to erase the largest fissure left from the civil war. They have encountered a land in desperate need and deeply divided after years of fighting. The advance has left ethnic Kurds fearful and wary. It has dashed their dream …</p>
+  <div class="card-footer">
+    <time>Mon, 16 Feb 2026 20:41:07</time>
+  </div>
+</article>
+
+<article class="card" data-score="39.34" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">39.3</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/us/politics/trump-congress-budget-cuts.html" target="_blank" rel="noopener">Trump Sought Vast Budget Cuts. Congress Granted Few.</a></h3>
+  <p class="preview">Congress has left intact a large set of federal programs that the White House tried to slash or eliminate this fiscal year. Credit... Eric Lee for The New York Times Supported by SKIP ADVERTISEMENT Listen to this article · 11:29 min Learn more Share full article 485 By Tony Romm …</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 10:03:00</time>
+  </div>
+</article>
+
+<article class="card" data-score="39.34" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">39.3</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/us/politics/trump-congress-budget-cuts.html" target="_blank" rel="noopener">Trump Sought Vast Budget Cuts. Congress Granted Few.</a></h3>
+  <p class="preview">Congress has left intact a large set of federal programs that the White House tried to slash or eliminate this fiscal year. Credit... Eric Lee for The New York Times Supported by SKIP ADVERTISEMENT Listen to this article · 11:29 min Learn more Share full article 485 By Tony Romm …</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 10:03:00</time>
+  </div>
+</article>
+
+<article class="card" data-score="35.02" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">35.0</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/nyregion/rose-freedman-dead.html" target="_blank" rel="noopener">Rose Freedman, Last Survivor of Triangle Fire, Dies at 107</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT This obituary was originally published on Feb. 17, 2001. It is being republished for a package for Women’s History Month. To preserve these articles as they originally appeared, The Times does not alter, edit or update them. Rose Freedman, the las…</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 21:47:10</time>
+  </div>
+</article>
+
+<article class="card" data-score="35.02" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">35.0</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/nyregion/rose-freedman-dead.html" target="_blank" rel="noopener">Rose Freedman, Last Survivor of Triangle Fire, Dies at 107</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT This obituary was originally published on Feb. 17, 2001. It is being republished for a package for Women’s History Month. To preserve these articles as they originally appeared, The Times does not alter, edit or update them. Rose Freedman, the las…</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 21:47:10</time>
+  </div>
+</article>
+
+<article class="card" data-score="34.88" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">34.9</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/us/politics/trump-dhs-shutdown-democrats.html" target="_blank" rel="noopener">White House Rejects Democrats’ Offer for Deal to Reopen D.H.S.</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT The White House on Tuesday rejected the latest offer from Democratic lawmakers on proposed new constraints on federal immigration officers, the latest sign that there would not be a quick resolution of the stalemate that has left the Department of…</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 23:07:22</time>
+  </div>
+</article>
+
+<article class="card" data-score="34.88" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">34.9</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/us/politics/trump-dhs-shutdown-democrats.html" target="_blank" rel="noopener">White House Rejects Democrats’ Offer for Deal to Reopen D.H.S.</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT The White House on Tuesday rejected the latest offer from Democratic lawmakers on proposed new constraints on federal immigration officers, the latest sign that there would not be a quick resolution of the stalemate that has left the Department of…</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 23:07:22</time>
+  </div>
+</article>
+
+<article class="card" data-score="34.48" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">34.5</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/10/climate/the-conservative-activists-behind-one-of-trumps-biggest-climate-moves.html" target="_blank" rel="noopener">The Conservative Activists Behind One of Trump’s Biggest Climate Moves</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT President Trump campaigned on a platform of climate denial and a promise to reverse federal policies aimed at protecting the planet. But even experts have been stunned at the magnitude of the environmental protections he has unraveled and the spee…</p>
+  <div class="card-footer">
+    <time>Tue, 10 Feb 2026 21:20:52</time>
+  </div>
+</article>
+
+<article class="card" data-score="34.48" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">34.5</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/10/climate/the-conservative-activists-behind-one-of-trumps-biggest-climate-moves.html" target="_blank" rel="noopener">The Conservative Activists Behind One of Trump’s Biggest Climate Moves</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT President Trump campaigned on a platform of climate denial and a promise to reverse federal policies aimed at protecting the planet. But even experts have been stunned at the magnitude of the environmental protections he has unraveled and the spee…</p>
+  <div class="card-footer">
+    <time>Tue, 10 Feb 2026 21:20:52</time>
+  </div>
+</article>
+
+<article class="card" data-score="33.95" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">34.0</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/business/bayer-roundup-lawsuits-settlement.html" target="_blank" rel="noopener">Bayer Agrees to Pay $7.25 Billion to Settle Roundup Lawsuits</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT Bayer, the German pharmaceutical and biotech giant, said Tuesday that it had reached an agreement that would pay plaintiffs $7.25 billion to settle tens of thousands of lawsuits that claimed the weedkiller Roundup caused non-Hodgkin’s lymphoma. Th…</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 20:37:11</time>
+  </div>
+</article>
+
+<article class="card" data-score="33.95" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">34.0</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/business/bayer-roundup-lawsuits-settlement.html" target="_blank" rel="noopener">Bayer Agrees to Pay $7.25 Billion to Settle Roundup Lawsuits</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT Bayer, the German pharmaceutical and biotech giant, said Tuesday that it had reached an agreement that would pay plaintiffs $7.25 billion to settle tens of thousands of lawsuits that claimed the weedkiller Roundup caused non-Hodgkin’s lymphoma. Th…</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 20:37:11</time>
+  </div>
+</article>
+
+<article class="card" data-score="32.63" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">32.6</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/us/politics/trump-howard-lutnick-epstein.html" target="_blank" rel="noopener">White House Shrugs Off Lutnick’s Epstein Ties</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT Revelations about ties to Jeffrey Epstein have toppled leaders of corporate America, Hollywood and academia as the Justice Department has released millions of documents and images from the disgraced financier’s files in recent months. But the Trum…</p>
+  <div class="card-footer">
+    <time>Wed, 18 Feb 2026 00:32:13</time>
+  </div>
+</article>
+
+<article class="card" data-score="32.63" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">32.6</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/us/politics/trump-howard-lutnick-epstein.html" target="_blank" rel="noopener">White House Shrugs Off Lutnick’s Epstein Ties</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT Revelations about ties to Jeffrey Epstein have toppled leaders of corporate America, Hollywood and academia as the Justice Department has released millions of documents and images from the disgraced financier’s files in recent months. But the Trum…</p>
+  <div class="card-footer">
+    <time>Wed, 18 Feb 2026 00:32:13</time>
+  </div>
+</article>
+
+<article class="card" data-score="32.63" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">32.6</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/us/politics/trump-howard-lutnick-epstein.html" target="_blank" rel="noopener">White House Shrugs Off Lutnick’s Epstein Ties</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT Revelations about ties to Jeffrey Epstein have toppled leaders of corporate America, Hollywood and academia as the Justice Department has released millions of documents and images from the disgraced financier’s files in recent months. But the Trum…</p>
+  <div class="card-footer">
+    <time>Wed, 18 Feb 2026 00:32:13</time>
+  </div>
+</article>
+
+<article class="card" data-score="32.59" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">32.6</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/business/warner-bros-discovery-paramount.html" target="_blank" rel="noopener">Warner Bros. Discovery Restarts Deal Talks With Paramount</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT Warner Bros. Discovery said on Tuesday that it would restart the deal talks with Paramount Skydance that it ended in December, giving the company another chance at besting Netflix for a deal. Paramount will have until Feb. 23 to negotiate its best…</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 20:18:39</time>
+  </div>
+</article>
+
+<article class="card" data-score="32.59" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">32.6</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/business/warner-bros-discovery-paramount.html" target="_blank" rel="noopener">Warner Bros. Discovery Restarts Deal Talks With Paramount</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT Warner Bros. Discovery said on Tuesday that it would restart the deal talks with Paramount Skydance that it ended in December, giving the company another chance at besting Netflix for a deal. Paramount will have until Feb. 23 to negotiate its best…</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 20:18:39</time>
+  </div>
+</article>
+
+<article class="card" data-score="32.11" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">32.1</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/world/americas/a-rio-carnival-party-that-goes-on-and-on.html" target="_blank" rel="noopener">A Rio Carnival Party That Goes On and On</a></h3>
+  <p class="preview">Revelers taking part in the Boi Tolo on Sunday in Rio de Janeiro. Credit... Supported by SKIP ADVERTISEMENT Listen to this article · 4:52 min Learn more Share full article 71 By Ana Ionova Photographs and Video by Dado Galdieri Ana Ionova and Dado Galdieri spent a day chasing one…</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 05:01:20</time>
+  </div>
+</article>
+
+<article class="card" data-score="32.11" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">32.1</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/world/americas/a-rio-carnival-party-that-goes-on-and-on.html" target="_blank" rel="noopener">A Rio Carnival Party That Goes On and On</a></h3>
+  <p class="preview">Revelers taking part in the Boi Tolo on Sunday in Rio de Janeiro. Credit... Supported by SKIP ADVERTISEMENT Listen to this article · 4:52 min Learn more Share full article 71 By Ana Ionova Photographs and Video by Dado Galdieri Ana Ionova and Dado Galdieri spent a day chasing one…</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 05:01:20</time>
+  </div>
+</article>
+
+<article class="card" data-score="31.81" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">31.8</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/business/media/colbert-cbs-fcc-talarico-carr.html" target="_blank" rel="noopener">Colbert Slams Trump Administration After CBS Pulls Talarico Interview</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT Stephen Colbert said on his late-night show on Monday that his network, CBS, barred him from airing an interview with a Democratic candidate for a U.S. Senate race because of new guidance from the Trump administration about equal airtime for polit…</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 21:12:32</time>
+  </div>
+</article>
+
+<article class="card" data-score="31.81" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">31.8</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/business/media/colbert-cbs-fcc-talarico-carr.html" target="_blank" rel="noopener">Colbert Slams Trump Administration After CBS Pulls Talarico Interview</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT Stephen Colbert said on his late-night show on Monday that his network, CBS, barred him from airing an interview with a Democratic candidate for a U.S. Senate race because of new guidance from the Trump administration about equal airtime for polit…</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 21:12:32</time>
+  </div>
+</article>
+
+<article class="card" data-score="31.67" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">31.7</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/12/business/economy/america-new-cities-irvine.html" target="_blank" rel="noopener">Maybe America Needs Some New Cities</a></h3>
+  <p class="preview">Credit... Photo illustration by Alex Merto Supported by SKIP ADVERTISEMENT Listen to this article · 15:17 min Learn more Share full article 537 By Conor Dougherty Conor Dougherty reported from Irvine, Calif., and has been writing about housing and urban development for two decade…</p>
+  <div class="card-footer">
+    <time>Thu, 12 Feb 2026 10:00:18</time>
+  </div>
+</article>
+
+<article class="card" data-score="31.67" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">31.7</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/12/business/economy/america-new-cities-irvine.html" target="_blank" rel="noopener">Maybe America Needs Some New Cities</a></h3>
+  <p class="preview">Credit... Photo illustration by Alex Merto Supported by SKIP ADVERTISEMENT Listen to this article · 15:17 min Learn more Share full article 537 By Conor Dougherty Conor Dougherty reported from Irvine, Calif., and has been writing about housing and urban development for two decade…</p>
+  <div class="card-footer">
+    <time>Thu, 12 Feb 2026 10:00:18</time>
+  </div>
+</article>
+
+<article class="card" data-score="31.65" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">31.6</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/world/middleeast/iran-memorials-protesters-crackdown.html" target="_blank" rel="noopener">Iranians Mourn Slain Protesters With ‘Revolutionary Rage’</a></h3>
+  <p class="preview">Credit... Supported by SKIP ADVERTISEMENT Listen to this article · 8:24 min Learn more Share full article By Erika Solomon Leily Nikounazar and Sanjana Varghese Produced by Jon Hazell Feb. 17, 2026 With patriotic anthems and chants against the country’s clerical rulers, Iranians …</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 18:57:59</time>
+  </div>
+</article>
+
+<article class="card" data-score="31.65" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">31.6</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/world/middleeast/iran-memorials-protesters-crackdown.html" target="_blank" rel="noopener">Iranians Mourn Slain Protesters With ‘Revolutionary Rage’</a></h3>
+  <p class="preview">Credit... Supported by SKIP ADVERTISEMENT Listen to this article · 8:24 min Learn more Share full article By Erika Solomon Leily Nikounazar and Sanjana Varghese Produced by Jon Hazell Feb. 17, 2026 With patriotic anthems and chants against the country’s clerical rulers, Iranians …</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 18:57:59</time>
+  </div>
+</article>
+
+<article class="card" data-score="29.88" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">29.9</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/world/europe/taylor-swift-concert-charges-austria.html" target="_blank" rel="noopener">Austria Charges Man in Thwarted Attack on Taylor Swift Concert</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT Prosecutors in Austria said on Monday that they had filed terrorism and other charges against a 21-year-old man they said was a member of a terrorist group that was planning an attack on a Taylor Swift concert in Vienna in 2024. The suspect, who w…</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 10:51:56</time>
+  </div>
+</article>
+
+<article class="card" data-score="29.88" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">29.9</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/world/europe/taylor-swift-concert-charges-austria.html" target="_blank" rel="noopener">Austria Charges Man in Thwarted Attack on Taylor Swift Concert</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT Prosecutors in Austria said on Monday that they had filed terrorism and other charges against a 21-year-old man they said was a member of a terrorist group that was planning an attack on a Taylor Swift concert in Vienna in 2024. The suspect, who w…</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 10:51:56</time>
+  </div>
+</article>
+
+<article class="card" data-score="28.62" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">28.6</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/us/politics/gunman-arrested-capitol.html" target="_blank" rel="noopener">Police Arrest Man Who Ran Toward the Capitol With a Loaded Gun</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT The U.S. Capitol Police arrested an 18-year-old man on Tuesday afternoon after he exited a vehicle and ran toward the Capitol building with a loaded shotgun. No one was hurt and there was no further threat to the area, the agency said. The episode…</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 23:32:41</time>
+  </div>
+</article>
+
+<article class="card" data-score="28.62" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">28.6</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/us/politics/gunman-arrested-capitol.html" target="_blank" rel="noopener">Police Arrest Man Who Ran Toward the Capitol With a Loaded Gun</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT The U.S. Capitol Police arrested an 18-year-old man on Tuesday afternoon after he exited a vehicle and ran toward the Capitol building with a loaded shotgun. No one was hurt and there was no further threat to the area, the agency said. The episode…</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 23:32:41</time>
+  </div>
+</article>
+
+<article class="card" data-score="24.2" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">24.2</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/12/business/economy/mothers-labor-force-participation.html" target="_blank" rel="noopener">Flexibility and Rising Costs Are Keeping Mothers at Work</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT Mothers of young children surged into the work force during the Covid-19 pandemic, propelled by a tight labor market, federal child care subsidies and the sudden abundance of remote jobs. Years later, they are still on the job. The share of women …</p>
+  <div class="card-footer">
+    <time>Thu, 12 Feb 2026 21:08:11</time>
+  </div>
+</article>
+
+<article class="card" data-score="24.2" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">24.2</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/12/business/economy/mothers-labor-force-participation.html" target="_blank" rel="noopener">Flexibility and Rising Costs Are Keeping Mothers at Work</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT Mothers of young children surged into the work force during the Covid-19 pandemic, propelled by a tight labor market, federal child care subsidies and the sudden abundance of remote jobs. Years later, they are still on the job. The share of women …</p>
+  <div class="card-footer">
+    <time>Thu, 12 Feb 2026 21:08:11</time>
+  </div>
+</article>
+
+<article class="card" data-score="23.84" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">23.8</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/11/business/economy/january-jobs-report-revisions.html" target="_blank" rel="noopener">Job Growth Was Overstated, New Data Shows</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT Job growth over the past two years was far weaker than previously believed. U.S. employers added just 181,000 jobs last year, the Bureau of Labor Statistics said on Wednesday. That was 69 percent fewer jobs than its initial estimate of 584,000. Th…</p>
+  <div class="card-footer">
+    <time>Wed, 11 Feb 2026 19:03:55</time>
+  </div>
+</article>
+
+<article class="card" data-score="23.84" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">23.8</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/11/business/economy/january-jobs-report-revisions.html" target="_blank" rel="noopener">Job Growth Was Overstated, New Data Shows</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT Job growth over the past two years was far weaker than previously believed. U.S. employers added just 181,000 jobs last year, the Bureau of Labor Statistics said on Wednesday. That was 69 percent fewer jobs than its initial estimate of 584,000. Th…</p>
+  <div class="card-footer">
+    <time>Wed, 11 Feb 2026 19:03:55</time>
+  </div>
+</article>
+
+<article class="card" data-score="22.54" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">22.5</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/technology/vibe-tv-billboards-silicon-valley.html" target="_blank" rel="noopener">With Niche Tech World References, Vibe Hopes Its Billboards Reach Start-Up Insiders</a></h3>
+  <p class="preview">The vague messages of San Francisco’s billboards have become a fixture of the A.I. boom as more start-ups raise funds and demand attention. Credit... Supported by SKIP ADVERTISEMENT Listen to this article · 4:13 min Learn more Share full article 2 By Natallie Rocha Visuals by Min…</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 10:01:00</time>
+  </div>
+</article>
+
+<article class="card" data-score="22.54" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">22.5</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/technology/vibe-tv-billboards-silicon-valley.html" target="_blank" rel="noopener">With Niche Tech World References, Vibe Hopes Its Billboards Reach Start-Up Insiders</a></h3>
+  <p class="preview">The vague messages of San Francisco’s billboards have become a fixture of the A.I. boom as more start-ups raise funds and demand attention. Credit... Supported by SKIP ADVERTISEMENT Listen to this article · 4:13 min Learn more Share full article 2 By Natallie Rocha Visuals by Min…</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 10:01:00</time>
+  </div>
+</article>
+
+<article class="card" data-score="22.02" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">22.0</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/us/politics/jesse-jackson-neighbor-chicago.html" target="_blank" rel="noopener">To One Chicago Resident, Jesse Jackson Was Simply a Friendly Neighbor</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT By the early afternoon on Tuesday, mourners had left around half a dozen bouquets of flowers and a few balloons outside of the Rev. Jesse Jackson’s Tudor-style house on Constance Avenue in the South Shore neighborhood. Next door, Junelle Speller s…</p>
+  <div class="card-footer">
+    <time>Wed, 18 Feb 2026 03:34:54</time>
+  </div>
+</article>
+
+<article class="card" data-score="22.02" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">22.0</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/us/politics/jesse-jackson-neighbor-chicago.html" target="_blank" rel="noopener">To One Chicago Resident, Jesse Jackson Was Simply a Friendly Neighbor</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT By the early afternoon on Tuesday, mourners had left around half a dozen bouquets of flowers and a few balloons outside of the Rev. Jesse Jackson’s Tudor-style house on Constance Avenue in the South Shore neighborhood. Next door, Junelle Speller s…</p>
+  <div class="card-footer">
+    <time>Wed, 18 Feb 2026 03:34:54</time>
+  </div>
+</article>
+
+<article class="card" data-score="21.51" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">21.5</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/18/us/politics/dan-helmer-congress-redistricting-virginia.html" target="_blank" rel="noopener">An Architect of Virginia’s Redistricting Will Run for a New Seat Himself</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT An architect of Virginia’s aggressive redistricting scheme will announce on Wednesday that he intends to run for one of the newly drawn Democratic seats himself. Dan Helmer, a four-term state delegate who played a key behind-the-scenes role in las…</p>
+  <div class="card-footer">
+    <time>Wed, 18 Feb 2026 10:05:01</time>
+  </div>
+</article>
+
+<article class="card" data-score="21.51" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">21.5</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/18/us/politics/dan-helmer-congress-redistricting-virginia.html" target="_blank" rel="noopener">An Architect of Virginia’s Redistricting Will Run for a New Seat Himself</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT An architect of Virginia’s aggressive redistricting scheme will announce on Wednesday that he intends to run for one of the newly drawn Democratic seats himself. Dan Helmer, a four-term state delegate who played a key behind-the-scenes role in las…</p>
+  <div class="card-footer">
+    <time>Wed, 18 Feb 2026 10:05:01</time>
+  </div>
+</article>
+
+<article class="card" data-score="21.45" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">21.4</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/us/politics/randy-fine-muslim-islamophobic-democrats.html" target="_blank" rel="noopener">House Republican Faces Backlash to Islamophobic Post Suggesting He Prefers Dogs to Muslims</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT Representative Randy Fine, Republican of Florida, on Tuesday faced a barrage of calls for his resignation from Democrats — and silence from Republican leaders — after making an Islamophobic statement suggesting he prefers dogs to Muslims. Mr. Fine…</p>
+  <div class="card-footer">
+    <time>Wed, 18 Feb 2026 01:01:28</time>
+  </div>
+</article>
+
+<article class="card" data-score="21.45" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">21.4</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/us/politics/randy-fine-muslim-islamophobic-democrats.html" target="_blank" rel="noopener">House Republican Faces Backlash to Islamophobic Post Suggesting He Prefers Dogs to Muslims</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT Representative Randy Fine, Republican of Florida, on Tuesday faced a barrage of calls for his resignation from Democrats — and silence from Republican leaders — after making an Islamophobic statement suggesting he prefers dogs to Muslims. Mr. Fine…</p>
+  <div class="card-footer">
+    <time>Wed, 18 Feb 2026 01:01:28</time>
+  </div>
+</article>
+
+<article class="card" data-score="17.85" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">17.9</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/16/business/media/anderson-cooper-60-minutes.html" target="_blank" rel="noopener">Anderson Cooper Is Leaving ’60 Minutes’</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT For nearly 20 years, Anderson Cooper has had a rare double billing in the TV industry: anchor on CNN and correspondent for “60 Minutes,” the celebrated newsmagazine on CBS. Now, he’s back to being a solo act. On Monday evening, Mr. Cooper said he …</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 19:17:51</time>
+  </div>
+</article>
+
+<article class="card" data-score="17.85" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">17.9</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/16/business/media/anderson-cooper-60-minutes.html" target="_blank" rel="noopener">Anderson Cooper Is Leaving ’60 Minutes’</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT For nearly 20 years, Anderson Cooper has had a rare double billing in the TV industry: anchor on CNN and correspondent for “60 Minutes,” the celebrated newsmagazine on CBS. Now, he’s back to being a solo act. On Monday evening, Mr. Cooper said he …</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 19:17:51</time>
+  </div>
+</article>
+
+<article class="card" data-score="17.42" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">17.4</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/18/world/africa/botswana-food-stand-corn.html" target="_blank" rel="noopener">Botswana’s ‘Corn Lady’ Finds Fame With Food Stands</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT Just about everyone close to Tshephiso Marumo condemned her when she chose to sell ears of corn door-to-door a decade ago after earning an honors degree from a university in her native Botswana. It was the sort of thing that people in the southern…</p>
+  <div class="card-footer">
+    <time>Wed, 18 Feb 2026 10:00:30</time>
+  </div>
+</article>
+
+<article class="card" data-score="17.42" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">17.4</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/18/world/africa/botswana-food-stand-corn.html" target="_blank" rel="noopener">Botswana’s ‘Corn Lady’ Finds Fame With Food Stands</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT Just about everyone close to Tshephiso Marumo condemned her when she chose to sell ears of corn door-to-door a decade ago after earning an honors degree from a university in her native Botswana. It was the sort of thing that people in the southern…</p>
+  <div class="card-footer">
+    <time>Wed, 18 Feb 2026 10:00:30</time>
+  </div>
+</article>
+
+<article class="card" data-score="17.36" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">17.4</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/live/2026/02/17/us/jesse-jackson-dead/jesse-jackson-memphis-mourns" target="_blank" rel="noopener">In Memphis, mourning for the Rev. Jesse Jackson, who kept coming back.</a></h3>
+  <p class="preview">Pinned Claire Moses Here’s more on his life. The Rev. Jesse Jackson, America’s most influential Black figure in the years between the civil rights crusades of the Rev. Dr. Martin Luther King Jr. and the election of Barack Obama, died on Tuesday . He was 84. In a statement, his fa…</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 23:52:41</time>
+  </div>
+</article>
+
+<article class="card" data-score="17.36" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">17.4</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/live/2026/02/17/us/jesse-jackson-dead/jesse-jackson-memphis-mourns" target="_blank" rel="noopener">In Memphis, mourning for the Rev. Jesse Jackson, who kept coming back.</a></h3>
+  <p class="preview">Pinned Claire Moses Here’s more on his life. The Rev. Jesse Jackson, America’s most influential Black figure in the years between the civil rights crusades of the Rev. Dr. Martin Luther King Jr. and the election of Barack Obama, died on Tuesday . He was 84. In a statement, his fa…</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 23:52:41</time>
+  </div>
+</article>
+
+<article class="card" data-score="17.35" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">17.4</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/live/2026/02/17/us/jesse-jackson-dead/the-president-of-the-national-urban-league-recalls-his-long-friendship-with-jackson" target="_blank" rel="noopener">The president of the National Urban League recalls his long friendship with Jackson.</a></h3>
+  <p class="preview">Pinned Claire Moses Here’s more on his life. The Rev. Jesse Jackson, America’s most influential Black figure in the years between the civil rights crusades of the Rev. Dr. Martin Luther King Jr. and the election of Barack Obama, died on Tuesday . He was 84. In a statement, his fa…</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 21:02:01</time>
+  </div>
+</article>
+
+<article class="card" data-score="17.35" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">17.4</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/live/2026/02/17/us/jesse-jackson-dead/the-president-of-the-national-urban-league-recalls-his-long-friendship-with-jackson" target="_blank" rel="noopener">The president of the National Urban League recalls his long friendship with Jackson.</a></h3>
+  <p class="preview">Pinned Claire Moses Here’s more on his life. The Rev. Jesse Jackson, America’s most influential Black figure in the years between the civil rights crusades of the Rev. Dr. Martin Luther King Jr. and the election of Barack Obama, died on Tuesday . He was 84. In a statement, his fa…</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 21:02:01</time>
+  </div>
+</article>
+
+<article class="card" data-score="15.37" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">15.4</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/us/politics/jesse-jackson-greenville-south-carolina-hometown.html" target="_blank" rel="noopener">Jesse Jackson’s Hometown Remembers Him as a ‘Superstar’</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT Long before the Rev. Jesse Jackson cemented his legacy as a civil-rights leader in struggles across the country and the world, he was a young boy growing up in Greenville, S.C., in an extremely segregated and poor part of the South that would shap…</p>
+  <div class="card-footer">
+    <time>Wed, 18 Feb 2026 02:37:53</time>
+  </div>
+</article>
+
+<article class="card" data-score="15.37" data-themes="war_conflict">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">15.4</span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/us/politics/jesse-jackson-greenville-south-carolina-hometown.html" target="_blank" rel="noopener">Jesse Jackson’s Hometown Remembers Him as a ‘Superstar’</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT Long before the Rev. Jesse Jackson cemented his legacy as a civil-rights leader in struggles across the country and the world, he was a young boy growing up in Greenville, S.C., in an extremely segregated and poor part of the South that would shap…</p>
+  <div class="card-footer">
+    <time>Wed, 18 Feb 2026 02:37:53</time>
+  </div>
+</article>
+
+<article class="card" data-score="2.23" data-themes="">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">2.2</span>
+    
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/business/media/gq-adam-baidawi-top-editor.html" target="_blank" rel="noopener">GQ Names Adam Baidawi as Its Top Editor</a></h3>
+  <p class="preview">Adam Baidawi previously led British GQ and was the deputy global editorial director for the magazine. Credit... Billy Barraclough for The New York Times Supported by SKIP ADVERTISEMENT Listen to this article · 3:36 min Learn more Share full article 6 By Katie Robertson Feb. 17, 2…</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 19:11:50</time>
+  </div>
+</article>
+
+<article class="card" data-score="2.23" data-themes="">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">2.2</span>
+    
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/business/media/gq-adam-baidawi-top-editor.html" target="_blank" rel="noopener">GQ Names Adam Baidawi as Its Top Editor</a></h3>
+  <p class="preview">Adam Baidawi previously led British GQ and was the deputy global editorial director for the magazine. Credit... Billy Barraclough for The New York Times Supported by SKIP ADVERTISEMENT Listen to this article · 3:36 min Learn more Share full article 6 By Katie Robertson Feb. 17, 2…</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 19:11:50</time>
+  </div>
+</article>
+
+<article class="card" data-score="0.58" data-themes="">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">0.6</span>
+    
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/business/are-you-a-medical-provider-who-has-worked-in-an-ice-detention-facility-we-want-to-hear-from-you.html" target="_blank" rel="noopener">Are you a medical provider who has worked in an ICE detention facility? We want to hear from you.</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT The Trump administration’s campaign to arrest and deport millions of people is putting a new strain on the medical care provided at the country’s more than 200 immigration detention facilities. The influx of people into detention increasingly incl…</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 21:38:50</time>
+  </div>
+</article>
+
+<article class="card" data-score="0.58" data-themes="">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">0.6</span>
+    
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/business/are-you-a-medical-provider-who-has-worked-in-an-ice-detention-facility-we-want-to-hear-from-you.html" target="_blank" rel="noopener">Are you a medical provider who has worked in an ICE detention facility? We want to hear from you.</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT The Trump administration’s campaign to arrest and deport millions of people is putting a new strain on the medical care provided at the country’s more than 200 immigration detention facilities. The influx of people into detention increasingly incl…</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 21:38:50</time>
+  </div>
+</article>
+
+<article class="card" data-score="0.0" data-themes="">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">0.0</span>
+    
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/us/boneless-chicken-wings-lawsuit-ruling.html" target="_blank" rel="noopener">Boneless Wings Are Still Wings, Judge Rules</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT In an opinion heavy on chicken puns, a district court judge ruled on Tuesday that the boneless wings at Buffalo Wild Wings could indeed be called wings. The order, in a lawsuit filed by a Chicago man in 2023, was dripping with skepticism at the cl…</p>
+  <div class="card-footer">
+    <time>Wed, 18 Feb 2026 02:53:51</time>
+  </div>
+</article>
+
+<article class="card" data-score="0.0" data-themes="">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">0.0</span>
+    
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/world/europe/spain-investigate-social-media.html" target="_blank" rel="noopener">Spain to Investigate Social Media Giants, Escalating Trans-Atlantic Tech Dispute</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT Prime Minister Pedro Sánchez of Spain said on Tuesday that his government will ask prosecutors to investigate social media giants X, Meta and TikTok for allegedly spreading child sexual abuse material generated by artificial intelligence, the late…</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 18:20:21</time>
+  </div>
+</article>
+
+<article class="card" data-score="0.0" data-themes="">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">0.0</span>
+    
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/world/europe/drones-winter-olympics-milan-cortina.html" target="_blank" rel="noopener">The Drone Games: Flying Cameras Are Everywhere at the Winter Olympics</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT The fans next to the Olympic sliding track oohed and aahed with each sharp turn. They admired the navigational precision and soft landing. They shouted, “You’re No. 1!” They were cheering for a drone pilot. “I’m almost feeling like I am with the a…</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 10:03:11</time>
+  </div>
+</article>
+
+<article class="card" data-score="0.0" data-themes="">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">0.0</span>
+    
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/world/asia/new-zealand-court-ai-apology.html" target="_blank" rel="noopener">Question of True Remorse When A.I. Helps Write Your Court Apology</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT A judge in New Zealand who discovered last week that apology letters from a defendant in an arson case had been written with the help of artificial intelligence raised questions about the sincerity of her sentiments. “The issue of remorse is inter…</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 18:09:14</time>
+  </div>
+</article>
+
+<article class="card" data-score="0.0" data-themes="">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">0.0</span>
+    
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/world/europe/belgium-trump-ambassador-anti-semitism.html" target="_blank" rel="noopener">Trump’s Ambassador to Belgium Is Summoned After Accusing Officials of Antisemitism</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT Belgium’s government summoned President Trump’s ambassador after he accused his host nation of an antisemitic action and criticized a Belgian official in a series of posts on social media. The meeting on Tuesday between the ambassador, Bill White,…</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 18:19:46</time>
+  </div>
+</article>
+
+<article class="card" data-score="0.0" data-themes="">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">0.0</span>
+    
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/world/europe/palmerston-britain-diplomat-dead.html" target="_blank" rel="noopener">Palmerston, the Former ‘Chief Mouser’ for Britain’s Foreign Office, Dies</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT Palmerston, a cat who served as the “chief mouser” for Britain’s diplomatic service, has died in Bermuda. He was about 12. “Palmerston, Diplocat extraordinaire, passed away peacefully,” his social media account announced on Friday , a day after he…</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 20:56:47</time>
+  </div>
+</article>
+
+<article class="card" data-score="0.0" data-themes="">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">0.0</span>
+    
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/us/boneless-chicken-wings-lawsuit-ruling.html" target="_blank" rel="noopener">Boneless Wings Are Still Wings, Judge Rules</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT In an opinion heavy on chicken puns, a district court judge ruled on Tuesday that the boneless wings at Buffalo Wild Wings could indeed be called wings. The order, in a lawsuit filed by a Chicago man in 2023, was dripping with skepticism at the cl…</p>
+  <div class="card-footer">
+    <time>Wed, 18 Feb 2026 02:53:51</time>
+  </div>
+</article>
+
+<article class="card" data-score="0.0" data-themes="">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">0.0</span>
+    
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/world/europe/spain-investigate-social-media.html" target="_blank" rel="noopener">Spain to Investigate Social Media Giants, Escalating Trans-Atlantic Tech Dispute</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT Prime Minister Pedro Sánchez of Spain said on Tuesday that his government will ask prosecutors to investigate social media giants X, Meta and TikTok for allegedly spreading child sexual abuse material generated by artificial intelligence, the late…</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 18:20:21</time>
+  </div>
+</article>
+
+<article class="card" data-score="0.0" data-themes="">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">0.0</span>
+    
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/world/europe/drones-winter-olympics-milan-cortina.html" target="_blank" rel="noopener">The Drone Games: Flying Cameras Are Everywhere at the Winter Olympics</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT The fans next to the Olympic sliding track oohed and aahed with each sharp turn. They admired the navigational precision and soft landing. They shouted, “You’re No. 1!” They were cheering for a drone pilot. “I’m almost feeling like I am with the a…</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 10:03:11</time>
+  </div>
+</article>
+
+<article class="card" data-score="0.0" data-themes="">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">0.0</span>
+    
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/world/asia/new-zealand-court-ai-apology.html" target="_blank" rel="noopener">Question of True Remorse When A.I. Helps Write Your Court Apology</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT A judge in New Zealand who discovered last week that apology letters from a defendant in an arson case had been written with the help of artificial intelligence raised questions about the sincerity of her sentiments. “The issue of remorse is inter…</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 18:09:14</time>
+  </div>
+</article>
+
+<article class="card" data-score="0.0" data-themes="">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">0.0</span>
+    
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/world/europe/belgium-trump-ambassador-anti-semitism.html" target="_blank" rel="noopener">Trump’s Ambassador to Belgium Is Summoned After Accusing Officials of Antisemitism</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT Belgium’s government summoned President Trump’s ambassador after he accused his host nation of an antisemitic action and criticized a Belgian official in a series of posts on social media. The meeting on Tuesday between the ambassador, Bill White,…</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 18:19:46</time>
+  </div>
+</article>
+
+<article class="card" data-score="0.0" data-themes="">
+  <div class="card-header">
+    <span class="source-badge">NYTimes</span>
+    <span class="score score-low">0.0</span>
+    
+  </div>
+  <h3><a href="https://www.nytimes.com/2026/02/17/world/europe/palmerston-britain-diplomat-dead.html" target="_blank" rel="noopener">Palmerston, the Former ‘Chief Mouser’ for Britain’s Foreign Office, Dies</a></h3>
+  <p class="preview">Advertisement SKIP ADVERTISEMENT Palmerston, a cat who served as the “chief mouser” for Britain’s diplomatic service, has died in Bermuda. He was about 12. “Palmerston, Diplocat extraordinaire, passed away peacefully,” his social media account announced on Friday , a day after he…</p>
+  <div class="card-footer">
+    <time>Tue, 17 Feb 2026 20:56:47</time>
+  </div>
+</article>
+    </div>
+  </div>
+</main>
+
+<script>
+  let currentView = 'top';
+
+  function toggleView() {
+    const btn = document.getElementById('toggleBtn');
+    const topView = document.getElementById('view-top');
+    const allView = document.getElementById('view-all');
+    if (currentView === 'top') {
+      topView.classList.remove('active');
+      allView.classList.add('active');
+      btn.textContent = 'Full History View';
+      btn.classList.add('active');
+      currentView = 'all';
+    } else {
+      allView.classList.remove('active');
+      topView.classList.add('active');
+      btn.textContent = 'Top 20 View';
+      currentView = 'top';
+    }
+  }
+
+  function filterCards(theme, btn, viewId) {
+    const containerId = viewId === 'all' ? 'cards-all' : 'cards-top';
+    const container = document.getElementById(containerId);
+    const cards = container.querySelectorAll('.card');
+
+    // Update active filter button
+    const parent = btn.parentElement;
+    parent.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    cards.forEach(card => {
+      if (theme === 'all') {
+        card.style.display = '';
+      } else {
+        const themes = card.dataset.themes || '';
+        card.style.display = themes.includes(theme) ? '' : 'none';
+      }
+    });
+  }
+</script>
+</body>
+</html>
