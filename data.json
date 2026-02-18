@@ -1,0 +1,11 @@
+{
+  "articles": [],
+  "last_updated": "",
+  "metadata": {
+    "total_runs": 0,
+    "sources": [],
+    "retention_days": 7,
+    "top_n": 20,
+    "alert_threshold": null
+  }
+}
