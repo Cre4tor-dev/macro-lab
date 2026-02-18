@@ -13,7 +13,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 55.71,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -26,7 +26,7 @@
       "themes": [],
       "is_relevant": false,
       "score_normalized": 0.0,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -41,7 +41,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 45.01,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -56,7 +56,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 43.95,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -69,7 +69,7 @@
       "themes": [],
       "is_relevant": false,
       "score_normalized": 0.58,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -84,7 +84,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 32.63,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -99,7 +99,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 35.02,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -114,7 +114,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 33.95,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -129,7 +129,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 31.81,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -142,7 +142,7 @@
       "themes": [],
       "is_relevant": false,
       "score_normalized": 2.23,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -157,7 +157,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 71.96,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -172,7 +172,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 32.59,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -187,7 +187,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 39.34,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -202,7 +202,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 22.54,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -217,7 +217,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 17.85,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -232,7 +232,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 62.8,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -245,7 +245,7 @@
       "themes": [],
       "is_relevant": false,
       "score_normalized": 44.2,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -260,7 +260,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 24.2,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -275,7 +275,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 64.07,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -291,7 +291,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 79.79,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -306,7 +306,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 31.67,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -321,7 +321,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 91.09,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -336,7 +336,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 90.58,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -351,7 +351,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 53.51,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -366,7 +366,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 74.27,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -381,7 +381,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 81.99,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -396,7 +396,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 23.84,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -411,37 +411,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 71.26,
-      "alert_threshold": 84.95
-    },
-    {
-      "source": "NYTimes",
-      "title": "The Conservative Activists Behind One of Trump’s Biggest Climate Moves",
-      "link": "https://www.nytimes.com/2026/02/10/climate/the-conservative-activists-behind-one-of-trumps-biggest-climate-moves.html",
-      "published_date": "Tue, 10 Feb 2026 21:20:52 +0000",
-      "scrape_timestamp": "2026-02-18T10:07:30.114938+00:00",
-      "content": "Advertisement SKIP ADVERTISEMENT President Trump campaigned on a platform of climate denial and a promise to reverse federal policies aimed at protecting the planet. But even experts have been stunned at the magnitude of the environmental protections he has unraveled and the speed with which his administration has acted. As Maxine Joselow and I report , the swift and meticulous dismantling of climate rules we are now seeing did not happen by chance. It was set in motion by a cadre of conservative lawyers who served in the first Trump administration and spent years honing arguments to block government regulations of climate pollution. We told the stories of four key players. Russell T. Vought and Jeffrey B. Clark, both high-profile allies of Trump, drafted executive orders. Mandy Gunasekara and Jonathan Brightbill, two conservative attorneys with long histories of fighting climate policies, collected what they called an “arsenal of information” to undermine the scientific and legal consensus that the planet is dangerously warming and the United States must take action. Both independently and in tandem, the four activists spent the Biden administration years charting roadmaps that a future Republican president could use to undermine established climate science and legally support the repeal of environmental rules. Those plans included Project 2025, a set of conservative policy recommendations for a second Trump term. A key climate rule Their biggest victory is around the corner. This week, the Environmental Protection Agency is expected to overturn what is known as the “endangerment finding,” a 2009 scientific determination that climate change threatens public health and welfare. By doing so, the federal government will effectively be relinquishing its authority to regulate the emissions that are dangerously warming the planet. Even more consequentially, reversing the endangerment finding could make it harder for a future administration to reverse course and curb emissions of carbon dioxide, methane and other chemicals from automobile tailpipes and factory or power plant smokestacks. Vought, Clark, Gunasekara and Brightbill were not the only ones who pushed to repeal the endangerment finding. But documents obtained by Fieldnotes, a watchdog group, and reviewed by The New York Times, together with interviews with more than a dozen people show the four activists were the key strategists who sought to ensure that if Trump were re-elected, he could move rapidly and with minimal interference from civil servants. “We are pretty close to total victory,” Myron Ebell, a prominent critic of climate science, told us. Funding the fight Gunasekara and Brightbill sought $2 million to draft regulatory documents that a future administration could use to abandon the endangerment finding. The duo also planned to solicit white papers from scientists who did not accept the physics of climate change, according to a funding pitch for the project. The Heritage Foundation eventually agreed to fund some of this work, according to two people familiar with the matter. Clark has been fighting climate protections since 2005, when as a Justice Department lawyer in the George W. Bush administration he argued that the E.P.A. lacked the power to regulate greenhouse gases. He served as an assistant attorney general focusing on environmental deregulation during Trump’s first term. During the Biden administration Clark found a professional home with Vought, also a former Trump official. Vought had launched a think tanks, the Center for Renewing America, to keep the MAGA movement alive, and Clark drafted executive orders that a future president could use to swiftly scrap climate policies enacted by President Joseph R. Biden, according to two people familiar with the matter. Business groups initially fought the endangerment finding. But after years of lost legal challenges and public pressure to address climate change, most gave up. By 2017, when Trump first took office, hundreds of American companies, including oil giants and major manufacturers, had accepted the reality of climate change. Neil Chatterjee, a Republican who led the Federal Energy Regulatory Commission in the first Trump administration, told me it was the “pure ideological activists who believe that climate change is a hoax” who kept up the fight. And when Trump won the presidential race in 2024, they knew they’d have a willing partner in the White House. “They had the experience of being in Trump 1.0, seeing what they wanted to do, then got organized during the Biden years,” Chatterjee said, adding that they “used their time in the wild to plan, and also identify people who can execute the plan.” Now, Chatterjee said, “This is their moment.” Related : The E.P.A. Is Barreling Toward a Supreme Court Climate Showdown . Image Ji-Yeon Cheon, right, and a fellow behavioral ecologist, Hyunjae Chung, with a Weddell seal sporting a pocket-sized sensor they had just glued to its head. Credit... Chang W. Lee/The New York Times Journey to Antarctica Antarctica’s best ocean explorers have whiskers and love to lounge Ji-Yeon Cheon and a fellow behavioral ecologist, Hyunjae Chung, have spent the past few weeks tagging Weddell seals on patches of frozen sea around Antarctica’s Thwaites Glacier . As the seals dive, swim and feed over the coming months, pocket-size devices glued to their heads will log their movements and the properties of the water around them, and transmit the information by satellite when they surface. The two doctoral candidates at Seoul National University are hoping to better understand how the warming ocean is affecting the animals’ diving and foraging behavior. The same warm water that is eroding Thwaites from below also brings up iron and other nutrients from the seafloor, helping nourish fish and other creatures that seals like to eat. Similar changes might also be underway in the ecosystems beneath melting icebergs around the glacier Image The tags, which capture data related to the seals’ movements and the properties of the water, remain attached until the seals molt next summer. Credit... Chang W. Lee/The New York Times “In the Amundsen Sea, especially near the Thwaites Glacier, there is fast environmental change,” Cheon said. Weddell seals are not considered a threatened species right now, but scientists still have more to learn about how the animals are responding to new conditions today and in the future, she said. Antarctica’s seals have no natural predators on the ice, so they are not typically inclined to fear incursions by blowpipe-wielding ecologists. Still, tagging is risky work for scientist and seal alike. — Raymond Zhong Read more . Follow our journey to Antarctica here . Image P-121, a young male mountain lion, underwent medical checks at the San Diego Humane Society’s Ramona Wildlife Center before his release in the summer of 2024. Credit... Loren Elliott for The New York Times One last thing How California is pushing to save mountain lions For a mountain lion, the kindest intervention for a broken leg is often euthanasia. But the cub known as P-121 was getting a second chance. Found in a roadside ditch in the Simi Valley near Los Angeles, he was one of scores of California mountain lions struck by vehicles each year . At only about five months old, he should have spent another year with his mother. But she was nowhere to be seen. An X-ray brought good news: the break in his hind leg was clean. He would undergo surgery and remain at a wildlife rehabilitation facility for several months, until his limb mended and he was old enough to fend for himself. If all went well, he would return to the wild. The story of P-121, who arrived at the San Diego Humane Society’s Ramona Wildlife Center on Thanksgiving Day in 2023, offers a searing glimpse into the challenges facing the animals. Between 2018 and 2023 alone, California added 550 miles of lanes to state highways. Populations of mountain lions in the ",
-      "score": 14.8198,
-      "themes": [
-        "war_conflict"
-      ],
-      "is_relevant": true,
-      "score_normalized": 34.48,
-      "alert_threshold": 84.95
-    },
-    {
-      "source": "NYTimes",
-      "title": "State Fiscal Chiefs Protest Federal Immigration Chaos",
-      "link": "https://www.nytimes.com/2026/02/04/business/economy/state-fiscal-protest-ice.html",
-      "published_date": "Wed, 04 Feb 2026 18:53:37 +0000",
-      "scrape_timestamp": "2026-02-18T10:07:30.315730+00:00",
-      "content": "Advertisement SKIP ADVERTISEMENT As the immigration enforcement operation in Minnesota takes a toll on local businesses, whose customers and employees are staying off the streets out of fear, some public budgets heads have a message to the White House: Stop. Democratic state treasurers, auditors and comptrollers from 15 states — including two from California — sent a letter on Wednesday to President Trump calling for a halt to aggressive tactics that they say have depressed economic activity and tax collections. “Many of our states already send more tax dollars to Washington than we receive in federal support,” read the letter, whose signatories also included the fiscal officers of Maryland, Oregon and New York. “We are now expected to absorb the fiscal consequences of enforcement activities. This is not acceptable.” State fiscal officers do not often weigh in as a group on law enforcement matters. They leave that to attorneys general, who frequently write collective letters and court briefs, typically with members of their own party. The letter was organized by For the Long Term , a group of progressive-leaning state and local financial overseers who aim to foster economic and budgetary stability beyond the rapid churn of election cycles. The signatories said they came together when they determined that what was unfolding in Minnesota crossed into their domain as stewards of the public purse. The Department of Homeland Security did not respond to a request for comment on the letter. Tom Homan, Mr. Trump’s border czar, said on Wednesday that the administration would withdraw 700 immigration agents from Minnesota, leaving around 2,000 there. Other states have also experienced extended Immigration and Customs Enforcement presence, including Illinois, where Operation Midway Blitz took place in the fall . Mike Frerichs, the state’s treasurer, said sales and income taxes dipped during that period, as people fearing federal officers avoided restaurants and shops in neighborhoods like Chicago’s Little Village. “If you’re terrorizing people, and they think they’re going to be arrested or shot, they’re going to stay home, and they’re not going to be spending money,” Mr. Frerichs said. “Donald Trump and Stephen Miller may not care about immigrants to this country, but the fear and chaos that they are sowing in our cities are having ripple effects on taxpaying Americans.” Officials from other states are thinking about what might happen if ICE came through in force. “There’s always concern that our state might be next,” said Mike Pellicciotti, the treasurer of Washington, which has large immigrant communities in both agriculture and technology. He said ICE deployments were just one of several blows from the federal government over the past year, including tariffs . “This reckless economic policy is having an impact across the board,” Mr. Pellicciotti said. “We’re a trade-dependent state. We’re a state that relies on a talented work force from around the world wanting to come.” Mr. Trump has threatened to withhold funding for Democratic cities and states, including child care subsidies, public housing assistance and food stamps. The White House has also pulled back clean energy and other infrastructure grants, such as $205 million for the $16 billion Gateway project between New York and New Jersey. For state and local finances, the damage from the Trump administration’s immigration restrictions and expanding enforcement efforts may take a while to play out, said William Glasgall, public finance adviser at the Volcker Alliance, a think tank. Many states, especially in the Northeast and the industrial Midwest, have depended on immigration to keep their populations steady or growing. “Budgets are getting tighter, and if the immigration restrictions begin to crimp the tax base — we’ll see in the next year or two what this looks like in terms of sales tax growth and income tax growth — then you have reason for concern,” Mr. Glasgall said. The list of signatories included states that received an influx of migrants during the Biden administration, a situation that also had tremendous fiscal costs. They were borne primarily by cities like Denver, whose mayor unsuccessfully pleaded for federal help as he spent tens of millions of dollars to accommodate the new arrivals. The nonpartisan Congressional Budget Office found that while the surge boosted tax revenues for state and local governments, their spending went up by about $10 billion more. State fiscal officers said current efforts to expel unauthorized immigrants had much wider implications for local economic activity because even legal residents feared being stopped and detained. “All of a sudden it presents this huge barrier to people participating in their communities,” said Dave Young, Colorado’s treasurer. Plus, he said, immigrants are essential to the state’s work force. “The concern that I have is that so many of these people that are here performing these tremendous services that we absolutely need, if they leave Colorado put us in a pretty significant economic bind,” he said. Lydia DePillis reports on the American economy for The Times. She has been a journalist since 2009, and can be reached at lydia.depillis@nytimes.com . A version of this article appears in print on , Section B , Page 1 of the New York edition with the headline: State Fiscal Chiefs Call for an End to Federal Immigration Chaos . Order Reprints | Today’s Paper | Subscribe See more on: U.S. Politics , Democratic Party , Congressional Budget Office Read 24 comments Share full article 24 Related Content Advertisement SKIP ADVERTISEMENT",
-      "score": 18.696,
-      "themes": [
-        "war_conflict"
-      ],
-      "is_relevant": true,
-      "score_normalized": 45.12,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -458,7 +428,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 100.0,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -473,7 +443,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 31.65,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -486,7 +456,7 @@
       "themes": [],
       "is_relevant": false,
       "score_normalized": 0.0,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -501,7 +471,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 32.11,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -514,7 +484,7 @@
       "themes": [],
       "is_relevant": false,
       "score_normalized": 0.0,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -530,7 +500,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 81.23,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -545,7 +515,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 55.66,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -562,7 +532,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 100.0,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -575,7 +545,7 @@
       "themes": [],
       "is_relevant": false,
       "score_normalized": 0.0,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -588,7 +558,7 @@
       "themes": [],
       "is_relevant": false,
       "score_normalized": 0.0,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -601,7 +571,7 @@
       "themes": [],
       "is_relevant": false,
       "score_normalized": 0.0,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -617,7 +587,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 100.0,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -632,7 +602,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 29.88,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -647,7 +617,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 40.92,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -662,7 +632,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 17.42,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -677,7 +647,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 21.51,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -692,7 +662,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 42.08,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -708,7 +678,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 76.91,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -723,7 +693,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 44.45,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -738,7 +708,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 22.02,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -753,7 +723,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 45.14,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -768,7 +738,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 17.36,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -783,7 +753,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 15.37,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -798,7 +768,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 81.4,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -813,7 +783,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 28.62,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -829,7 +799,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 85.84,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -844,7 +814,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 17.35,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -859,7 +829,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 21.45,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -874,7 +844,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 34.88,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -889,7 +859,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 55.71,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -902,7 +872,7 @@
       "themes": [],
       "is_relevant": false,
       "score_normalized": 0.0,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -917,7 +887,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 45.01,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -932,7 +902,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 43.95,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -945,7 +915,7 @@
       "themes": [],
       "is_relevant": false,
       "score_normalized": 0.58,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -960,7 +930,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 32.63,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -975,7 +945,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 35.02,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -990,7 +960,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 33.95,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -1005,7 +975,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 31.81,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -1018,7 +988,7 @@
       "themes": [],
       "is_relevant": false,
       "score_normalized": 2.23,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -1033,7 +1003,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 71.96,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -1048,7 +1018,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 32.59,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -1063,7 +1033,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 39.34,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -1078,7 +1048,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 22.54,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -1093,7 +1063,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 17.85,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -1108,7 +1078,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 62.8,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -1121,7 +1091,7 @@
       "themes": [],
       "is_relevant": false,
       "score_normalized": 44.2,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -1136,7 +1106,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 24.2,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -1151,7 +1121,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 64.07,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -1167,7 +1137,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 79.79,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -1182,7 +1152,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 31.67,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -1197,7 +1167,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 91.09,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -1212,7 +1182,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 90.58,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -1227,7 +1197,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 53.51,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -1242,7 +1212,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 74.27,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -1257,7 +1227,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 81.99,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -1272,7 +1242,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 23.84,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -1287,37 +1257,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 71.26,
-      "alert_threshold": 84.95
-    },
-    {
-      "source": "NYTimes",
-      "title": "The Conservative Activists Behind One of Trump’s Biggest Climate Moves",
-      "link": "https://www.nytimes.com/2026/02/10/climate/the-conservative-activists-behind-one-of-trumps-biggest-climate-moves.html",
-      "published_date": "Tue, 10 Feb 2026 21:20:52 +0000",
-      "scrape_timestamp": "2026-02-18T10:07:30.114938+00:00",
-      "content": "Advertisement SKIP ADVERTISEMENT President Trump campaigned on a platform of climate denial and a promise to reverse federal policies aimed at protecting the planet. But even experts have been stunned at the magnitude of the environmental protections he has unraveled and the speed with which his administration has acted. As Maxine Joselow and I report , the swift and meticulous dismantling of climate rules we are now seeing did not happen by chance. It was set in motion by a cadre of conservative lawyers who served in the first Trump administration and spent years honing arguments to block government regulations of climate pollution. We told the stories of four key players. Russell T. Vought and Jeffrey B. Clark, both high-profile allies of Trump, drafted executive orders. Mandy Gunasekara and Jonathan Brightbill, two conservative attorneys with long histories of fighting climate policies, collected what they called an “arsenal of information” to undermine the scientific and legal consensus that the planet is dangerously warming and the United States must take action. Both independently and in tandem, the four activists spent the Biden administration years charting roadmaps that a future Republican president could use to undermine established climate science and legally support the repeal of environmental rules. Those plans included Project 2025, a set of conservative policy recommendations for a second Trump term. A key climate rule Their biggest victory is around the corner. This week, the Environmental Protection Agency is expected to overturn what is known as the “endangerment finding,” a 2009 scientific determination that climate change threatens public health and welfare. By doing so, the federal government will effectively be relinquishing its authority to regulate the emissions that are dangerously warming the planet. Even more consequentially, reversing the endangerment finding could make it harder for a future administration to reverse course and curb emissions of carbon dioxide, methane and other chemicals from automobile tailpipes and factory or power plant smokestacks. Vought, Clark, Gunasekara and Brightbill were not the only ones who pushed to repeal the endangerment finding. But documents obtained by Fieldnotes, a watchdog group, and reviewed by The New York Times, together with interviews with more than a dozen people show the four activists were the key strategists who sought to ensure that if Trump were re-elected, he could move rapidly and with minimal interference from civil servants. “We are pretty close to total victory,” Myron Ebell, a prominent critic of climate science, told us. Funding the fight Gunasekara and Brightbill sought $2 million to draft regulatory documents that a future administration could use to abandon the endangerment finding. The duo also planned to solicit white papers from scientists who did not accept the physics of climate change, according to a funding pitch for the project. The Heritage Foundation eventually agreed to fund some of this work, according to two people familiar with the matter. Clark has been fighting climate protections since 2005, when as a Justice Department lawyer in the George W. Bush administration he argued that the E.P.A. lacked the power to regulate greenhouse gases. He served as an assistant attorney general focusing on environmental deregulation during Trump’s first term. During the Biden administration Clark found a professional home with Vought, also a former Trump official. Vought had launched a think tanks, the Center for Renewing America, to keep the MAGA movement alive, and Clark drafted executive orders that a future president could use to swiftly scrap climate policies enacted by President Joseph R. Biden, according to two people familiar with the matter. Business groups initially fought the endangerment finding. But after years of lost legal challenges and public pressure to address climate change, most gave up. By 2017, when Trump first took office, hundreds of American companies, including oil giants and major manufacturers, had accepted the reality of climate change. Neil Chatterjee, a Republican who led the Federal Energy Regulatory Commission in the first Trump administration, told me it was the “pure ideological activists who believe that climate change is a hoax” who kept up the fight. And when Trump won the presidential race in 2024, they knew they’d have a willing partner in the White House. “They had the experience of being in Trump 1.0, seeing what they wanted to do, then got organized during the Biden years,” Chatterjee said, adding that they “used their time in the wild to plan, and also identify people who can execute the plan.” Now, Chatterjee said, “This is their moment.” Related : The E.P.A. Is Barreling Toward a Supreme Court Climate Showdown . Image Ji-Yeon Cheon, right, and a fellow behavioral ecologist, Hyunjae Chung, with a Weddell seal sporting a pocket-sized sensor they had just glued to its head. Credit... Chang W. Lee/The New York Times Journey to Antarctica Antarctica’s best ocean explorers have whiskers and love to lounge Ji-Yeon Cheon and a fellow behavioral ecologist, Hyunjae Chung, have spent the past few weeks tagging Weddell seals on patches of frozen sea around Antarctica’s Thwaites Glacier . As the seals dive, swim and feed over the coming months, pocket-size devices glued to their heads will log their movements and the properties of the water around them, and transmit the information by satellite when they surface. The two doctoral candidates at Seoul National University are hoping to better understand how the warming ocean is affecting the animals’ diving and foraging behavior. The same warm water that is eroding Thwaites from below also brings up iron and other nutrients from the seafloor, helping nourish fish and other creatures that seals like to eat. Similar changes might also be underway in the ecosystems beneath melting icebergs around the glacier Image The tags, which capture data related to the seals’ movements and the properties of the water, remain attached until the seals molt next summer. Credit... Chang W. Lee/The New York Times “In the Amundsen Sea, especially near the Thwaites Glacier, there is fast environmental change,” Cheon said. Weddell seals are not considered a threatened species right now, but scientists still have more to learn about how the animals are responding to new conditions today and in the future, she said. Antarctica’s seals have no natural predators on the ice, so they are not typically inclined to fear incursions by blowpipe-wielding ecologists. Still, tagging is risky work for scientist and seal alike. — Raymond Zhong Read more . Follow our journey to Antarctica here . Image P-121, a young male mountain lion, underwent medical checks at the San Diego Humane Society’s Ramona Wildlife Center before his release in the summer of 2024. Credit... Loren Elliott for The New York Times One last thing How California is pushing to save mountain lions For a mountain lion, the kindest intervention for a broken leg is often euthanasia. But the cub known as P-121 was getting a second chance. Found in a roadside ditch in the Simi Valley near Los Angeles, he was one of scores of California mountain lions struck by vehicles each year . At only about five months old, he should have spent another year with his mother. But she was nowhere to be seen. An X-ray brought good news: the break in his hind leg was clean. He would undergo surgery and remain at a wildlife rehabilitation facility for several months, until his limb mended and he was old enough to fend for himself. If all went well, he would return to the wild. The story of P-121, who arrived at the San Diego Humane Society’s Ramona Wildlife Center on Thanksgiving Day in 2023, offers a searing glimpse into the challenges facing the animals. Between 2018 and 2023 alone, California added 550 miles of lanes to state highways. Populations of mountain lions in the ",
-      "score": 14.8198,
-      "themes": [
-        "war_conflict"
-      ],
-      "is_relevant": true,
-      "score_normalized": 34.48,
-      "alert_threshold": 84.95
-    },
-    {
-      "source": "NYTimes",
-      "title": "State Fiscal Chiefs Protest Federal Immigration Chaos",
-      "link": "https://www.nytimes.com/2026/02/04/business/economy/state-fiscal-protest-ice.html",
-      "published_date": "Wed, 04 Feb 2026 18:53:37 +0000",
-      "scrape_timestamp": "2026-02-18T10:07:30.315730+00:00",
-      "content": "Advertisement SKIP ADVERTISEMENT As the immigration enforcement operation in Minnesota takes a toll on local businesses, whose customers and employees are staying off the streets out of fear, some public budgets heads have a message to the White House: Stop. Democratic state treasurers, auditors and comptrollers from 15 states — including two from California — sent a letter on Wednesday to President Trump calling for a halt to aggressive tactics that they say have depressed economic activity and tax collections. “Many of our states already send more tax dollars to Washington than we receive in federal support,” read the letter, whose signatories also included the fiscal officers of Maryland, Oregon and New York. “We are now expected to absorb the fiscal consequences of enforcement activities. This is not acceptable.” State fiscal officers do not often weigh in as a group on law enforcement matters. They leave that to attorneys general, who frequently write collective letters and court briefs, typically with members of their own party. The letter was organized by For the Long Term , a group of progressive-leaning state and local financial overseers who aim to foster economic and budgetary stability beyond the rapid churn of election cycles. The signatories said they came together when they determined that what was unfolding in Minnesota crossed into their domain as stewards of the public purse. The Department of Homeland Security did not respond to a request for comment on the letter. Tom Homan, Mr. Trump’s border czar, said on Wednesday that the administration would withdraw 700 immigration agents from Minnesota, leaving around 2,000 there. Other states have also experienced extended Immigration and Customs Enforcement presence, including Illinois, where Operation Midway Blitz took place in the fall . Mike Frerichs, the state’s treasurer, said sales and income taxes dipped during that period, as people fearing federal officers avoided restaurants and shops in neighborhoods like Chicago’s Little Village. “If you’re terrorizing people, and they think they’re going to be arrested or shot, they’re going to stay home, and they’re not going to be spending money,” Mr. Frerichs said. “Donald Trump and Stephen Miller may not care about immigrants to this country, but the fear and chaos that they are sowing in our cities are having ripple effects on taxpaying Americans.” Officials from other states are thinking about what might happen if ICE came through in force. “There’s always concern that our state might be next,” said Mike Pellicciotti, the treasurer of Washington, which has large immigrant communities in both agriculture and technology. He said ICE deployments were just one of several blows from the federal government over the past year, including tariffs . “This reckless economic policy is having an impact across the board,” Mr. Pellicciotti said. “We’re a trade-dependent state. We’re a state that relies on a talented work force from around the world wanting to come.” Mr. Trump has threatened to withhold funding for Democratic cities and states, including child care subsidies, public housing assistance and food stamps. The White House has also pulled back clean energy and other infrastructure grants, such as $205 million for the $16 billion Gateway project between New York and New Jersey. For state and local finances, the damage from the Trump administration’s immigration restrictions and expanding enforcement efforts may take a while to play out, said William Glasgall, public finance adviser at the Volcker Alliance, a think tank. Many states, especially in the Northeast and the industrial Midwest, have depended on immigration to keep their populations steady or growing. “Budgets are getting tighter, and if the immigration restrictions begin to crimp the tax base — we’ll see in the next year or two what this looks like in terms of sales tax growth and income tax growth — then you have reason for concern,” Mr. Glasgall said. The list of signatories included states that received an influx of migrants during the Biden administration, a situation that also had tremendous fiscal costs. They were borne primarily by cities like Denver, whose mayor unsuccessfully pleaded for federal help as he spent tens of millions of dollars to accommodate the new arrivals. The nonpartisan Congressional Budget Office found that while the surge boosted tax revenues for state and local governments, their spending went up by about $10 billion more. State fiscal officers said current efforts to expel unauthorized immigrants had much wider implications for local economic activity because even legal residents feared being stopped and detained. “All of a sudden it presents this huge barrier to people participating in their communities,” said Dave Young, Colorado’s treasurer. Plus, he said, immigrants are essential to the state’s work force. “The concern that I have is that so many of these people that are here performing these tremendous services that we absolutely need, if they leave Colorado put us in a pretty significant economic bind,” he said. Lydia DePillis reports on the American economy for The Times. She has been a journalist since 2009, and can be reached at lydia.depillis@nytimes.com . A version of this article appears in print on , Section B , Page 1 of the New York edition with the headline: State Fiscal Chiefs Call for an End to Federal Immigration Chaos . Order Reprints | Today’s Paper | Subscribe See more on: U.S. Politics , Democratic Party , Congressional Budget Office Read 24 comments Share full article 24 Related Content Advertisement SKIP ADVERTISEMENT",
-      "score": 18.696,
-      "themes": [
-        "war_conflict"
-      ],
-      "is_relevant": true,
-      "score_normalized": 45.12,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -1334,7 +1274,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 100.0,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -1349,7 +1289,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 31.65,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -1362,7 +1302,7 @@
       "themes": [],
       "is_relevant": false,
       "score_normalized": 0.0,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -1377,7 +1317,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 32.11,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -1390,7 +1330,7 @@
       "themes": [],
       "is_relevant": false,
       "score_normalized": 0.0,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -1406,7 +1346,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 81.23,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -1421,7 +1361,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 55.66,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -1438,7 +1378,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 100.0,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -1451,7 +1391,7 @@
       "themes": [],
       "is_relevant": false,
       "score_normalized": 0.0,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -1464,7 +1404,7 @@
       "themes": [],
       "is_relevant": false,
       "score_normalized": 0.0,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -1477,7 +1417,7 @@
       "themes": [],
       "is_relevant": false,
       "score_normalized": 0.0,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -1493,7 +1433,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 100.0,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -1508,7 +1448,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 29.88,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -1523,7 +1463,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 40.92,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -1538,7 +1478,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 17.42,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -1553,7 +1493,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 21.51,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -1568,7 +1508,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 42.08,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -1584,7 +1524,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 76.91,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -1599,7 +1539,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 44.45,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -1614,7 +1554,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 22.02,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -1629,7 +1569,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 45.14,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -1644,7 +1584,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 17.36,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -1659,7 +1599,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 15.37,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -1674,7 +1614,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 81.4,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -1689,7 +1629,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 28.62,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -1705,7 +1645,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 85.84,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -1720,7 +1660,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 32.63,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -1735,7 +1675,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 17.35,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -1750,7 +1690,7 @@
       ],
       "is_relevant": true,
       "score_normalized": 21.45,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
     },
     {
       "source": "NYTimes",
@@ -1765,10 +1705,134 @@
       ],
       "is_relevant": true,
       "score_normalized": 34.88,
-      "alert_threshold": 84.95
+      "alert_threshold": 84.46
+    },
+    {
+      "source": "NYTimes",
+      "title": "The Conservative Activists Behind One of Trump’s Biggest Climate Moves",
+      "link": "https://www.nytimes.com/2026/02/10/climate/the-conservative-activists-behind-one-of-trumps-biggest-climate-moves.html",
+      "published_date": "Tue, 10 Feb 2026 21:20:52 +0000",
+      "scrape_timestamp": "2026-02-18T10:49:16.005310+00:00",
+      "content": "Advertisement SKIP ADVERTISEMENT President Trump campaigned on a platform of climate denial and a promise to reverse federal policies aimed at protecting the planet. But even experts have been stunned at the magnitude of the environmental protections he has unraveled and the speed with which his administration has acted. As Maxine Joselow and I report , the swift and meticulous dismantling of climate rules we are now seeing did not happen by chance. It was set in motion by a cadre of conservative lawyers who served in the first Trump administration and spent years honing arguments to block government regulations of climate pollution. We told the stories of four key players. Russell T. Vought and Jeffrey B. Clark, both high-profile allies of Trump, drafted executive orders. Mandy Gunasekara and Jonathan Brightbill, two conservative attorneys with long histories of fighting climate policies, collected what they called an “arsenal of information” to undermine the scientific and legal consensus that the planet is dangerously warming and the United States must take action. Both independently and in tandem, the four activists spent the Biden administration years charting roadmaps that a future Republican president could use to undermine established climate science and legally support the repeal of environmental rules. Those plans included Project 2025, a set of conservative policy recommendations for a second Trump term. A key climate rule Their biggest victory is around the corner. This week, the Environmental Protection Agency is expected to overturn what is known as the “endangerment finding,” a 2009 scientific determination that climate change threatens public health and welfare. By doing so, the federal government will effectively be relinquishing its authority to regulate the emissions that are dangerously warming the planet. Even more consequentially, reversing the endangerment finding could make it harder for a future administration to reverse course and curb emissions of carbon dioxide, methane and other chemicals from automobile tailpipes and factory or power plant smokestacks. Vought, Clark, Gunasekara and Brightbill were not the only ones who pushed to repeal the endangerment finding. But documents obtained by Fieldnotes, a watchdog group, and reviewed by The New York Times, together with interviews with more than a dozen people show the four activists were the key strategists who sought to ensure that if Trump were re-elected, he could move rapidly and with minimal interference from civil servants. “We are pretty close to total victory,” Myron Ebell, a prominent critic of climate science, told us. Funding the fight Gunasekara and Brightbill sought $2 million to draft regulatory documents that a future administration could use to abandon the endangerment finding. The duo also planned to solicit white papers from scientists who did not accept the physics of climate change, according to a funding pitch for the project. The Heritage Foundation eventually agreed to fund some of this work, according to two people familiar with the matter. Clark has been fighting climate protections since 2005, when as a Justice Department lawyer in the George W. Bush administration he argued that the E.P.A. lacked the power to regulate greenhouse gases. He served as an assistant attorney general focusing on environmental deregulation during Trump’s first term. During the Biden administration Clark found a professional home with Vought, also a former Trump official. Vought had launched a think tanks, the Center for Renewing America, to keep the MAGA movement alive, and Clark drafted executive orders that a future president could use to swiftly scrap climate policies enacted by President Joseph R. Biden, according to two people familiar with the matter. Business groups initially fought the endangerment finding. But after years of lost legal challenges and public pressure to address climate change, most gave up. By 2017, when Trump first took office, hundreds of American companies, including oil giants and major manufacturers, had accepted the reality of climate change. Neil Chatterjee, a Republican who led the Federal Energy Regulatory Commission in the first Trump administration, told me it was the “pure ideological activists who believe that climate change is a hoax” who kept up the fight. And when Trump won the presidential race in 2024, they knew they’d have a willing partner in the White House. “They had the experience of being in Trump 1.0, seeing what they wanted to do, then got organized during the Biden years,” Chatterjee said, adding that they “used their time in the wild to plan, and also identify people who can execute the plan.” Now, Chatterjee said, “This is their moment.” Related : The E.P.A. Is Barreling Toward a Supreme Court Climate Showdown . Image Ji-Yeon Cheon, right, and a fellow behavioral ecologist, Hyunjae Chung, with a Weddell seal sporting a pocket-sized sensor they had just glued to its head. Credit... Chang W. Lee/The New York Times Journey to Antarctica Antarctica’s best ocean explorers have whiskers and love to lounge Ji-Yeon Cheon and a fellow behavioral ecologist, Hyunjae Chung, have spent the past few weeks tagging Weddell seals on patches of frozen sea around Antarctica’s Thwaites Glacier . As the seals dive, swim and feed over the coming months, pocket-size devices glued to their heads will log their movements and the properties of the water around them, and transmit the information by satellite when they surface. The two doctoral candidates at Seoul National University are hoping to better understand how the warming ocean is affecting the animals’ diving and foraging behavior. The same warm water that is eroding Thwaites from below also brings up iron and other nutrients from the seafloor, helping nourish fish and other creatures that seals like to eat. Similar changes might also be underway in the ecosystems beneath melting icebergs around the glacier Image The tags, which capture data related to the seals’ movements and the properties of the water, remain attached until the seals molt next summer. Credit... Chang W. Lee/The New York Times “In the Amundsen Sea, especially near the Thwaites Glacier, there is fast environmental change,” Cheon said. Weddell seals are not considered a threatened species right now, but scientists still have more to learn about how the animals are responding to new conditions today and in the future, she said. Antarctica’s seals have no natural predators on the ice, so they are not typically inclined to fear incursions by blowpipe-wielding ecologists. Still, tagging is risky work for scientist and seal alike. — Raymond Zhong Read more . Follow our journey to Antarctica here . Image P-121, a young male mountain lion, underwent medical checks at the San Diego Humane Society’s Ramona Wildlife Center before his release in the summer of 2024. Credit... Loren Elliott for The New York Times One last thing How California is pushing to save mountain lions For a mountain lion, the kindest intervention for a broken leg is often euthanasia. But the cub known as P-121 was getting a second chance. Found in a roadside ditch in the Simi Valley near Los Angeles, he was one of scores of California mountain lions struck by vehicles each year . At only about five months old, he should have spent another year with his mother. But she was nowhere to be seen. An X-ray brought good news: the break in his hind leg was clean. He would undergo surgery and remain at a wildlife rehabilitation facility for several months, until his limb mended and he was old enough to fend for himself. If all went well, he would return to the wild. The story of P-121, who arrived at the San Diego Humane Society’s Ramona Wildlife Center on Thanksgiving Day in 2023, offers a searing glimpse into the challenges facing the animals. Between 2018 and 2023 alone, California added 550 miles of lanes to state highways. Populations of mountain lions in the ",
+      "score": 14.8198,
+      "themes": [
+        "war_conflict"
+      ],
+      "is_relevant": true,
+      "matched_keywords": [
+        "fed",
+        "war",
+        "oil"
+      ],
+      "score_normalized": 34.48,
+      "alert_threshold": 84.46
+    },
+    {
+      "source": "NYTimes",
+      "title": "State Fiscal Chiefs Protest Federal Immigration Chaos",
+      "link": "https://www.nytimes.com/2026/02/04/business/economy/state-fiscal-protest-ice.html",
+      "published_date": "Wed, 04 Feb 2026 18:53:37 +0000",
+      "scrape_timestamp": "2026-02-18T10:49:16.205680+00:00",
+      "content": "Advertisement SKIP ADVERTISEMENT As the immigration enforcement operation in Minnesota takes a toll on local businesses, whose customers and employees are staying off the streets out of fear, some public budgets heads have a message to the White House: Stop. Democratic state treasurers, auditors and comptrollers from 15 states — including two from California — sent a letter on Wednesday to President Trump calling for a halt to aggressive tactics that they say have depressed economic activity and tax collections. “Many of our states already send more tax dollars to Washington than we receive in federal support,” read the letter, whose signatories also included the fiscal officers of Maryland, Oregon and New York. “We are now expected to absorb the fiscal consequences of enforcement activities. This is not acceptable.” State fiscal officers do not often weigh in as a group on law enforcement matters. They leave that to attorneys general, who frequently write collective letters and court briefs, typically with members of their own party. The letter was organized by For the Long Term , a group of progressive-leaning state and local financial overseers who aim to foster economic and budgetary stability beyond the rapid churn of election cycles. The signatories said they came together when they determined that what was unfolding in Minnesota crossed into their domain as stewards of the public purse. The Department of Homeland Security did not respond to a request for comment on the letter. Tom Homan, Mr. Trump’s border czar, said on Wednesday that the administration would withdraw 700 immigration agents from Minnesota, leaving around 2,000 there. Other states have also experienced extended Immigration and Customs Enforcement presence, including Illinois, where Operation Midway Blitz took place in the fall . Mike Frerichs, the state’s treasurer, said sales and income taxes dipped during that period, as people fearing federal officers avoided restaurants and shops in neighborhoods like Chicago’s Little Village. “If you’re terrorizing people, and they think they’re going to be arrested or shot, they’re going to stay home, and they’re not going to be spending money,” Mr. Frerichs said. “Donald Trump and Stephen Miller may not care about immigrants to this country, but the fear and chaos that they are sowing in our cities are having ripple effects on taxpaying Americans.” Officials from other states are thinking about what might happen if ICE came through in force. “There’s always concern that our state might be next,” said Mike Pellicciotti, the treasurer of Washington, which has large immigrant communities in both agriculture and technology. He said ICE deployments were just one of several blows from the federal government over the past year, including tariffs . “This reckless economic policy is having an impact across the board,” Mr. Pellicciotti said. “We’re a trade-dependent state. We’re a state that relies on a talented work force from around the world wanting to come.” Mr. Trump has threatened to withhold funding for Democratic cities and states, including child care subsidies, public housing assistance and food stamps. The White House has also pulled back clean energy and other infrastructure grants, such as $205 million for the $16 billion Gateway project between New York and New Jersey. For state and local finances, the damage from the Trump administration’s immigration restrictions and expanding enforcement efforts may take a while to play out, said William Glasgall, public finance adviser at the Volcker Alliance, a think tank. Many states, especially in the Northeast and the industrial Midwest, have depended on immigration to keep their populations steady or growing. “Budgets are getting tighter, and if the immigration restrictions begin to crimp the tax base — we’ll see in the next year or two what this looks like in terms of sales tax growth and income tax growth — then you have reason for concern,” Mr. Glasgall said. The list of signatories included states that received an influx of migrants during the Biden administration, a situation that also had tremendous fiscal costs. They were borne primarily by cities like Denver, whose mayor unsuccessfully pleaded for federal help as he spent tens of millions of dollars to accommodate the new arrivals. The nonpartisan Congressional Budget Office found that while the surge boosted tax revenues for state and local governments, their spending went up by about $10 billion more. State fiscal officers said current efforts to expel unauthorized immigrants had much wider implications for local economic activity because even legal residents feared being stopped and detained. “All of a sudden it presents this huge barrier to people participating in their communities,” said Dave Young, Colorado’s treasurer. Plus, he said, immigrants are essential to the state’s work force. “The concern that I have is that so many of these people that are here performing these tremendous services that we absolutely need, if they leave Colorado put us in a pretty significant economic bind,” he said. Lydia DePillis reports on the American economy for The Times. She has been a journalist since 2009, and can be reached at lydia.depillis@nytimes.com . A version of this article appears in print on , Section B , Page 1 of the New York edition with the headline: State Fiscal Chiefs Call for an End to Federal Immigration Chaos . Order Reprints | Today’s Paper | Subscribe See more on: U.S. Politics , Democratic Party , Congressional Budget Office Read 24 comments Share full article 24 Related Content Advertisement SKIP ADVERTISEMENT",
+      "score": 18.696,
+      "themes": [
+        "war_conflict"
+      ],
+      "is_relevant": true,
+      "matched_keywords": [
+        "fed",
+        "war",
+        "nato",
+        "tariff",
+        "dollar"
+      ],
+      "score_normalized": 45.12,
+      "alert_threshold": 84.46
+    },
+    {
+      "source": "NYTimes",
+      "title": "Ski Mountaineering Makes Its Olympic Debut at the Milan-Cortina Winter Games",
+      "link": "https://www.nytimes.com/2026/02/18/world/olympics/ski-mountaineering-winter-olympics-sport.html",
+      "published_date": "Wed, 18 Feb 2026 10:03:42 +0000",
+      "scrape_timestamp": "2026-02-18T10:49:19.548572+00:00",
+      "content": "Advertisement SKIP ADVERTISEMENT Long before mechanical lifts, snow machines or winter resorts with après-ski comforts, hardy Alpine people trudged up icy peaks under their own power, not for sport but because it was the only way to get around. It was a necessity of rugged mountain life: Merchants wore skis to trade goods, and soldiers wore skis to fight battles. That tradition, once essential for survival, is at the heart of ski mountaineering, which makes its debut as an Olympic event on Thursday in some of the same mountains where the sport was born. In skimo, as it is known to its devotees, competitors climb uphill on skis and then on foot before racing downhill. It is a punishing exercise that requires strength, technique and endurance, which is exactly why ski mountaineers love it. “You have to be powerful, explosive, fast, and also be able to repeat these climbs over and over again,” said Cameron Smith, who is the most decorated American ski mountaineer and one of two U.S. athletes competing this week at the Winter Games in Northern Italy. “So it’s a super physically demanding sport.” Skimo is the first new Olympic winter sport since snowboarding in 1998. ( Skeleton debuted in the 1920s before becoming a fixture at the Games in 2002.) Organizers have not announced whether skimo will be included in the 2030 Games in the French Alps, but supporters of the sport say its roots and popularity in Italy, France and Switzerland help its chances. Image The transition from skiing to moving on foot can make or break an athlete’s race. Credit... Jonathon Selkowitz for The New York Times The sport is relatively young in the United States, but the International Ski Mountaineering Federation is also working to secure a spot for the event at the 2034 Winter Games in Utah. An early American champion was Nina Silitch, who embraced the sport while living in France and won two gold medals in skimo World Cups, including the first medal in the event for a North American. After returning to the United States, she founded a skimo club in Park City, Utah, and worked to expand the sport, with an eye on getting it into the Winter Games. “Slowly, these youth programs started to build support from parents and then create that structure in North America,” she said. “For it to be in the Olympics is the result of lots of people who are passionate about the sport being committed.” Smith and his U.S. teammate, Anna Gibson, qualified for this year’s Olympics after an unexpectedly dominant performance won them first place in a mixed relay World Cup event in December. Besides the mixed relay, the Olympics will have men’s and women’s individual sprints. In the sprints, competitors climb up the course on skis, take them off to continue on foot and then put the skis back on to make the final ascent, reaching a height of about 230 feet. Then they race downhill. Each sprint takes about three minutes. In the mixed relay, the female member of the pair completes two ascents, reaching 400 to 500 feet, and two descents before the male athlete goes through the same course. Then they each repeat it. That race takes about 30 minutes. One tip for viewers at home: Watch the athletes’ transitions from climbing uphill on skis to going on foot to getting back on skis and then going downhill. Racers affix skins to the bottoms of their skis to provide traction as they ascend, then must take them off and reattach their skis before heading back down. Image Skins on the bottoms of the skis help with traction on the ascent. Credit... Angelika Warmuth/Reuters Races are often won or lost based on how nimbly athletes handle the transitions, Smith said. Competitors devote part of their training exclusively to those moments, he added, describing creative setups using yoga mats and uneven steps in an effort to mimic course conditions. In warmer months, many ski mountaineers are trail runners or cyclists. The three sports share similar physical requirements, train similar muscles and fulfill a similar desire to move freely through mountains at any time of year. Smith said he got hooked on skimo in part because he could “access places that, once they’re covered in feet of snow, normally are really hard to get to.” Some of the highest peaks of the Italian Alps around the town of Bormio are so snowy that ski mountaineers are able to practice six months a year, said Marco Colombo, who is a local ski mountaineer and guide. The roughly 15-mile Stelvio Pass, the shortest route by car to neighboring Switzerland, is closed in winter. The pass, above the ski center course of the same name that will be used in Olympic skimo, is one of the places where Italian and Austro-Hungarian soldiers fought on skis during World War I, in brutal, high-altitude combat that became known as the White War. Italy’s three Olympic ski mountaineers live in nearby Albosaggia, population 3,000, where a local sports academy has nurtured young people in the sport. “There has always been a great tradition here since the postwar period,” said Alessandro Piani, the president of the academy, Polisportiva Albosaggia, which enrolls about 350 children in a range of mountain sports, including skiing and cycling. He cited the closure of many small ski lifts in the area, which forced locals to figure out how to get up the mountains under their own power. Image The women’s sprint race at the Ski Mountaineering World Cup event in Bormio, Italy, in February 2025. Credit... Antonio Calanni/Associated Press But ski climbing in pristine backwoods can be treacherous, so building the sport in places like Bormio has required clearing space for trails in snowy areas near existing downhill slopes. Colombo, the guide, helped lead a project with the local tourism bureau, where he now works, to create five skimo trails close to the foot of the Stelvio ski course. One of the practical challenges his team faced was striking a deal between go-it-alone ski mountaineers and ski lift operators, who typically charge to take skiers up the mountain and use those funds to pay for the slopes’ upkeep. The compromise was a seasonal pass that charges ski mountaineers for one lift ride a day so they can practice high up in the mountains early in winter, when there is usually not enough snow to climb up from the foothills. Smith, the American ski mountaineer, said he hopes that the sport becomes more popular as more people are exposed to it. He acknowledged that a lot of people he knows don’t understand the discipline he competes in. “Now that it’s in the Olympics, people I grew up with — youth sports coaches, people I’ve worked with — are starting to understand it,” he said. “And get more excited about it.” Patricia Mazzei is the lead reporter for The Times in Miami, covering Florida and Puerto Rico. A version of this article appears in print on , Section B , Page 10 of the New York edition with the headline: Ski Downhill? Why Not Ski Uphill? Meet Skimo,  At Its Olympic Debut. . Order Reprints | Today’s Paper | Subscribe Share full article Related Content Advertisement SKIP ADVERTISEMENT",
+      "score": 13.2048,
+      "themes": [
+        "war_conflict"
+      ],
+      "is_relevant": true,
+      "matched_keywords": [
+        "fed",
+        "war",
+        "gold"
+      ],
+      "score_normalized": 30.04,
+      "alert_threshold": 84.46
+    },
+    {
+      "source": "NYTimes",
+      "title": "The Conservative Activists Behind One of Trump’s Biggest Climate Moves",
+      "link": "https://www.nytimes.com/2026/02/10/climate/the-conservative-activists-behind-one-of-trumps-biggest-climate-moves.html",
+      "published_date": "Tue, 10 Feb 2026 21:20:52 +0000",
+      "scrape_timestamp": "2026-02-18T10:49:16.005310+00:00",
+      "content": "Advertisement SKIP ADVERTISEMENT President Trump campaigned on a platform of climate denial and a promise to reverse federal policies aimed at protecting the planet. But even experts have been stunned at the magnitude of the environmental protections he has unraveled and the speed with which his administration has acted. As Maxine Joselow and I report , the swift and meticulous dismantling of climate rules we are now seeing did not happen by chance. It was set in motion by a cadre of conservative lawyers who served in the first Trump administration and spent years honing arguments to block government regulations of climate pollution. We told the stories of four key players. Russell T. Vought and Jeffrey B. Clark, both high-profile allies of Trump, drafted executive orders. Mandy Gunasekara and Jonathan Brightbill, two conservative attorneys with long histories of fighting climate policies, collected what they called an “arsenal of information” to undermine the scientific and legal consensus that the planet is dangerously warming and the United States must take action. Both independently and in tandem, the four activists spent the Biden administration years charting roadmaps that a future Republican president could use to undermine established climate science and legally support the repeal of environmental rules. Those plans included Project 2025, a set of conservative policy recommendations for a second Trump term. A key climate rule Their biggest victory is around the corner. This week, the Environmental Protection Agency is expected to overturn what is known as the “endangerment finding,” a 2009 scientific determination that climate change threatens public health and welfare. By doing so, the federal government will effectively be relinquishing its authority to regulate the emissions that are dangerously warming the planet. Even more consequentially, reversing the endangerment finding could make it harder for a future administration to reverse course and curb emissions of carbon dioxide, methane and other chemicals from automobile tailpipes and factory or power plant smokestacks. Vought, Clark, Gunasekara and Brightbill were not the only ones who pushed to repeal the endangerment finding. But documents obtained by Fieldnotes, a watchdog group, and reviewed by The New York Times, together with interviews with more than a dozen people show the four activists were the key strategists who sought to ensure that if Trump were re-elected, he could move rapidly and with minimal interference from civil servants. “We are pretty close to total victory,” Myron Ebell, a prominent critic of climate science, told us. Funding the fight Gunasekara and Brightbill sought $2 million to draft regulatory documents that a future administration could use to abandon the endangerment finding. The duo also planned to solicit white papers from scientists who did not accept the physics of climate change, according to a funding pitch for the project. The Heritage Foundation eventually agreed to fund some of this work, according to two people familiar with the matter. Clark has been fighting climate protections since 2005, when as a Justice Department lawyer in the George W. Bush administration he argued that the E.P.A. lacked the power to regulate greenhouse gases. He served as an assistant attorney general focusing on environmental deregulation during Trump’s first term. During the Biden administration Clark found a professional home with Vought, also a former Trump official. Vought had launched a think tanks, the Center for Renewing America, to keep the MAGA movement alive, and Clark drafted executive orders that a future president could use to swiftly scrap climate policies enacted by President Joseph R. Biden, according to two people familiar with the matter. Business groups initially fought the endangerment finding. But after years of lost legal challenges and public pressure to address climate change, most gave up. By 2017, when Trump first took office, hundreds of American companies, including oil giants and major manufacturers, had accepted the reality of climate change. Neil Chatterjee, a Republican who led the Federal Energy Regulatory Commission in the first Trump administration, told me it was the “pure ideological activists who believe that climate change is a hoax” who kept up the fight. And when Trump won the presidential race in 2024, they knew they’d have a willing partner in the White House. “They had the experience of being in Trump 1.0, seeing what they wanted to do, then got organized during the Biden years,” Chatterjee said, adding that they “used their time in the wild to plan, and also identify people who can execute the plan.” Now, Chatterjee said, “This is their moment.” Related : The E.P.A. Is Barreling Toward a Supreme Court Climate Showdown . Image Ji-Yeon Cheon, right, and a fellow behavioral ecologist, Hyunjae Chung, with a Weddell seal sporting a pocket-sized sensor they had just glued to its head. Credit... Chang W. Lee/The New York Times Journey to Antarctica Antarctica’s best ocean explorers have whiskers and love to lounge Ji-Yeon Cheon and a fellow behavioral ecologist, Hyunjae Chung, have spent the past few weeks tagging Weddell seals on patches of frozen sea around Antarctica’s Thwaites Glacier . As the seals dive, swim and feed over the coming months, pocket-size devices glued to their heads will log their movements and the properties of the water around them, and transmit the information by satellite when they surface. The two doctoral candidates at Seoul National University are hoping to better understand how the warming ocean is affecting the animals’ diving and foraging behavior. The same warm water that is eroding Thwaites from below also brings up iron and other nutrients from the seafloor, helping nourish fish and other creatures that seals like to eat. Similar changes might also be underway in the ecosystems beneath melting icebergs around the glacier Image The tags, which capture data related to the seals’ movements and the properties of the water, remain attached until the seals molt next summer. Credit... Chang W. Lee/The New York Times “In the Amundsen Sea, especially near the Thwaites Glacier, there is fast environmental change,” Cheon said. Weddell seals are not considered a threatened species right now, but scientists still have more to learn about how the animals are responding to new conditions today and in the future, she said. Antarctica’s seals have no natural predators on the ice, so they are not typically inclined to fear incursions by blowpipe-wielding ecologists. Still, tagging is risky work for scientist and seal alike. — Raymond Zhong Read more . Follow our journey to Antarctica here . Image P-121, a young male mountain lion, underwent medical checks at the San Diego Humane Society’s Ramona Wildlife Center before his release in the summer of 2024. Credit... Loren Elliott for The New York Times One last thing How California is pushing to save mountain lions For a mountain lion, the kindest intervention for a broken leg is often euthanasia. But the cub known as P-121 was getting a second chance. Found in a roadside ditch in the Simi Valley near Los Angeles, he was one of scores of California mountain lions struck by vehicles each year . At only about five months old, he should have spent another year with his mother. But she was nowhere to be seen. An X-ray brought good news: the break in his hind leg was clean. He would undergo surgery and remain at a wildlife rehabilitation facility for several months, until his limb mended and he was old enough to fend for himself. If all went well, he would return to the wild. The story of P-121, who arrived at the San Diego Humane Society’s Ramona Wildlife Center on Thanksgiving Day in 2023, offers a searing glimpse into the challenges facing the animals. Between 2018 and 2023 alone, California added 550 miles of lanes to state highways. Populations of mountain lions in the ",
+      "score": 14.8198,
+      "themes": [
+        "war_conflict"
+      ],
+      "is_relevant": true,
+      "matched_keywords": [
+        "fed",
+        "war",
+        "oil"
+      ],
+      "score_normalized": 34.48,
+      "alert_threshold": 84.46
+    },
+    {
+      "source": "NYTimes",
+      "title": "State Fiscal Chiefs Protest Federal Immigration Chaos",
+      "link": "https://www.nytimes.com/2026/02/04/business/economy/state-fiscal-protest-ice.html",
+      "published_date": "Wed, 04 Feb 2026 18:53:37 +0000",
+      "scrape_timestamp": "2026-02-18T10:49:16.205680+00:00",
+      "content": "Advertisement SKIP ADVERTISEMENT As the immigration enforcement operation in Minnesota takes a toll on local businesses, whose customers and employees are staying off the streets out of fear, some public budgets heads have a message to the White House: Stop. Democratic state treasurers, auditors and comptrollers from 15 states — including two from California — sent a letter on Wednesday to President Trump calling for a halt to aggressive tactics that they say have depressed economic activity and tax collections. “Many of our states already send more tax dollars to Washington than we receive in federal support,” read the letter, whose signatories also included the fiscal officers of Maryland, Oregon and New York. “We are now expected to absorb the fiscal consequences of enforcement activities. This is not acceptable.” State fiscal officers do not often weigh in as a group on law enforcement matters. They leave that to attorneys general, who frequently write collective letters and court briefs, typically with members of their own party. The letter was organized by For the Long Term , a group of progressive-leaning state and local financial overseers who aim to foster economic and budgetary stability beyond the rapid churn of election cycles. The signatories said they came together when they determined that what was unfolding in Minnesota crossed into their domain as stewards of the public purse. The Department of Homeland Security did not respond to a request for comment on the letter. Tom Homan, Mr. Trump’s border czar, said on Wednesday that the administration would withdraw 700 immigration agents from Minnesota, leaving around 2,000 there. Other states have also experienced extended Immigration and Customs Enforcement presence, including Illinois, where Operation Midway Blitz took place in the fall . Mike Frerichs, the state’s treasurer, said sales and income taxes dipped during that period, as people fearing federal officers avoided restaurants and shops in neighborhoods like Chicago’s Little Village. “If you’re terrorizing people, and they think they’re going to be arrested or shot, they’re going to stay home, and they’re not going to be spending money,” Mr. Frerichs said. “Donald Trump and Stephen Miller may not care about immigrants to this country, but the fear and chaos that they are sowing in our cities are having ripple effects on taxpaying Americans.” Officials from other states are thinking about what might happen if ICE came through in force. “There’s always concern that our state might be next,” said Mike Pellicciotti, the treasurer of Washington, which has large immigrant communities in both agriculture and technology. He said ICE deployments were just one of several blows from the federal government over the past year, including tariffs . “This reckless economic policy is having an impact across the board,” Mr. Pellicciotti said. “We’re a trade-dependent state. We’re a state that relies on a talented work force from around the world wanting to come.” Mr. Trump has threatened to withhold funding for Democratic cities and states, including child care subsidies, public housing assistance and food stamps. The White House has also pulled back clean energy and other infrastructure grants, such as $205 million for the $16 billion Gateway project between New York and New Jersey. For state and local finances, the damage from the Trump administration’s immigration restrictions and expanding enforcement efforts may take a while to play out, said William Glasgall, public finance adviser at the Volcker Alliance, a think tank. Many states, especially in the Northeast and the industrial Midwest, have depended on immigration to keep their populations steady or growing. “Budgets are getting tighter, and if the immigration restrictions begin to crimp the tax base — we’ll see in the next year or two what this looks like in terms of sales tax growth and income tax growth — then you have reason for concern,” Mr. Glasgall said. The list of signatories included states that received an influx of migrants during the Biden administration, a situation that also had tremendous fiscal costs. They were borne primarily by cities like Denver, whose mayor unsuccessfully pleaded for federal help as he spent tens of millions of dollars to accommodate the new arrivals. The nonpartisan Congressional Budget Office found that while the surge boosted tax revenues for state and local governments, their spending went up by about $10 billion more. State fiscal officers said current efforts to expel unauthorized immigrants had much wider implications for local economic activity because even legal residents feared being stopped and detained. “All of a sudden it presents this huge barrier to people participating in their communities,” said Dave Young, Colorado’s treasurer. Plus, he said, immigrants are essential to the state’s work force. “The concern that I have is that so many of these people that are here performing these tremendous services that we absolutely need, if they leave Colorado put us in a pretty significant economic bind,” he said. Lydia DePillis reports on the American economy for The Times. She has been a journalist since 2009, and can be reached at lydia.depillis@nytimes.com . A version of this article appears in print on , Section B , Page 1 of the New York edition with the headline: State Fiscal Chiefs Call for an End to Federal Immigration Chaos . Order Reprints | Today’s Paper | Subscribe See more on: U.S. Politics , Democratic Party , Congressional Budget Office Read 24 comments Share full article 24 Related Content Advertisement SKIP ADVERTISEMENT",
+      "score": 18.696,
+      "themes": [
+        "war_conflict"
+      ],
+      "is_relevant": true,
+      "matched_keywords": [
+        "fed",
+        "war",
+        "nato",
+        "tariff",
+        "dollar"
+      ],
+      "score_normalized": 45.12,
+      "alert_threshold": 84.46
+    },
+    {
+      "source": "NYTimes",
+      "title": "Ski Mountaineering Makes Its Olympic Debut at the Milan-Cortina Winter Games",
+      "link": "https://www.nytimes.com/2026/02/18/world/olympics/ski-mountaineering-winter-olympics-sport.html",
+      "published_date": "Wed, 18 Feb 2026 10:03:42 +0000",
+      "scrape_timestamp": "2026-02-18T10:49:19.548572+00:00",
+      "content": "Advertisement SKIP ADVERTISEMENT Long before mechanical lifts, snow machines or winter resorts with après-ski comforts, hardy Alpine people trudged up icy peaks under their own power, not for sport but because it was the only way to get around. It was a necessity of rugged mountain life: Merchants wore skis to trade goods, and soldiers wore skis to fight battles. That tradition, once essential for survival, is at the heart of ski mountaineering, which makes its debut as an Olympic event on Thursday in some of the same mountains where the sport was born. In skimo, as it is known to its devotees, competitors climb uphill on skis and then on foot before racing downhill. It is a punishing exercise that requires strength, technique and endurance, which is exactly why ski mountaineers love it. “You have to be powerful, explosive, fast, and also be able to repeat these climbs over and over again,” said Cameron Smith, who is the most decorated American ski mountaineer and one of two U.S. athletes competing this week at the Winter Games in Northern Italy. “So it’s a super physically demanding sport.” Skimo is the first new Olympic winter sport since snowboarding in 1998. ( Skeleton debuted in the 1920s before becoming a fixture at the Games in 2002.) Organizers have not announced whether skimo will be included in the 2030 Games in the French Alps, but supporters of the sport say its roots and popularity in Italy, France and Switzerland help its chances. Image The transition from skiing to moving on foot can make or break an athlete’s race. Credit... Jonathon Selkowitz for The New York Times The sport is relatively young in the United States, but the International Ski Mountaineering Federation is also working to secure a spot for the event at the 2034 Winter Games in Utah. An early American champion was Nina Silitch, who embraced the sport while living in France and won two gold medals in skimo World Cups, including the first medal in the event for a North American. After returning to the United States, she founded a skimo club in Park City, Utah, and worked to expand the sport, with an eye on getting it into the Winter Games. “Slowly, these youth programs started to build support from parents and then create that structure in North America,” she said. “For it to be in the Olympics is the result of lots of people who are passionate about the sport being committed.” Smith and his U.S. teammate, Anna Gibson, qualified for this year’s Olympics after an unexpectedly dominant performance won them first place in a mixed relay World Cup event in December. Besides the mixed relay, the Olympics will have men’s and women’s individual sprints. In the sprints, competitors climb up the course on skis, take them off to continue on foot and then put the skis back on to make the final ascent, reaching a height of about 230 feet. Then they race downhill. Each sprint takes about three minutes. In the mixed relay, the female member of the pair completes two ascents, reaching 400 to 500 feet, and two descents before the male athlete goes through the same course. Then they each repeat it. That race takes about 30 minutes. One tip for viewers at home: Watch the athletes’ transitions from climbing uphill on skis to going on foot to getting back on skis and then going downhill. Racers affix skins to the bottoms of their skis to provide traction as they ascend, then must take them off and reattach their skis before heading back down. Image Skins on the bottoms of the skis help with traction on the ascent. Credit... Angelika Warmuth/Reuters Races are often won or lost based on how nimbly athletes handle the transitions, Smith said. Competitors devote part of their training exclusively to those moments, he added, describing creative setups using yoga mats and uneven steps in an effort to mimic course conditions. In warmer months, many ski mountaineers are trail runners or cyclists. The three sports share similar physical requirements, train similar muscles and fulfill a similar desire to move freely through mountains at any time of year. Smith said he got hooked on skimo in part because he could “access places that, once they’re covered in feet of snow, normally are really hard to get to.” Some of the highest peaks of the Italian Alps around the town of Bormio are so snowy that ski mountaineers are able to practice six months a year, said Marco Colombo, who is a local ski mountaineer and guide. The roughly 15-mile Stelvio Pass, the shortest route by car to neighboring Switzerland, is closed in winter. The pass, above the ski center course of the same name that will be used in Olympic skimo, is one of the places where Italian and Austro-Hungarian soldiers fought on skis during World War I, in brutal, high-altitude combat that became known as the White War. Italy’s three Olympic ski mountaineers live in nearby Albosaggia, population 3,000, where a local sports academy has nurtured young people in the sport. “There has always been a great tradition here since the postwar period,” said Alessandro Piani, the president of the academy, Polisportiva Albosaggia, which enrolls about 350 children in a range of mountain sports, including skiing and cycling. He cited the closure of many small ski lifts in the area, which forced locals to figure out how to get up the mountains under their own power. Image The women’s sprint race at the Ski Mountaineering World Cup event in Bormio, Italy, in February 2025. Credit... Antonio Calanni/Associated Press But ski climbing in pristine backwoods can be treacherous, so building the sport in places like Bormio has required clearing space for trails in snowy areas near existing downhill slopes. Colombo, the guide, helped lead a project with the local tourism bureau, where he now works, to create five skimo trails close to the foot of the Stelvio ski course. One of the practical challenges his team faced was striking a deal between go-it-alone ski mountaineers and ski lift operators, who typically charge to take skiers up the mountain and use those funds to pay for the slopes’ upkeep. The compromise was a seasonal pass that charges ski mountaineers for one lift ride a day so they can practice high up in the mountains early in winter, when there is usually not enough snow to climb up from the foothills. Smith, the American ski mountaineer, said he hopes that the sport becomes more popular as more people are exposed to it. He acknowledged that a lot of people he knows don’t understand the discipline he competes in. “Now that it’s in the Olympics, people I grew up with — youth sports coaches, people I’ve worked with — are starting to understand it,” he said. “And get more excited about it.” Patricia Mazzei is the lead reporter for The Times in Miami, covering Florida and Puerto Rico. A version of this article appears in print on , Section B , Page 10 of the New York edition with the headline: Ski Downhill? Why Not Ski Uphill? Meet Skimo,  At Its Olympic Debut. . Order Reprints | Today’s Paper | Subscribe Share full article Related Content Advertisement SKIP ADVERTISEMENT",
+      "score": 13.2048,
+      "themes": [
+        "war_conflict"
+      ],
+      "is_relevant": true,
+      "matched_keywords": [
+        "fed",
+        "war",
+        "gold"
+      ],
+      "score_normalized": 30.04,
+      "alert_threshold": 84.46
     }
   ],
-  "last_updated": "2026-02-18T10:09:34.021253+00:00",
+  "last_updated": "2026-02-18T10:51:09.147641+00:00",
   "metadata": {
     "total_runs": 0,
     "sources": [
@@ -1776,6 +1840,6 @@
     ],
     "retention_days": 7,
     "top_n": 20,
-    "alert_threshold": 84.95
+    "alert_threshold": 84.46
   }
 }

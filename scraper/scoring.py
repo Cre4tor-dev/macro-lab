@@ -52,13 +52,18 @@ KEYWORD_WEIGHTS: dict[str, float] = {
 }
 
 CRITICAL_THEMES: dict[str, list[str]] = {
-    "war_conflict": ["war", "invasion", "military strike", "airstrike", "nuclear"],
-    "market_crash": ["market crash", "circuit breaker", "trading halt", "black monday", "black swan"],
+    "war_conflict":       ["war", "invasion", "military strike", "airstrike", "nuclear"],
+    "market_crash":       ["market crash", "circuit breaker", "trading halt", "black monday", "black swan"],
     "monetary_emergency": ["emergency rate cut", "emergency meeting", "fed emergency", "extraordinary measures"],
-    "sovereign_default": ["default", "debt restructuring", "imf bailout", "sovereign debt crisis"],
-    "banking_crisis": ["bank run", "bank failure", "fdic", "systemic collapse", "bank bailout"],
-    "sanctions_major": ["sanctions", "export controls", "asset freeze", "swift ban"],
+    "sovereign_default":  ["default", "debt restructuring", "imf bailout", "sovereign debt crisis"],
+    "banking_crisis":     ["bank run", "bank failure", "fdic", "systemic collapse", "bank bailout"],
+    "sanctions_major":    ["sanctions", "export controls", "asset freeze", "swift ban"],
     "geopolitical_shock": ["taiwan strait", "nuclear threat", "escalation", "invasion"],
+    "recession":          ["recession", "gdp contraction", "economic downturn", "negative growth"],
+    "inflation":          ["inflation surge", "cpi spike", "hyperinflation", "price surge"],
+    "oil_energy":         ["oil price", "crude oil", "opec", "energy crisis", "oil shock"],
+    "market_volatility":  ["vix spike", "volatility surge", "flash crash", "market selloff", "panic selling"],
+    "central_bank":       ["rate decision", "central bank", "fomc meeting", "boj decision", "ecb decision"],
 }
 
 # BM25 parameters
@@ -72,27 +77,27 @@ def tokenize(text: str) -> list[str]:
     return re.findall(r"[a-z0-9]+(?:[\s'&][a-z0-9]+)*", text.lower())
 
 
-def compute_raw_score(title: str, content: str) -> tuple[float, list[str]]:
+def compute_raw_score(title: str, content: str) -> tuple[float, list[str], list[str]]:
     """
     Compute raw relevance score using BM25-style term weighting.
-    Returns (score, detected_themes).
+    Returns (score, detected_themes, matched_keywords).
     """
-    # Title gets 3x weight
     combined_text = (title.lower() + " ") * 3 + content.lower()
     doc_len = len(combined_text.split())
 
     score = 0.0
     matched_themes = []
+    matched_keywords = []
 
     # --- Keyword scoring (BM25-style saturation) ---
     for phrase, weight in KEYWORD_WEIGHTS.items():
         count = combined_text.count(phrase)
         if count > 0:
-            # BM25 term frequency normalization
             tf_norm = (count * (BM25_K1 + 1)) / (
                 count + BM25_K1 * (1 - BM25_B + BM25_B * doc_len / AVG_DOC_LENGTH)
             )
             score += tf_norm * weight
+            matched_keywords.append(phrase)
 
     # --- Critical theme detection ---
     for theme_name, keywords in CRITICAL_THEMES.items():
@@ -100,10 +105,10 @@ def compute_raw_score(title: str, content: str) -> tuple[float, list[str]]:
             if kw in combined_text:
                 if theme_name not in matched_themes:
                     matched_themes.append(theme_name)
-                score += 5.0  # Hard boost for critical themes
+                score += 5.0
                 break
 
-    return round(score, 4), matched_themes
+    return round(score, 4), matched_themes, matched_keywords[:15]
 
 
 def normalize_scores(articles: list[dict]) -> list[dict]:
@@ -165,9 +170,10 @@ def score_articles(articles: list[dict], existing_corpus: list[dict]) -> list[di
     """
     # Step 1: Raw scoring
     for article in articles:
-        raw, themes = compute_raw_score(article["title"], article["content"])
+        raw, themes, keywords = compute_raw_score(article["title"], article["content"])
         article["score"] = raw
         article["themes"] = themes
+        article["matched_keywords"] = keywords
 
     # Step 2: Combine new + existing for normalization
     all_articles = existing_corpus + articles
