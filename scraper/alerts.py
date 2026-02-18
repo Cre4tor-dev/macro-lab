@@ -20,7 +20,7 @@ class AlertConfig:
     TELEGRAM_TOKEN: Optional[str] = os.getenv("TELEGRAM_BOT_TOKEN")
     TELEGRAM_CHAT_ID: Optional[str] = os.getenv("TELEGRAM_CHAT_ID")
     SMTP_HOST: Optional[str] = os.getenv("SMTP_HOST")
-    SMTP_PORT: int = int(os.getenv("SMTP_PORT", "587"))
+    SMTP_PORT: int = int(os.getenv("SMTP_PORT") or "587")
     SMTP_USER: Optional[str] = os.getenv("SMTP_USER")
     SMTP_PASSWORD: Optional[str] = os.getenv("SMTP_PASSWORD")
     ALERT_EMAIL: Optional[str] = os.getenv("ALERT_EMAIL")
