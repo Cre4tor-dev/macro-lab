@@ -61,20 +61,6 @@ def run():
     # 6. Render HTML
     generate(all_articles, top_articles)
 
-    # 7. Update data.json with final scored articles
-    from storage import save_data
-    save_data({
-        "articles": all_articles,
-        "last_updated": "",
-        "metadata": {
-            "total_runs": 0,
-            "sources": list({a["source"] for a in all_articles}),
-            "retention_days": 7,
-            "top_n": TOP_N,
-            "alert_threshold": top_articles[0].get("alert_threshold") if top_articles else None,
-        }
-    })
-
     logger.info("=== Cycle complete ===")
 
 
