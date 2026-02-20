@@ -47,7 +47,7 @@ def run():
         return
 
     # 3. Score ALL articles (full corpus, dynamic normalization)
-    all_articles = score_articles(truly_new, all_articles)
+    all_articles = score_articles(all_articles, [])
 
     # 4. Get top N for display
     top_articles = get_top_articles(all_articles, top_n=TOP_N)
