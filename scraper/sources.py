@@ -76,56 +76,40 @@ def fetch_full_content(url: str, timeout: int = 10) -> str:
         return ""
 
 
-class NYTimesSource:
-    NAME = "NYTimes"
+class BloombergSource:
+    NAME = "Bloomberg"
     FEEDS = [
-        "https://rss.nytimes.com/services/xml/rss/nyt/Business.xml",
-        "https://rss.nytimes.com/services/xml/rss/nyt/Economy.xml",
-        "https://rss.nytimes.com/services/xml/rss/nyt/World.xml",
-        "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml",
+        "https://feeds.bloomberg.com/markets/news.rss",
+        "https://feeds.bloomberg.com/economics/news.rss",
+        "https://feeds.bloomberg.com/politics/news.rss",
     ]
-
     def fetch(self) -> list[dict]:
         articles = []
         for feed_url in self.FEEDS:
             try:
                 feed = feedparser.parse(feed_url)
-                for entry in feed.entries[:15]:  # Max 15 per feed
-                    pub_date = ""
-                    if hasattr(entry, "published"):
-                        pub_date = entry.published
-                    elif hasattr(entry, "updated"):
-                        pub_date = entry.updated
-
-                    link = entry.get("link", "")
+                for entry in feed.entries[:15]:
+                    pub_date = entry.get("published", entry.get("updated", ""))
                     summary = entry.get("summary", "")
-
-                    # Full content from RSS if available, else fetch page
-                    content = ""
-                    if hasattr(entry, "content"):
-                        content = entry.content[0].value
-                        content = BeautifulSoup(content, "html.parser").get_text()
-                    else:
-                        content = summary  # Start with summary, enrich later
-
                     articles.append(make_article(
                         source=self.NAME,
                         title=entry.get("title", "").strip(),
-                        link=link,
+                        link=entry.get("link", ""),
                         published_date=pub_date,
-                        content=content or summary,
+                        content=summary,
                     ))
-                    time.sleep(0.2)  # Polite delay
+                    time.sleep(0.2)
             except Exception as e:
-                logger.error(f"NYTimes feed {feed_url} error: {e}")
+                logger.error(f"Bloomberg feed {feed_url} error: {e}")
         return articles
 
 
-class ReutersSource:
-    NAME = "Reuters"
+class EconomistSource:
+    NAME = "Economist"
     FEEDS = [
-        "https://feeds.reuters.com/reuters/businessNews",
-        "https://feeds.reuters.com/reuters/topNews",
+        "https://www.economist.com/finance-and-economics/rss.xml",
+        "https://www.economist.com/business/rss.xml",
+        "https://www.economist.com/international/rss.xml",
     ]
 
     def fetch(self) -> list[dict]:
@@ -144,14 +128,14 @@ class ReutersSource:
                         content=summary,
                     ))
             except Exception as e:
-                logger.error(f"Reuters feed {feed_url} error: {e}")
+                logger.error(f"Economist feed {feed_url} error: {e}")
         return articles
 
 
 # Registry – add sources here as you expand
 ACTIVE_SOURCES = [
-    NYTimesSource(),
-    ReutersSource(),
+    BloombergSource(),
+    EconomistSource(),
 ]
 
 def deduplicate_articles(articles: list[dict]) -> list[dict]:
