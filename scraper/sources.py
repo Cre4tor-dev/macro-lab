@@ -76,12 +76,12 @@ def fetch_full_content(url: str, timeout: int = 10) -> str:
         return ""
 
 
-class BloombergSource:
-    NAME = "Bloomberg"
+class FinancialTimeSource:
+    NAME = "Financial Times"
     FEEDS = [
-        "https://feeds.bloomberg.com/markets/news.rss",
-        "https://feeds.bloomberg.com/economics/news.rss",
-        "https://feeds.bloomberg.com/politics/news.rss",
+        "https://www.ft.com/rss/home",
+        "https://www.ft.com/rss/world",
+        "https://www.ft.com/rss/markets-data",
     ]
     def fetch(self) -> list[dict]:
         articles = []
@@ -100,16 +100,15 @@ class BloombergSource:
                     ))
                     time.sleep(0.2)
             except Exception as e:
-                logger.error(f"Bloomberg feed {feed_url} error: {e}")
+                logger.error(f"Financial Times feed {feed_url} error: {e}")
         return articles
 
 
-class EconomistSource:
-    NAME = "Economist"
+class YahooFinanceSource:
+    NAME = "Yahoo Finance"
     FEEDS = [
-        "https://www.economist.com/finance-and-economics/rss.xml",
-        "https://www.economist.com/business/rss.xml",
-        "https://www.economist.com/international/rss.xml",
+        "https://finance.yahoo.com/rss/topfinstories",
+        "https://finance.yahoo.com/news/rssindex",
     ]
 
     def fetch(self) -> list[dict]:
@@ -128,14 +127,13 @@ class EconomistSource:
                         content=summary,
                     ))
             except Exception as e:
-                logger.error(f"Economist feed {feed_url} error: {e}")
+                logger.error(f"Yahoo Finance feed {feed_url} error: {e}")
         return articles
-
 
 # Registry – add sources here as you expand
 ACTIVE_SOURCES = [
-    BloombergSource(),
-    EconomistSource(),
+    YahooFinanceSource(),
+    FinancialTimeSource(),
 ]
 
 def deduplicate_articles(articles: list[dict]) -> list[dict]:
