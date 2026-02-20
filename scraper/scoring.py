@@ -363,9 +363,9 @@ def score_articles(articles: list[dict], existing_corpus: list[dict]) -> list[di
     threshold = compute_dynamic_threshold(articles)
 
     for article in articles:
-        norm = article.get("score_normalized", 0)
-        article["is_relevant"]     = norm >= threshold or len(article.get("themes", [])) > 0
-        article["alert_threshold"] = threshold
+        article["score_normalized"] = article["score_combined"]
+        article["alert_threshold"] = 5.0 # seuil fixe temporaire
+        article["is_relevant"] = article["score_normalized"] >= 5.0
 
     return articles
 

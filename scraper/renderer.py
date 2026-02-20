@@ -111,7 +111,7 @@ def _build_card(article: dict) -> str:
         preview += "&#8230;"
 
     kw_display = ", ".join(keywords[:8]) if keywords else "—"
-    tooltip = f"Score: {score:.1f}/100 | Seuil: {threshold:.1f} | Mots-cles: {kw_display}"
+    tooltip = f"Score: {score:.2f} | Seuil: {threshold:.1f} | Sentiment: {article.get('sentiment_label','?')}| Mots-cles: {kw_display}"
 
     # data-text: searchable text blob (title + content snippet, lowercased)
     searchable = (raw_title + " " + content[:600]).lower().replace('"', "").replace("\n", " ")
