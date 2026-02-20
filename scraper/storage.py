@@ -109,23 +109,34 @@ def purge_old_articles(articles: list[dict]) -> list[dict]:
     return fresh
 
 
+def _normalize_title(title: str) -> str:
+    """Lowercase + strip whitespace for title comparison."""
+    return title.lower().strip()
+
+
 def deduplicate(existing: list[dict], new_articles: list[dict]) -> list[dict]:
     """
-    Merge new articles, deduplicating by normalized URL.
-    Handles duplicates within new_articles themselves (same article in multiple feeds)
-    AND against existing articles.
+    Merge new articles, deduplicating by:
+    1. Normalized URL (catches same article with different tracking params)
+    2. Exact title match (catches same article across different feeds/sources)
     """
-    # Build seen set from existing articles
-    seen_links = {a["link"].rstrip("/").lower() for a in existing}
+    seen_links  = {a["link"].rstrip("/").lower() for a in existing}
+    seen_titles = {_normalize_title(a["title"]) for a in existing if a.get("title")}
     added = 0
 
     for article in new_articles:
-        link = article.get("link", "").rstrip("/").lower()
-        # Skip empty links or already seen links (catches intra-batch duplicates too)
-        if not link or link in seen_links:
+        link  = article.get("link", "").rstrip("/").lower()
+        title = _normalize_title(article.get("title", ""))
+
+        # Skip if URL or exact title already seen
+        if (link and link in seen_links) or (title and title in seen_titles):
             continue
+
         existing.append(article)
-        seen_links.add(link)  # Add immediately so next duplicate in same batch is caught
+        if link:
+            seen_links.add(link)
+        if title:
+            seen_titles.add(title)
         added += 1
 
     skipped = len(new_articles) - added
