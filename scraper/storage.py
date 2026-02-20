@@ -2,7 +2,7 @@
 storage.py - Sliding window persistence.
 
 - Loads/saves data.json
-- Deduplicates by URL
+- Deduplicates by URL (within new batch AND against existing)
 - Purges articles older than 7 days
 - Keeps repo size stable
 """
@@ -88,16 +88,13 @@ def purge_old_articles(articles: list[dict]) -> list[dict]:
     removed = 0
 
     for article in articles:
-        # Use scrape_timestamp as fallback if published_date is unparseable
         date_str = article.get("published_date") or article.get("scrape_timestamp", "")
         dt = _parse_date(date_str)
 
         if dt is None:
-            # Keep articles with unparseable dates (conservative)
             fresh.append(article)
             continue
 
-        # Normalize to UTC
         if dt.tzinfo is None:
             dt = dt.replace(tzinfo=timezone.utc)
 
@@ -113,18 +110,26 @@ def purge_old_articles(articles: list[dict]) -> list[dict]:
 
 
 def deduplicate(existing: list[dict], new_articles: list[dict]) -> list[dict]:
-    """Merge new articles, deduplicating by normalized URL."""
-    existing_links = {a["link"].rstrip("/").lower() for a in existing}
+    """
+    Merge new articles, deduplicating by normalized URL.
+    Handles duplicates within new_articles themselves (same article in multiple feeds)
+    AND against existing articles.
+    """
+    # Build seen set from existing articles
+    seen_links = {a["link"].rstrip("/").lower() for a in existing}
     added = 0
 
     for article in new_articles:
         link = article.get("link", "").rstrip("/").lower()
-        if link and link not in existing_links:
-            existing.append(article)
-            existing_links.add(link)
-            added += 1
+        # Skip empty links or already seen links (catches intra-batch duplicates too)
+        if not link or link in seen_links:
+            continue
+        existing.append(article)
+        seen_links.add(link)  # Add immediately so next duplicate in same batch is caught
+        added += 1
 
-    logger.info(f"Added {added} new unique articles (skipped {len(new_articles) - added} duplicates)")
+    skipped = len(new_articles) - added
+    logger.info(f"Added {added} new unique articles (skipped {skipped} duplicates)")
     return existing
 
 
@@ -139,23 +144,31 @@ def update_storage(new_articles: list[dict]) -> tuple[list[dict], list[dict]]:
     # Purge old first
     existing = purge_old_articles(existing)
 
-    # Identify existing links before merge
+    # Snapshot existing links BEFORE merge (to identify truly new ones)
     existing_links = {a["link"].rstrip("/").lower() for a in existing}
 
-    # Deduplicate
+    # Deduplicate and merge
     merged = deduplicate(existing, new_articles)
 
-    # Track which are new (for scoring)
+    # Truly new = articles that weren't in existing before this run
     truly_new = [
         a for a in new_articles
         if a.get("link", "").rstrip("/").lower() not in existing_links
     ]
+    # Also deduplicate truly_new itself (same fix)
+    seen = set()
+    truly_new_deduped = []
+    for a in truly_new:
+        link = a.get("link", "").rstrip("/").lower()
+        if link and link not in seen:
+            truly_new_deduped.append(a)
+            seen.add(link)
+    truly_new = truly_new_deduped
 
     # Update metadata
     data["articles"] = merged
     data["metadata"]["total_runs"] = data["metadata"].get("total_runs", 0) + 1
-    sources = list({a["source"] for a in merged})
-    data["metadata"]["sources"] = sources
+    data["metadata"]["sources"] = list({a["source"] for a in merged})
 
     save_data(data)
     return merged, truly_new
