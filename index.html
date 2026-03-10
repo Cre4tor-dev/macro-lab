@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Macro Lab — 2026-03-09 23:20 UTC</title>
+  <title>Macro Lab — 2026-03-10 01:11 UTC</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <style>
     :root {
@@ -70,14 +70,14 @@
   <button class="btn on" id="viewBtn" onclick="setView('top')">Top 20</button>
   <button class="btn" id="viewAllBtn" onclick="setView('all')">Historique 7j</button>
   <button class="btn" id="compactBtn" onclick="toggleCompact()">⊞ Compact</button>
-  <div class="header-meta">Mis à jour: 2026-03-09 23:20 UTC<br>Seuil alerte: 5.0 · 1329 alertes</div>
+  <div class="header-meta">Mis à jour: 2026-03-10 01:11 UTC<br>Seuil alerte: 5.0 · 1324 alertes</div>
 </header>
 
 <main>
   <div class="dashboard">
-    <div class="stat-card"><div class="stat-label">Articles 7j</div><div class="stat-value">1894</div></div>
+    <div class="stat-card"><div class="stat-label">Articles 7j</div><div class="stat-value">1890</div></div>
     <div class="stat-card"><div class="stat-label">Top sélectionnés</div><div class="stat-value">20</div></div>
-    <div class="stat-card"><div class="stat-label">Alertes critiques</div><div class="stat-value" style="color:var(--alert)">1329</div></div>
+    <div class="stat-card"><div class="stat-label">Alertes critiques</div><div class="stat-value" style="color:var(--alert)">1324</div></div>
     <div class="stat-card"><div class="stat-label">Score moyen</div><div class="stat-value">9.8</div></div>
     <div class="stat-card"><div class="stat-label">Seuil alerte</div><div class="stat-value">5.0</div></div>
   </div>
@@ -100,13 +100,13 @@
       <span class="toolbar-label" style="min-width:36px">📅 Jour</span>
       <select class="date-select" id="dateSelect" onchange="applyFilters()">
         <option value="">Tous</option>
-        <option value="2026-03-09">Mon 09 Mar</option>
+        <option value="2026-03-10">Tue 10 Mar</option>
+<option value="2026-03-09">Mon 09 Mar</option>
 <option value="2026-03-08">Sun 08 Mar</option>
 <option value="2026-03-07">Sat 07 Mar</option>
 <option value="2026-03-06">Fri 06 Mar</option>
 <option value="2026-03-05">Thu 05 Mar</option>
 <option value="2026-03-04">Wed 04 Mar</option>
-<option value="2026-03-03">Tue 03 Mar</option>
       </select>
       <span class="result-count" id="resultCount"></span>
     </div>
@@ -413,7 +413,7 @@
   </div>
 
   <div class="view" id="view-all">
-    <div class="section-title">Historique complet — 7 derniers jours (1894 articles)</div>
+    <div class="section-title">Historique complet — 7 derniers jours (1890 articles)</div>
     <div id="cards-all"><article class="card card-alert" data-score="49.80" data-date="2026-03-08" data-themes="war_conflict,monetary_emergency,recession,oil_energy,central_bank" data-text="stock market today: dow, s&p 500, nasdaq futures tumble as oil prices surge to over $100 a barrel live stock market today: dow, s&p 500, nasdaq futures tumble as oil prices surge to over $100 a barrel rian howlett and karen friar updated mon, march 9, 2026 at 7:00 am edt 2 min read cl=f es=f bz=f ym=f nq=f us stock futures tumbled but were trimming losses on monday on hopes for an easing in the oil supply squeeze, after crude prices surged past the $100-a-barrel mark amid fears of a prolonged middle east conflict. dow jones industrial average futures ( ym=f ) were down 1.2% after plunging more than 1,000 points overnight. contracts on the s&p 500 ( es=f ) and the nasdaq 100 ( nq=f ) sank 1">
   <div class="card-header">
     <span class="source-badge">Yahoo Finance</span>
@@ -762,20 +762,6 @@
   <div class="card-footer card-detail">
     <time datetime="2026-03-06">2026-03-06T21:31:17Z</time>
     <span class="kw-hint">🔑 inflation, volatility, earnings, war, conflict</span>
-  </div>
-</article>
-<article class="card card-alert" data-score="38.47" data-date="2026-03-02" data-themes="war_conflict,oil_energy" data-text="stock market today: dow, s&p 500, nasdaq futures plunge as fresh strikes intensify iran conflict live stock market today: dow, s&p 500, nasdaq futures plunge as fresh strikes intensify iran conflict rian howlett and karen friar updated tue, march 3, 2026 at 5:35 am mst 2 min read es=f ym=f bz=f nq=f cl=f us stock futures sold off on tuesday after israel and us jets launched new strikes on iran, as the widening conflict stoked worries about a drawn-out regional war. contracts on the s&p 500 ( es=f ) dived 1.3%, while those on the dow jones industrial average ( ym=f ) pulled back 1.4%. nasdaq 100 ( nq=f ) futures led the retreat, dropping roughly 1.7%, as oil prices continued to rally on co">
-  <div class="card-header">
-    <span class="source-badge">Yahoo Finance</span>
-    <span class="score-pill" style="background:color-mix(in srgb,#f0883e 18%,transparent);color:#f0883e;border-color:color-mix(in srgb,#f0883e 35%,transparent)" title="Score: 38.47 | Seuil: 5.0 | Sentiment: Extreme Negative| Mots-cles: rate cut, inflation, stock market, s&p 500, nasdaq, volatility, earnings, war">38.5 <sup>ℹ</sup></span>
-    <span class="theme-tag">⚔️ War/Conflict</span><span class="theme-tag">🛢️ Oil/Energy</span>
-    <span class="alert-badge">🚨 ALERT</span>
-  </div>
-  <h3 class="card-title"><a href="https://finance.yahoo.com/news/live/stock-market-today-dow-sp-500-nasdaq-futures-plunge-as-fresh-strikes-intensify-iran-conflict-235309696.html" target="_blank" rel="noopener">Stock market today: Dow, S&P 500, Nasdaq futures plunge as fresh strikes intensify Iran conflict</a></h3>
-  <p class="preview card-detail">LIVE Stock market today: Dow, S&P 500, Nasdaq futures plunge as fresh strikes intensify Iran conflict Rian Howlett and Karen Friar Updated Tue, March 3, 2026 at 5:35 AM MST 2 min read ES=F YM=F BZ=F NQ=F CL=F US stock futures sold off on Tuesday after Israel and US jets launched new strikes on Iran,&#8230;</p>
-  <div class="card-footer card-detail">
-    <time datetime="2026-03-02">2026-03-02T23:53:09Z</time>
-    <span class="kw-hint">🔑 rate cut, inflation, stock market, s&p 500, nasdaq</span>
   </div>
 </article>
 <article class="card card-alert" data-score="38.45" data-date="2026-03-03" data-themes="war_conflict,geopolitical_shock,oil_energy" data-text="stock market today: dow, s&p 500, nasdaq futures rise as iran reportedly calls for talks to end conflict live stock market today: dow, s&p 500, nasdaq futures rise as iran reportedly calls for talks to end conflict rian howlett and karen friar updated wed, march 4, 2026 at 5:33 am pst 2 min read ^ndx es=f nq=f ym=f ^ixic us stock futures edged higher on wednesday following stronger-than-expected private payrolls data and a report that iran has indirectly approached the us to discuss terms for ending the escalating conflict. contracts on the s&p 500 ( es=f ) rose 0.3% and the nasdaq 100 ( nq=f ) gained 0.5%. dow jones industrial average ( ym=f ) futures added 0.2% after the major us benchmarks clo">
@@ -6168,20 +6154,6 @@
     <span class="kw-hint">🔑 war, nato</span>
   </div>
 </article>
-<article class="card card-alert" data-score="13.55" data-date="2026-03-03" data-themes="war_conflict" data-text="1 high-yield dividend stock for income that keeps growing 1 high-yield dividend stock for income that keeps growing oil pipeline through forest by cozyta via istock amit singh mon, march 2, 2026 at 7:30 pm est 3 min read enb investors seeking dependable passive income that keeps growing over time could consider high-yield dividend stocks with the ability to increase their distributions year after year. the reliable dividend payers and growers are backed by resilient business models generating steady earnings and cash flows across economic cycles. in this context, enbridge (enb) is a top choice for passive income investors. the company has a proven hi">
-  <div class="card-header">
-    <span class="source-badge">Yahoo Finance</span>
-    <span class="score-pill" style="background:color-mix(in srgb,#8b949e 18%,transparent);color:#8b949e;border-color:color-mix(in srgb,#8b949e 35%,transparent)" title="Score: 13.55 | Seuil: 5.0 | Sentiment: Positive| Mots-cles: earnings, war, oil, geopolitical">13.5 <sup>ℹ</sup></span>
-    <span class="theme-tag">⚔️ War/Conflict</span>
-    <span class="alert-badge">🚨 ALERT</span>
-  </div>
-  <h3 class="card-title"><a href="https://finance.yahoo.com/news/1-high-yield-dividend-stock-003002711.html" target="_blank" rel="noopener">1 High-Yield Dividend Stock for Income That Keeps Growing</a></h3>
-  <p class="preview card-detail">1 High-Yield Dividend Stock for Income That Keeps Growing Oil pipeline through forest by cozyta via iStock Amit Singh Mon, March 2, 2026 at 7:30 PM EST 3 min read ENB Investors seeking dependable passive income that keeps growing over time could consider high-yield dividend stocks with the ability t&#8230;</p>
-  <div class="card-footer card-detail">
-    <time datetime="2026-03-03">2026-03-03T00:30:02Z</time>
-    <span class="kw-hint">🔑 earnings, war, oil, geopolitical</span>
-  </div>
-</article>
 <article class="card card-alert" data-score="13.55" data-date="2026-03-04" data-themes="war_conflict" data-text="fuel tech (ftek) q4 2025 earnings call transcript fuel tech (ftek) q4 2025 earnings call transcript motley fool transcribing, the motley fool wed, march 4, 2026 at 11:21 am est 30 min read ftek image source: the motley fool. date wednesday, march 4, 2026 at 10 a.m. et call participants chairman, president, and chief executive officer — vincent j. arnone chief financial officer — ellen t. albrecht full conference call transcript operator: greetings and welcome to fuel tech, inc.'s 2025 fourth quarter and full year conference call and financial results conference call and webcast. at this time, all participants are in a listen-only mode. a ques">
   <div class="card-header">
     <span class="source-badge">Yahoo Finance</span>
@@ -8198,6 +8170,20 @@
     <span class="kw-hint">🔑 earnings, war, oil, tariff</span>
   </div>
 </article>
+<article class="card card-alert" data-score="12.03" data-date="2026-03-08" data-themes="war_conflict" data-text="wall street’s worry about marvell losing customers was overblown wall street’s worry about marvell losing customers was overblown rich duprey sun, march 8, 2026 at 9:16 am edt 5 min read mrvl amzn msft avgo quick read marvell technology ( mrvl ) fell 7% then 20% on fears of losing amazon and microsoft to broadcom or alchip . q4 data-center revenue hit $1.5b with 40% growth projected for fiscal 2027. marvell’s q4 earnings showed strong 1.6t bookings and expanding design wins, proving hyperscalers are deepening commitments rather than defecting. the analyst who called nvidia in 2010 just named his top 10 ai stocks. get them here free . two months ago, wall st">
+  <div class="card-header">
+    <span class="source-badge">Yahoo Finance</span>
+    <span class="score-pill" style="background:color-mix(in srgb,#8b949e 18%,transparent);color:#8b949e;border-color:color-mix(in srgb,#8b949e 35%,transparent)" title="Score: 12.03 | Seuil: 5.0 | Sentiment: Positive| Mots-cles: nasdaq, earnings, war">12.0 <sup>ℹ</sup></span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+    <span class="alert-badge">🚨 ALERT</span>
+  </div>
+  <h3 class="card-title"><a href="https://finance.yahoo.com/news/wall-street-worry-marvell-losing-131646271.html" target="_blank" rel="noopener">Wall Street’s Worry About Marvell Losing Customers Was Overblown</a></h3>
+  <p class="preview card-detail">Wall Street’s Worry About Marvell Losing Customers Was Overblown Rich Duprey Sun, March 8, 2026 at 9:16 AM EDT 5 min read MRVL AMZN MSFT AVGO Quick Read Marvell Technology ( MRVL ) fell 7% then 20% on fears of losing Amazon and Microsoft to Broadcom or Alchip . Q4 data-center revenue hit $1.5B with &#8230;</p>
+  <div class="card-footer card-detail">
+    <time datetime="2026-03-08">2026-03-08T13:16:46Z</time>
+    <span class="kw-hint">🔑 nasdaq, earnings, war</span>
+  </div>
+</article>
 <article class="card card-alert" data-score="12.02" data-date="2026-03-06" data-themes="war_conflict" data-text="gilts sell off sharply on fears of inflation from iran war gilts sell off sharply on fears of inflation from iran war subscribe to unlock this article try unlimited access only undefined for 4 weeks then undefined per month. complete digital access to quality ft journalism on any device. cancel anytime during your trial. keep reading for undefined what’s included global news & analysis expert opinion ft app on android & ios first ft: the day’s biggest stories 20+ curated newsletters follow topics & set alerts with myft ft videos & podcasts 10 additional monthly gift articles to share lex: ft’s flagship investment column 15+ premium newsletters from le">
   <div class="card-header">
     <span class="source-badge">Financial Times</span>
@@ -8308,20 +8294,6 @@
   <div class="card-footer card-detail">
     <time datetime="2026-03-03">2026-03-03T07:21:13Z</time>
     <span class="kw-hint">🔑 nasdaq, earnings, war, tariff</span>
-  </div>
-</article>
-<article class="card card-alert" data-score="12.00" data-date="2026-03-02" data-themes="war_conflict" data-text="asana (asan) q4 2026 earnings call transcript asana (asan) q4 2026 earnings call transcript motley fool transcribing, the motley fool mon, march 2, 2026 at 6:25 pm est 43 min read asan image source: the motley fool. date monday, march 2, 2026 at 4:30 p.m. et call participants chief executive officer — dan rogers chief financial officer — sonalee parekh incoming chief financial officer — aziz meghji vice president, investor relations — eva leung full conference call transcript eva leung: and thank you for joining us on today's conference call to discuss the financial results for asana, inc.'s fourth quarter and fiscal year 2026. with me on">
-  <div class="card-header">
-    <span class="source-badge">Yahoo Finance</span>
-    <span class="score-pill" style="background:color-mix(in srgb,#8b949e 18%,transparent);color:#8b949e;border-color:color-mix(in srgb,#8b949e 35%,transparent)" title="Score: 12.00 | Seuil: 5.0 | Sentiment: Positive| Mots-cles: earnings, war">12.0 <sup>ℹ</sup></span>
-    <span class="theme-tag">⚔️ War/Conflict</span>
-    <span class="alert-badge">🚨 ALERT</span>
-  </div>
-  <h3 class="card-title"><a href="https://finance.yahoo.com/news/asana-asan-q4-2026-earnings-232506003.html" target="_blank" rel="noopener">Asana (ASAN) Q4 2026 Earnings Call Transcript</a></h3>
-  <p class="preview card-detail">Asana (ASAN) Q4 2026 Earnings Call Transcript Motley Fool Transcribing, The Motley Fool Mon, March 2, 2026 at 6:25 PM EST 43 min read ASAN Image source: The Motley Fool. DATE Monday, March 2, 2026 at 4:30 p.m. ET CALL PARTICIPANTS Chief Executive Officer — Dan Rogers Chief Financial Officer — Sonale&#8230;</p>
-  <div class="card-footer card-detail">
-    <time datetime="2026-03-02">2026-03-02T23:25:06Z</time>
-    <span class="kw-hint">🔑 earnings, war</span>
   </div>
 </article>
 <article class="card card-alert" data-score="11.99" data-date="2026-03-05" data-themes="war_conflict" data-text="jim cramer considers workday’s new ceo “terrific” jim cramer considers workday’s new ceo “terrific” syeda seirut javed thu, march 5, 2026 at 3:45 am pst 2 min read wday adbe crm now workday, inc. (nasdaq: wday ) is one of the stocks on jim cramer’s radar . cramer highlighted the ai threat for companies like workday, as he stated: let’s talk about what’s really going on. something that could change the focus of the entire market. you know that the tech stocks have been very troubled of late. enough with the magnificent seven. we’ve got this big four thing going on, adobe, salesforce, servicenow, and workday. these are once popular enterprise s">
@@ -8660,6 +8632,20 @@
     <span class="kw-hint">🔑 earnings, war</span>
   </div>
 </article>
+<article class="card card-alert" data-score="11.80" data-date="2026-03-10" data-themes="war_conflict" data-text="donald trump says iran war will be over ‘very soon’ middle east war live: oil slides and stocks rebound subscribe to unlock this article try unlimited access only undefined for 4 weeks then undefined per month. complete digital access to quality ft journalism on any device. cancel anytime during your trial. keep reading for undefined what’s included global news & analysis expert opinion ft app on android & ios first ft: the day’s biggest stories 20+ curated newsletters follow topics & set alerts with myft ft videos & podcasts 10 additional monthly gift articles to share lex: ft’s flagship investment column 15+ premium newsletters from leading e">
+  <div class="card-header">
+    <span class="source-badge">Financial Times</span>
+    <span class="score-pill" style="background:color-mix(in srgb,#8b949e 18%,transparent);color:#8b949e;border-color:color-mix(in srgb,#8b949e 35%,transparent)" title="Score: 11.80 | Seuil: 5.0 | Sentiment: Neutral| Mots-cles: war, middle east, oil">11.8 <sup>ℹ</sup></span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+    <span class="alert-badge">🚨 ALERT</span>
+  </div>
+  <h3 class="card-title"><a href="https://www.ft.com/content/6fda3451-8fd3-4ec1-8ab2-17f33291ec5e" target="_blank" rel="noopener">Donald Trump says Iran war will be over ‘very soon’</a></h3>
+  <p class="preview card-detail">Middle East war live: Oil slides and stocks rebound Subscribe to unlock this article Try unlimited access Only undefined for 4 weeks Then undefined per month. Complete digital access to quality FT journalism on any device. Cancel anytime during your trial. Keep reading for undefined What’s included &#8230;</p>
+  <div class="card-footer card-detail">
+    <time datetime="2026-03-10">Tue, 10 Mar 2026 00:07:09</time>
+    <span class="kw-hint">🔑 war, middle east, oil</span>
+  </div>
+</article>
 <article class="card card-alert" data-score="11.80" data-date="2026-03-07" data-themes="war_conflict" data-text="analysts see 32% upside to roku, inc. (roku) analysts see 32% upside to roku, inc. (roku) ashar jawad sat, march 7, 2026 at 5:09 am mst 2 min read roku roku, inc. (nasdaq:roku) is among the ark invest stock portfolio: top 10 stock picks for 2026 . as of the close on march 5, it sports a strong buy rating with an upside potential of 32%. recent updates include seaport global analyst david joice, who on february 15 kept a buy rating on the stock with a price target of $130. earlier on february 13, rosenblatt upgraded roku, inc. (nasdaq:roku) to buy from neutral and lifted its price target to $118 from $106. according to tipranks, the firm’">
   <div class="card-header">
     <span class="source-badge">Yahoo Finance</span>
@@ -8868,6 +8854,20 @@
   <div class="card-footer card-detail">
     <time datetime="2026-03-08">2026-03-08T20:50:00Z</time>
     <span class="kw-hint">🔑 s&p 500, nasdaq, earnings, war</span>
+  </div>
+</article>
+<article class="card card-alert" data-score="11.64" data-date="2026-03-08" data-themes="war_conflict" data-text="are student loans worth it? are student loans worth it? financial planners have a guideline for student loans: your total shouldn't exceed your first-year salary. credit: whitebalance.space / getty images dara-abasi ita sun, march 8, 2026 at 9:16 am edt 3 min read key takeaways student loan debt should not exceed a graduate's expected first-year salary to remain manageable. federal student loans are generally safer than private loans due to fixed rates and repayment options. starting at a community college or appealing financial aid can significantly reduce student debt. a parent posted a question in reddit's studentloan">
+  <div class="card-header">
+    <span class="source-badge">Yahoo Finance</span>
+    <span class="score-pill" style="background:color-mix(in srgb,#8b949e 18%,transparent);color:#8b949e;border-color:color-mix(in srgb,#8b949e 35%,transparent)" title="Score: 11.64 | Seuil: 5.0 | Sentiment: Negative| Mots-cles: fed, interest rate, war">11.6 <sup>ℹ</sup></span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+    <span class="alert-badge">🚨 ALERT</span>
+  </div>
+  <h3 class="card-title"><a href="https://finance.yahoo.com/news/student-loans-worth-131600557.html" target="_blank" rel="noopener">Are Student Loans Worth It?</a></h3>
+  <p class="preview card-detail">Are Student Loans Worth It? Financial planners have a guideline for student loans: Your total shouldn't exceed your first-year salary. Credit: whitebalance.space / Getty Images Dara-Abasi Ita Sun, March 8, 2026 at 9:16 AM EDT 3 min read Key Takeaways Student loan debt should not exceed a graduate's &#8230;</p>
+  <div class="card-footer card-detail">
+    <time datetime="2026-03-08">2026-03-08T13:16:00Z</time>
+    <span class="kw-hint">🔑 fed, interest rate, war</span>
   </div>
 </article>
 <article class="card card-alert" data-score="11.62" data-date="2026-03-07" data-themes="war_conflict" data-text="the trade desk vs. applovin: which ai-powered adtech stock is the better buy? the trade desk vs. applovin: which ai-powered adtech stock is the better buy? adam levy, the motley fool sat, march 7, 2026 at 8:56 am pst 5 min read app amzn meta nvda intc taking on trillion-dollar companies is no easy feat. that's evident in the recent performances of both the trade desk (nasdaq: ttd) and applovin (nasdaq: app) . the two adtech companies have seen their share prices slashed amid competitive pressures from tech giants amazon (nasdaq: amzn) and meta platforms (nasdaq: meta) . while growing competition from deep-pocketed tech giants with established relationships with millions">
@@ -9528,6 +9528,20 @@
     <span class="kw-hint">🔑 nasdaq, middle east, oil, tariff</span>
   </div>
 </article>
+<article class="card card-alert" data-score="11.27" data-date="2026-03-08" data-themes="war_conflict" data-text="dutch bros plans to more than triple its store count in existing markets. the growth story goes much further than that. dutch bros plans to more than triple its store count in existing markets. the growth story goes much further than that. bryan white, the motley fool sun, march 8, 2026 at 9:25 am edt 4 min read bros nvda intc will ai create the world's first trillionaire? our team just released a report on the one little-known company, called an indispensable monopoly providing the critical technology nvidia and intel both need. continue » dutch bros (nyse: bros) is not a typical restaurant stock. with most companies, investors have to worry about market saturation. not with dutch bros. the coffee chain, bas">
+  <div class="card-header">
+    <span class="source-badge">Yahoo Finance</span>
+    <span class="score-pill" style="background:color-mix(in srgb,#8b949e 18%,transparent);color:#8b949e;border-color:color-mix(in srgb,#8b949e 35%,transparent)" title="Score: 11.27 | Seuil: 5.0 | Sentiment: Positive| Mots-cles: s&p 500, earnings, war">11.3 <sup>ℹ</sup></span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+    <span class="alert-badge">🚨 ALERT</span>
+  </div>
+  <h3 class="card-title"><a href="https://finance.yahoo.com/news/dutch-bros-plans-more-triple-132500285.html" target="_blank" rel="noopener">Dutch Bros Plans to More Than Triple Its Store Count in Existing Markets. The Growth Story Goes Much Further Than That.</a></h3>
+  <p class="preview card-detail">Dutch Bros Plans to More Than Triple Its Store Count in Existing Markets. The Growth Story Goes Much Further Than That. Bryan White, The Motley Fool Sun, March 8, 2026 at 9:25 AM EDT 4 min read BROS NVDA INTC Will AI create the world's first trillionaire? Our team just released a report on the one l&#8230;</p>
+  <div class="card-footer card-detail">
+    <time datetime="2026-03-08">2026-03-08T13:25:00Z</time>
+    <span class="kw-hint">🔑 s&p 500, earnings, war</span>
+  </div>
+</article>
 <article class="card card-alert" data-score="11.26" data-date="2026-03-04" data-themes="war_conflict" data-text="jim cramer notes that corning is one of the stocks he is “most excited about” jim cramer notes that corning is one of the stocks he is “most excited about” syeda seirut javed wed, march 4, 2026 at 3:48 pm est 2 min read glw ^gspc corning incorporated (nyse: glw ) is one of the s&p 500 stocks that jim cramer shared his take on . cramer highlighted that the stock is one of the charitable trust holdings, as he stated: february’s second-best performer… is one of the ones that i am most excited about, and that is corning. it’s a stock we own for the charitable trust. it was up 45.7% last year. now, this company’s a glass specialist. it’s been printing money as it makes fiber">
   <div class="card-header">
     <span class="source-badge">Yahoo Finance</span>
@@ -9764,20 +9778,6 @@
   <div class="card-footer card-detail">
     <time datetime="2026-03-03">2026-03-03T07:22:28Z</time>
     <span class="kw-hint">🔑 nasdaq, war, tariff</span>
-  </div>
-</article>
-<article class="card card-alert" data-score="11.04" data-date="2026-03-03" data-themes="war_conflict" data-text="mobile infrastructure corporation q4 2025 earnings call summary mobile infrastructure corporation q4 2025 earnings call summary moby intelligence mon, march 2, 2026 at 8:03 pm est 3 min read beep mobile infrastructure corporation q4 2025 earnings call summary - moby strategic operational shift and portfolio optimization management intentionally prioritized occupancy over pricing in 2025, adopting a 'volume first, rate second' playbook to stabilize assets and win market share. contract parking grew 10% year-over-year to 6,700 contracts, providing a stable recurring revenue base that now represents 35% of management agreement revenue. residential parking con">
-  <div class="card-header">
-    <span class="source-badge">Yahoo Finance</span>
-    <span class="score-pill" style="background:color-mix(in srgb,#8b949e 18%,transparent);color:#8b949e;border-color:color-mix(in srgb,#8b949e 35%,transparent)" title="Score: 11.04 | Seuil: 5.0 | Sentiment: Positive| Mots-cles: earnings, war">11.0 <sup>ℹ</sup></span>
-    <span class="theme-tag">⚔️ War/Conflict</span>
-    <span class="alert-badge">🚨 ALERT</span>
-  </div>
-  <h3 class="card-title"><a href="https://finance.yahoo.com/news/mobile-infrastructure-corporation-q4-2025-010321152.html" target="_blank" rel="noopener">Mobile Infrastructure Corporation Q4 2025 Earnings Call Summary</a></h3>
-  <p class="preview card-detail">Mobile Infrastructure Corporation Q4 2025 Earnings Call Summary Moby Intelligence Mon, March 2, 2026 at 8:03 PM EST 3 min read BEEP Mobile Infrastructure Corporation Q4 2025 Earnings Call Summary - Moby Strategic Operational Shift and Portfolio Optimization Management intentionally prioritized occup&#8230;</p>
-  <div class="card-footer card-detail">
-    <time datetime="2026-03-03">2026-03-03T01:03:21Z</time>
-    <span class="kw-hint">🔑 earnings, war</span>
   </div>
 </article>
 <article class="card card-alert" data-score="11.03" data-date="2026-03-03" data-themes="war_conflict" data-text="tariff-refund seekers flock to a little-known us court with big-case experience tariff-refund seekers flock to a little-known us court with big-case experience a driver of fedex stands with packages near a delivery truck during black friday preparations in the georgetown neighborhood of washington, u.s., november 26, 2024. reuters/benoit tessier · reuters reuters tue, march 3, 2026 at 5:12 am cst 4 min read fdx or.pa march 3 (reuters) - importers seeking their share of more than $130 billion in tariff refunds are flocking to a little-known u.s. trade court, which must now figure out how to deal with what is expected to be an explosion of cases. multinationals such as fede">
@@ -10660,20 +10660,6 @@
   <div class="card-footer card-detail">
     <time datetime="2026-03-09">2026-03-09T13:00:01Z</time>
     <span class="kw-hint">🔑 stock market, earnings, war</span>
-  </div>
-</article>
-<article class="card card-alert" data-score="10.39" data-date="2026-03-03" data-themes="war_conflict" data-text="gaia, inc. q4 2025 earnings call summary gaia, inc. q4 2025 earnings call summary moby intelligence mon, march 2, 2026 at 8:06 pm est 3 min read gaia gaia, inc. q4 2025 earnings call summary - moby strategic pivot and operational efficiency revenue growth of 11% in 2025 was primarily driven by a combination of increased member counts and higher average revenue per user (arpu). management is intentionally concentrating capital on the direct platform because third-party distributors do not support the ai and community features central to gaia's next phase. direct members demonstrate significantly higher value, yielding approximately do">
-  <div class="card-header">
-    <span class="source-badge">Yahoo Finance</span>
-    <span class="score-pill" style="background:color-mix(in srgb,#8b949e 18%,transparent);color:#8b949e;border-color:color-mix(in srgb,#8b949e 35%,transparent)" title="Score: 10.39 | Seuil: 5.0 | Sentiment: Positive| Mots-cles: earnings, war">10.4 <sup>ℹ</sup></span>
-    <span class="theme-tag">⚔️ War/Conflict</span>
-    <span class="alert-badge">🚨 ALERT</span>
-  </div>
-  <h3 class="card-title"><a href="https://finance.yahoo.com/news/gaia-inc-q4-2025-earnings-010622010.html" target="_blank" rel="noopener">Gaia, Inc. Q4 2025 Earnings Call Summary</a></h3>
-  <p class="preview card-detail">Gaia, Inc. Q4 2025 Earnings Call Summary Moby Intelligence Mon, March 2, 2026 at 8:06 PM EST 3 min read GAIA Gaia, Inc. Q4 2025 Earnings Call Summary - Moby Strategic Pivot and Operational Efficiency Revenue growth of 11% in 2025 was primarily driven by a combination of increased member counts and h&#8230;</p>
-  <div class="card-footer card-detail">
-    <time datetime="2026-03-03">2026-03-03T01:06:22Z</time>
-    <span class="kw-hint">🔑 earnings, war</span>
   </div>
 </article>
 <article class="card card-alert" data-score="10.38" data-date="2026-03-04" data-themes="war_conflict" data-text="broadcom sees over $100 billion in ai chip sales by 2027 on robust custom chip demand broadcom sees over $100 billion in ai chip sales by 2027 on robust custom chip demand jaspreet singh updated thu, march 5, 2026 at 4:12 am est 3 min read avgo goog nvda msft amzn by jaspreet singh march 4 (reuters) - chip designer broadcom ( avgo ) on wednesday projected its artificial intelligence chip revenue would exceed $100 billion next year, signaling surging demand for custom chips in a market dominated by nvidia ( nvda ). the company's share price rose nearly 6% in premarket trading on thursday ‌after it also announced a new share repurchase program of up to $10 billion through the end">
@@ -12118,20 +12104,6 @@
     <span class="kw-hint">🔑 federal reserve, fed, interest rate, war</span>
   </div>
 </article>
-<article class="card card-alert" data-score="9.55" data-date="2026-03-03" data-themes="war_conflict" data-text="stronger uk public finances can withstand iran war shock, reeves to say stronger uk public finances can withstand iran war shock, reeves to say subscribe to unlock this article try unlimited access only undefined for 4 weeks then undefined per month. complete digital access to quality ft journalism on any device. cancel anytime during your trial. keep reading for undefined what’s included global news & analysis expert opinion ft app on android & ios first ft: the day’s biggest stories 20+ curated newsletters follow topics & set alerts with myft ft videos & podcasts 10 additional monthly gift articles to share lex: ft’s flagship investment column 15+ premium newsle">
-  <div class="card-header">
-    <span class="source-badge">Financial Times</span>
-    <span class="score-pill" style="background:color-mix(in srgb,#8b949e 18%,transparent);color:#8b949e;border-color:color-mix(in srgb,#8b949e 35%,transparent)" title="Score: 9.55 | Seuil: 5.0 | Sentiment: Negative| Mots-cles: war">9.5 <sup>ℹ</sup></span>
-    <span class="theme-tag">⚔️ War/Conflict</span>
-    <span class="alert-badge">🚨 ALERT</span>
-  </div>
-  <h3 class="card-title"><a href="https://www.ft.com/content/0f8b7d9f-eb13-41d3-890d-49a6bbcf3594" target="_blank" rel="noopener">Stronger UK public finances can withstand Iran war shock, Reeves to say</a></h3>
-  <p class="preview card-detail">Stronger UK public finances can withstand Iran war shock, Reeves to say Subscribe to unlock this article Try unlimited access Only undefined for 4 weeks Then undefined per month. Complete digital access to quality FT journalism on any device. Cancel anytime during your trial. Keep reading for undefi&#8230;</p>
-  <div class="card-footer card-detail">
-    <time datetime="2026-03-03">Tue, 03 Mar 2026 00:01:00</time>
-    <span class="kw-hint">🔑 war</span>
-  </div>
-</article>
 <article class="card card-alert" data-score="9.54" data-date="2026-03-08" data-themes="war_conflict" data-text="robinhood's $695 platinum card targets american express's most profitable franchise, bofa warns robinhood's $695 platinum card targets american express's most profitable franchise, bofa warns piero cingari sun, march 8, 2026 at 2:00 pm edt 4 min read hood axp something unusual is unfolding in the super-premium credit card market, and american express company is suddenly facing a new challenger from an unexpected corner of finance. trading platform robinhood markets inc. is launching a $695-per-year platinum card, directly challenging the high-margin credit card segment that has long been dominated by american express and its flagship platinum card. wall street took notice quickly. in a n">
   <div class="card-header">
     <span class="source-badge">Yahoo Finance</span>
@@ -13420,20 +13392,6 @@
     <span class="kw-hint">🔑 war</span>
   </div>
 </article>
-<article class="card card-alert" data-score="8.68" data-date="2026-03-03" data-themes="war_conflict" data-text="iran executes khamenei’s plan to spread regional war iran executes khamenei’s plan to spread regional war subscribe to unlock this article try unlimited access only undefined for 4 weeks then undefined per month. complete digital access to quality ft journalism on any device. cancel anytime during your trial. keep reading for undefined what’s included global news & analysis expert opinion ft app on android & ios first ft: the day’s biggest stories 20+ curated newsletters follow topics & set alerts with myft ft videos & podcasts 10 additional monthly gift articles to share lex: ft’s flagship investment column 15+ premium newsletters from leading ">
-  <div class="card-header">
-    <span class="source-badge">Financial Times</span>
-    <span class="score-pill" style="background:color-mix(in srgb,#8b949e 18%,transparent);color:#8b949e;border-color:color-mix(in srgb,#8b949e 35%,transparent)" title="Score: 8.68 | Seuil: 5.0 | Sentiment: Neutral| Mots-cles: war">8.7 <sup>ℹ</sup></span>
-    <span class="theme-tag">⚔️ War/Conflict</span>
-    <span class="alert-badge">🚨 ALERT</span>
-  </div>
-  <h3 class="card-title"><a href="https://www.ft.com/content/02eb660a-3c80-4d6b-9e58-e7411278b0f1" target="_blank" rel="noopener">Iran executes Khamenei’s plan to spread regional war</a></h3>
-  <p class="preview card-detail">Iran executes Khamenei’s plan to spread regional war Subscribe to unlock this article Try unlimited access Only undefined for 4 weeks Then undefined per month. Complete digital access to quality FT journalism on any device. Cancel anytime during your trial. Keep reading for undefined What’s included&#8230;</p>
-  <div class="card-footer card-detail">
-    <time datetime="2026-03-03">Tue, 03 Mar 2026 00:00:00</time>
-    <span class="kw-hint">🔑 war</span>
-  </div>
-</article>
 <article class="card card-alert" data-score="8.68" data-date="2026-03-03" data-themes="war_conflict" data-text="iran war presents a different script for markets iran war presents a different script for markets subscribe to unlock this article try unlimited access only undefined for 4 weeks then undefined per month. complete digital access to quality ft journalism on any device. cancel anytime during your trial. keep reading for undefined what’s included global news & analysis expert opinion ft app on android & ios first ft: the day’s biggest stories 20+ curated newsletters follow topics & set alerts with myft ft videos & podcasts 10 additional monthly gift articles to share lex: ft’s flagship investment column 15+ premium newsletters from leading expe">
   <div class="card-header">
     <span class="source-badge">Financial Times</span>
@@ -13473,6 +13431,20 @@
   <p class="preview card-detail">Global trading system under ‘unsustainable’ pressure warns UK Subscribe to unlock this article Try unlimited access Only undefined for 4 weeks Then undefined per month. Complete digital access to quality FT journalism on any device. Cancel anytime during your trial. Keep reading for undefined What’s&#8230;</p>
   <div class="card-footer card-detail">
     <time datetime="2026-03-09">Mon, 09 Mar 2026 05:00:12</time>
+    <span class="kw-hint">🔑 war</span>
+  </div>
+</article>
+<article class="card card-alert" data-score="8.68" data-date="2026-03-10" data-themes="war_conflict" data-text="trump says iran war will end ‘very soon’ donald trump says iran war will end ‘very soon’ subscribe to unlock this article try unlimited access only undefined for 4 weeks then undefined per month. complete digital access to quality ft journalism on any device. cancel anytime during your trial. keep reading for undefined what’s included global news & analysis expert opinion ft app on android & ios first ft: the day’s biggest stories 20+ curated newsletters follow topics & set alerts with myft ft videos & podcasts 10 additional monthly gift articles to share lex: ft’s flagship investment column 15+ premium newsletters from leading exper">
+  <div class="card-header">
+    <span class="source-badge">Financial Times</span>
+    <span class="score-pill" style="background:color-mix(in srgb,#8b949e 18%,transparent);color:#8b949e;border-color:color-mix(in srgb,#8b949e 35%,transparent)" title="Score: 8.68 | Seuil: 5.0 | Sentiment: Neutral| Mots-cles: war">8.7 <sup>ℹ</sup></span>
+    <span class="theme-tag">⚔️ War/Conflict</span>
+    <span class="alert-badge">🚨 ALERT</span>
+  </div>
+  <h3 class="card-title"><a href="https://www.ft.com/content/e6f166b1-c5a1-49bb-9dd5-2d0200f8afca" target="_blank" rel="noopener">Trump says Iran war will end ‘very soon’</a></h3>
+  <p class="preview card-detail">Donald Trump says Iran war will end ‘very soon’ Subscribe to unlock this article Try unlimited access Only undefined for 4 weeks Then undefined per month. Complete digital access to quality FT journalism on any device. Cancel anytime during your trial. Keep reading for undefined What’s included Glob&#8230;</p>
+  <div class="card-footer card-detail">
+    <time datetime="2026-03-10">Tue, 10 Mar 2026 00:55:25</time>
     <span class="kw-hint">🔑 war</span>
   </div>
 </article>
@@ -14050,20 +14022,6 @@
     <span class="kw-hint">🔑 war</span>
   </div>
 </article>
-<article class="card card-alert" data-score="8.39" data-date="2026-03-03" data-themes="war_conflict" data-text="apollo, leon black sued for allegedly concealing epstein business ties from shareholders apollo, leon black sued for allegedly concealing epstein business ties from shareholders file photo: apollo global management's logo at their office in tokyo, japan october 20, 2025. reuters/miho uranaka/file photo · reuters by jonathan stempel and isla binnie mon, march 2, 2026 at 7:46 pm est 3 min read apo by jonathan stempel and isla binnie new york, march 2 (reuters) - shareholders sued apollo global management and its billionaire co-founders leon black and marc rowan on monday in a proposed class action for allegedly ‌defrauding them for nearly five years about the private capital firm's ">
-  <div class="card-header">
-    <span class="source-badge">Yahoo Finance</span>
-    <span class="score-pill" style="background:color-mix(in srgb,#8b949e 18%,transparent);color:#8b949e;border-color:color-mix(in srgb,#8b949e 35%,transparent)" title="Score: 8.39 | Seuil: 5.0 | Sentiment: Neutral| Mots-cles: fed, war">8.4 <sup>ℹ</sup></span>
-    <span class="theme-tag">⚔️ War/Conflict</span>
-    <span class="alert-badge">🚨 ALERT</span>
-  </div>
-  <h3 class="card-title"><a href="https://finance.yahoo.com/news/apollo-leon-black-sued-allegedly-004535212.html" target="_blank" rel="noopener">Apollo, Leon Black sued for allegedly concealing Epstein business ties from shareholders</a></h3>
-  <p class="preview card-detail">Apollo, Leon Black sued for allegedly concealing Epstein business ties from shareholders FILE PHOTO: Apollo Global Management's logo at their office in Tokyo, Japan October 20, 2025. REUTERS/Miho Uranaka/File Photo · Reuters By Jonathan Stempel and Isla Binnie Mon, March 2, 2026 at 7:46 PM EST 3 min&#8230;</p>
-  <div class="card-footer card-detail">
-    <time datetime="2026-03-03">2026-03-03T00:46:44Z</time>
-    <span class="kw-hint">🔑 fed, war</span>
-  </div>
-</article>
 <article class="card card-alert" data-score="8.38" data-date="2026-03-08" data-themes="" data-text="monster beverage corporation (mnst) exceeds fourth-quarter sales and profit expectations monster beverage corporation (mnst) exceeds fourth-quarter sales and profit expectations fatima gulzar sun, march 8, 2026 at 7:45 am cdt 2 min read mnst monster beverage corporation (nasdaq: mnst ) is among the 12 best alcohol stocks to buy right now . monster beverage corporation (mnst) exceeds fourth-quarter sales and profit expectations on february 26, 2026, reuters reported that monster beverage corporation (nasdaq:mnst) surpassed fourth-quarter sales and profit projections. the firm posted net sales of $2.13 billion for the quarter ended december 31, up 17.6% from the previous year and su">
   <div class="card-header">
     <span class="source-badge">Yahoo Finance</span>
@@ -14496,20 +14454,6 @@
   <div class="card-footer card-detail">
     <time datetime="2026-03-07">2026-03-07T12:05:00Z</time>
     <span class="kw-hint">🔑 s&p 500, recession</span>
-  </div>
-</article>
-<article class="card card-alert" data-score="8.15" data-date="2026-03-02" data-themes="" data-text="stock market today, march 2: sofi technologies rises after ceo anthony noto buys 56,000 shares stock market today, march 2: sofi technologies rises after ceo anthony noto buys 56,000 shares josh kohn-lindquist, the motley fool mon, march 2, 2026 at 6:21 pm est 2 min read sofi ^gspc upst ^ixic lc sofi technologies (nasdaq:sofi) , a digital banking and lending platform, closed monday at $18.39, up 3.55%. the stock is rebounding after a recent decline, with investors watching insider buying by ceo anthony noto and ongoing trends in member growth and profitability. trading volume reached 71.7 million shares, about 26% above its three-month average of 57 million shares. sofi technologies ipo">
-  <div class="card-header">
-    <span class="source-badge">Yahoo Finance</span>
-    <span class="score-pill" style="background:color-mix(in srgb,#8b949e 18%,transparent);color:#8b949e;border-color:color-mix(in srgb,#8b949e 35%,transparent)" title="Score: 8.15 | Seuil: 5.0 | Sentiment: Positive| Mots-cles: stock market, s&p 500, nasdaq">8.1 <sup>ℹ</sup></span>
-    
-    <span class="alert-badge">🚨 ALERT</span>
-  </div>
-  <h3 class="card-title"><a href="https://finance.yahoo.com/news/stock-market-today-march-2-232133449.html" target="_blank" rel="noopener">Stock Market Today, March 2: SoFi Technologies Rises After CEO Anthony Noto Buys 56,000 Shares</a></h3>
-  <p class="preview card-detail">Stock Market Today, March 2: SoFi Technologies Rises After CEO Anthony Noto Buys 56,000 Shares Josh Kohn-Lindquist, The Motley Fool Mon, March 2, 2026 at 6:21 PM EST 2 min read SOFI ^GSPC UPST ^IXIC LC SoFi Technologies (NASDAQ:SOFI) , a digital banking and lending platform, closed Monday at $18.39,&#8230;</p>
-  <div class="card-footer card-detail">
-    <time datetime="2026-03-02">2026-03-02T23:21:33Z</time>
-    <span class="kw-hint">🔑 stock market, s&p 500, nasdaq</span>
   </div>
 </article>
 <article class="card card-alert" data-score="8.15" data-date="2026-03-09" data-themes="war_conflict" data-text="mitsui partners with kaynes for new osat facility in india mitsui partners with kaynes for new osat facility in india anwesha pattanaik mon, march 9, 2026 at 7:22 am cdt 2 min read kaynes.bo 8031.t 6832.t mitsui & co. has entered into a strategic partnership with kaynes semicon and aoi electronics co. to support the establishment of a semiconductor back-end manufacturing operation in india. the agreement gives mitsui the role of facilitating kaynes’ launch into the outsourced semiconductor assembly and test (osat) sector by drawing on japan-based aoi electronics’ technical experience. mitsui has secured exclusive rights regarding procurement of raw ma">
@@ -17788,20 +17732,6 @@
     <span class="kw-hint">🔑 earnings, oil</span>
   </div>
 </article>
-<article class="card card-alert" data-score="5.76" data-date="2026-03-02" data-themes="" data-text="how the iran conflict could pressure consumer staples companies ">
-  <div class="card-header">
-    <span class="source-badge">Yahoo Finance</span>
-    <span class="score-pill" style="background:color-mix(in srgb,#8b949e 18%,transparent);color:#8b949e;border-color:color-mix(in srgb,#8b949e 35%,transparent)" title="Score: 5.76 | Seuil: 5.0 | Sentiment: Negative| Mots-cles: conflict">5.8 <sup>ℹ</sup></span>
-    
-    <span class="alert-badge">🚨 ALERT</span>
-  </div>
-  <h3 class="card-title"><a href="https://www.barrons.com/articles/consumer-staples-stocks-iran-a44c4392?siteid=yhoof2&yptr=yahoo" target="_blank" rel="noopener">How the Iran Conflict Could Pressure Consumer Staples Companies</a></h3>
-  <p class="preview card-detail"></p>
-  <div class="card-footer card-detail">
-    <time datetime="2026-03-02">2026-03-02T23:26:00Z</time>
-    <span class="kw-hint">🔑 conflict</span>
-  </div>
-</article>
 <article class="card card-alert" data-score="5.76" data-date="2026-03-06" data-themes="" data-text="china to deepen reform of shenzhen's chinext board, regulator says china to deepen reform of shenzhen's chinext board, regulator says china securities regulatory commission (csrc) building in beijing · reuters reuters fri, march 6, 2026 at 2:31 am pst 2 min read beijing/shanghai, march 6 (reuters) - china's securities regulator said on friday that reforms for chinext, shenzhen's startup board for growth companies, were largely complete, as beijing steps up ‌efforts to funnel more financing to homegrown tech champions. wu qing, chairman of the china ‌securities regulatory commission (csrc), told a news conference that the board would adopt more precise and inc">
   <div class="card-header">
     <span class="source-badge">Yahoo Finance</span>
@@ -19622,20 +19552,6 @@
     <span class="kw-hint">🔑 conflict</span>
   </div>
 </article>
-<article class="card" data-score="4.52" data-date="2026-03-03" data-themes="" data-text="us lng producers rush to seize on surging gas prices triggered by iran conflict us lng producers rush to seize on surging gas prices triggered by iran conflict subscribe to unlock this article try unlimited access only undefined for 4 weeks then undefined per month. complete digital access to quality ft journalism on any device. cancel anytime during your trial. keep reading for undefined what’s included global news & analysis expert opinion ft app on android & ios first ft: the day’s biggest stories 20+ curated newsletters follow topics & set alerts with myft ft videos & podcasts 10 additional monthly gift articles to share lex: ft’s flagship investment column 15+ premiu">
-  <div class="card-header">
-    <span class="source-badge">Financial Times</span>
-    <span class="score-pill" style="background:color-mix(in srgb,#8b949e 18%,transparent);color:#8b949e;border-color:color-mix(in srgb,#8b949e 35%,transparent)" title="Score: 4.52 | Seuil: 5.0 | Sentiment: Neutral| Mots-cles: conflict">4.5 <sup>ℹ</sup></span>
-    
-    
-  </div>
-  <h3 class="card-title"><a href="https://www.ft.com/content/fb837a9d-6334-43da-a58d-cb9830dc68fe" target="_blank" rel="noopener">US LNG producers rush to seize on surging gas prices triggered by Iran conflict</a></h3>
-  <p class="preview card-detail">US LNG producers rush to seize on surging gas prices triggered by Iran conflict Subscribe to unlock this article Try unlimited access Only undefined for 4 weeks Then undefined per month. Complete digital access to quality FT journalism on any device. Cancel anytime during your trial. Keep reading fo&#8230;</p>
-  <div class="card-footer card-detail">
-    <time datetime="2026-03-03">Tue, 03 Mar 2026 00:06:08</time>
-    <span class="kw-hint">🔑 conflict</span>
-  </div>
-</article>
 <article class="card" data-score="4.50" data-date="2026-03-03" data-themes="" data-text="germany’s military boost undermined by mould and broken lifts germany’s military boost undermined by mould and broken lifts subscribe to unlock this article try unlimited access only undefined for 4 weeks then undefined per month. complete digital access to quality ft journalism on any device. cancel anytime during your trial. keep reading for undefined what’s included global news & analysis expert opinion ft app on android & ios first ft: the day’s biggest stories 20+ curated newsletters follow topics & set alerts with myft ft videos & podcasts 10 additional monthly gift articles to share lex: ft’s flagship investment column 15+ premium newsletters from">
   <div class="card-header">
     <span class="source-badge">Financial Times</span>
@@ -20796,6 +20712,20 @@
   <div class="card-footer card-detail">
     <time datetime="2026-03-09">2026-03-09T09:20:00Z</time>
     <span class="kw-hint">🔑 bitcoin, crypto</span>
+  </div>
+</article>
+<article class="card" data-score="3.73" data-date="2026-03-08" data-themes="" data-text="a married couple collecting social security face a $44,000 tax trap most never see coming a married couple collecting social security face a $44,000 tax trap most never see coming austin smith sun, march 8, 2026 at 9:08 am edt 3 min read shapecharge / getty images · shapecharge / getty images married couples claiming social security in 2026 are running into a tax problem that rarely gets mentioned in retirement planning conversations, and it hits harder when two incomes combine than when one person claims alone. what the situation actually looks like a couple, both in their late 60s, each collecting social security. one spouse gets $1,800 a month, the other gets $1,400. together th">
+  <div class="card-header">
+    <span class="source-badge">Yahoo Finance</span>
+    <span class="score-pill" style="background:color-mix(in srgb,#8b949e 18%,transparent);color:#8b949e;border-color:color-mix(in srgb,#8b949e 35%,transparent)" title="Score: 3.73 | Seuil: 5.0 | Sentiment: Neutral| Mots-cles: fed, inflation">3.7 <sup>ℹ</sup></span>
+    
+    
+  </div>
+  <h3 class="card-title"><a href="https://finance.yahoo.com/news/married-couple-collecting-social-security-130815144.html" target="_blank" rel="noopener">A Married Couple Collecting Social Security Face a $44,000 Tax Trap Most Never See Coming</a></h3>
+  <p class="preview card-detail">A Married Couple Collecting Social Security Face a $44,000 Tax Trap Most Never See Coming Austin Smith Sun, March 8, 2026 at 9:08 AM EDT 3 min read shapecharge / Getty Images · shapecharge / Getty Images Married couples claiming Social Security in 2026 are running into a tax problem that rarely gets&#8230;</p>
+  <div class="card-footer card-detail">
+    <time datetime="2026-03-08">2026-03-08T13:08:15Z</time>
+    <span class="kw-hint">🔑 fed, inflation</span>
   </div>
 </article>
 <article class="card" data-score="3.73" data-date="2026-03-03" data-themes="" data-text="dow jones restaurant giant mcdonald's, alcoa in or near buy zones amid stock market sell-off ">
@@ -25614,6 +25544,20 @@
     
   </div>
 </article>
+<article class="card" data-score="1.24" data-date="2026-03-09" data-themes="" data-text="trump family-linked financial group probed by congressional committee over chinese stock scams trump family-linked financial group probed by congressional committee over chinese stock scams subscribe to unlock this article try unlimited access only undefined for 4 weeks then undefined per month. complete digital access to quality ft journalism on any device. cancel anytime during your trial. keep reading for undefined what’s included global news & analysis expert opinion ft app on android & ios first ft: the day’s biggest stories 20+ curated newsletters follow topics & set alerts with myft ft videos & podcasts 10 additional monthly gift articles to share lex: ft’s flagship investment co">
+  <div class="card-header">
+    <span class="source-badge">Financial Times</span>
+    <span class="score-pill" style="background:color-mix(in srgb,#8b949e 18%,transparent);color:#8b949e;border-color:color-mix(in srgb,#8b949e 35%,transparent)" title="Score: 1.24 | Seuil: 5.0 | Sentiment: Neutral| Mots-cles: —">1.2 <sup>ℹ</sup></span>
+    
+    
+  </div>
+  <h3 class="card-title"><a href="https://www.ft.com/content/49f541f8-c73d-4268-9621-f8604f1a8141" target="_blank" rel="noopener">Trump family-linked financial group probed by congressional committee over Chinese stock scams</a></h3>
+  <p class="preview card-detail">Trump family-linked financial group probed by congressional committee over Chinese stock scams Subscribe to unlock this article Try unlimited access Only undefined for 4 weeks Then undefined per month. Complete digital access to quality FT journalism on any device. Cancel anytime during your trial. &#8230;</p>
+  <div class="card-footer card-detail">
+    <time datetime="2026-03-09">Mon, 09 Mar 2026 23:00:03</time>
+    
+  </div>
+</article>
 <article class="card" data-score="1.19" data-date="2026-03-05" data-themes="" data-text="plunge in south korean stocks saps an astounding market ride for now plunge in south korean stocks saps an astounding market ride for now subscribe to unlock this article try unlimited access only undefined for 4 weeks then undefined per month. complete digital access to quality ft journalism on any device. cancel anytime during your trial. keep reading for undefined what’s included global news & analysis expert opinion ft app on android & ios first ft: the day’s biggest stories 20+ curated newsletters follow topics & set alerts with myft ft videos & podcasts 10 additional monthly gift articles to share lex: ft’s flagship investment column 15+ premium newslette">
   <div class="card-header">
     <span class="source-badge">Financial Times</span>
@@ -27020,9 +26964,9 @@ const axisOpts  = { grid: { color: gridColor }, ticks: { color: tickColor, font:
 new Chart(document.getElementById('chartDays'), {
   type: 'bar',
   data: {
-    labels: ["03-03", "03-04", "03-05", "03-06", "03-07", "03-08", "03-09"],
+    labels: ["03-04", "03-05", "03-06", "03-07", "03-08", "03-09", "03-10"],
     datasets: [{
-      data: [385, 344, 311, 273, 187, 200, 190],
+      data: [344, 311, 273, 187, 204, 191, 2],
       backgroundColor: 'rgba(88,166,255,0.45)',
       borderColor: '#58a6ff',
       borderWidth: 1,
@@ -27036,7 +26980,7 @@ new Chart(document.getElementById('chartDays'), {
   }
 });
 
-const themeValues = [965, 40, 47, 197, 29, 27, 4, 46, 15, 5, 9];
+const themeValues = [962, 40, 47, 196, 29, 27, 4, 46, 15, 5, 9];
 if (themeValues.length > 0 && themeValues.some(v => v > 0)) {
   new Chart(document.getElementById('chartThemes'), {
     type: 'doughnut',
